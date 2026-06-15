@@ -78,8 +78,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hira
 .fl{font-size:11px;color:var(--text2);display:block;margin-bottom:3px;margin-top:9px;}
 .af{border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:14px;margin-bottom:12px;background:var(--bg2);}
 .af h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
-input,select,textarea{width:100%;padding:7px 10px;border:0.5px solid var(--border2);border-radius:var(--radius);font-size:12px;color:var(--text);background:var(--bg);font-family:inherit;outline:none;}
+input,select,textarea{width:100%;padding:7px 10px;border:0.5px solid var(--border2);border-radius:var(--radius);font-size:12px;color:var(--text);background:var(--bg);font-family:inherit;outline:none;writing-mode:horizontal-tb;}
 input:focus,select:focus,textarea:focus{border-color:var(--text3);}
+label,button,.tab,.btn-p,.btn-o,.badge,.mn,.ms,.fl{writing-mode:horizontal-tb !important;text-orientation:mixed !important;}
 .nc{border-left:2px solid #378add;padding:8px 11px;margin-bottom:7px;background:var(--bg2);border-radius:var(--radius);}
 .nc.nw{border-left-color:#ba7517;}
 .pw{height:6px;background:var(--bg2);border-radius:3px;overflow:hidden;margin:6px 0 3px;}
@@ -957,7 +958,7 @@ function showAddVax(){
   showOverlay(`<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加疫苗记录</h3>
     <label class="fl">疫苗</label><select id="vN" onchange="document.getElementById('vNC').style.display=this.value==='custom'?'block':'none';"><option value="">-- 选择 --</option>${opts}<option value="custom">自定义…</option></select>
     <input id="vNC" placeholder="输入疫苗名称" style="display:none;margin-top:5px;">
-    <label class="fl">状态</label><div style="display:flex;gap:10px;margin-top:4px;"><label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="vD" value="1"> 已接种</label><label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="vD" value="0" checked> 待接种</label></div>
+    <label class="fl">状态</label><div style="display:flex;gap:10px;margin-top:4px;flex-wrap:nowrap;"><label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;white-space:nowrap;writing-mode:horizontal-tb;"><input type="radio" name="vD" value="1"> 已接种</label><label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;white-space:nowrap;writing-mode:horizontal-tb;"><input type="radio" name="vD" value="0" checked> 待接种</label></div>
     <label class="fl">日期</label><input type="date" id="vDate" value="${TS}">
     <label class="fl">医院（选填）</label><input id="vHosp" placeholder="医院">
     <div class="rb"><button class="btn-p" onclick="saveVax()" style="flex:1;">保存</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
@@ -1288,8 +1289,8 @@ function showAddMember(){
     <input type="hidden" id="newEmoji" value="👤">
     <label class="fl" style="margin-top:10px;">是否为儿童？</label>
     <div style="display:flex;gap:8px;margin-top:4px;">
-      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="newIsChild" value="0" checked> 成人</label>
-      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="newIsChild" value="1"> 儿童</label>
+      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;white-space:nowrap;writing-mode:horizontal-tb;"><input type="radio" name="newIsChild" value="0" checked> 成人</label>
+      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;white-space:nowrap;writing-mode:horizontal-tb;"><input type="radio" name="newIsChild" value="1"> 儿童</label>
     </div>
     <label class="fl" style="margin-top:10px;">健康标签（可多选）</label>
     <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:5px;" id="newTagPicker">
@@ -1353,8 +1354,8 @@ function showEditMember(id){
     <input type="hidden" id="editEmoji" value="${esc(m.emoji||m.name[0])}">
     <label class="fl" style="margin-top:10px;">是否为儿童</label>
     <div style="display:flex;gap:12px;margin-top:4px;">
-      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="editIsChild" value="0" ${!m.isChild?'checked':''}> 成人</label>
-      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="editIsChild" value="1" ${m.isChild?'checked':''}> 儿童</label>
+      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;white-space:nowrap;writing-mode:horizontal-tb;"><input type="radio" name="editIsChild" value="0" ${!m.isChild?'checked':''}> 成人</label>
+      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;white-space:nowrap;writing-mode:horizontal-tb;"><input type="radio" name="editIsChild" value="1" ${m.isChild?'checked':''}> 儿童</label>
     </div>
     <div class="rb" style="margin-top:14px;">
       <button class="btn-p" onclick="saveEditMember(${id})" style="flex:1;">保存</button>
