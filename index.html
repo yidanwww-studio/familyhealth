@@ -477,6 +477,7 @@ function rReports(){
       </div>
       <div style="flex:1;"><label class="fl" style="margin-top:0;">检查日期</label><input type="date" id="repDate" value="${TS}"></div>
     </div>
+    <div style="margin-bottom:8px;"><label class="fl" style="margin-top:0;">医院</label><input id="repHosp" placeholder="AI识别后自动填入"></div>
     <button class="btn-p" style="width:100%;" onclick="doRepAI('${sk}')">🤖 AI 识别所有指标</button>
     <div id="rep_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
     <div id="rep_result"></div>
@@ -538,7 +539,7 @@ async function doRepAI(sk){
   const typeStr=typeVal!=='auto'?`（报告类型：${typeVal}）`:'';
   const prompt='请仔细识别这张医疗检查报告图片'+typeStr+'。'
     +'只输出JSON，不要任何markdown或多余文字，第一个字符必须是{：'
-    +'{"reportType":"报告类型名称","summary":"2-3句分析总结，说明哪些指标异常及临床意义","abnormalCount":数字,'
+    +'{"reportType":"报告类型名称","date":"检查日期YYYY-MM-DD","hospital":"医院名称","summary":"2-3句分析总结，说明哪些指标异常及临床意义","abnormalCount":数字,'
     +'"metrics":[{"name":"指标全称（英文缩写）","value":"数值+单位","reference":"参考范围","status":"ok或warn或danger"}]}'
     +'。status规则：在参考范围内=ok，轻度偏高/偏低=warn，明显异常=danger。'
     +'把报告中所有指标都列出来，不要遗漏。无法识别返回{"error":"原因"}';
@@ -569,11 +570,20 @@ async function doRepAI(sk){
     const abn=allMetrics.filter(m=>m.status!=='ok').length;
     const merged={
       reportType:valid[0].reportType||'医疗报告',
+      date:valid[0].date||'',
+      hospital:valid[0].hospital||'',
       summary:(valid.length===1?valid[0].summary:'共'+valid.length+'张报告。'+valid.map(r=>r.summary).filter(Boolean).join(' ')),
       abnormalCount:abn, metrics:allMetrics, pageCount:files.length
     };
     window._lastMerged=merged;
     if(st2) st2.textContent=`✅ 识别完成（${files.length}张）`;
+    // 把识别到的日期填入日期框
+    if(merged.date && document.getElementById('repDate')){
+      document.getElementById('repDate').value=merged.date;
+    }
+    if(merged.hospital && document.getElementById('repHosp')){
+      document.getElementById('repHosp').value=merged.hospital;
+    }
     // 显示结果
     const bc=abn===0?'bok':abn<=2?'bwarn':'bdanger';
     const warnM=allMetrics.filter(m=>m.status!=='ok');
@@ -600,7 +610,10 @@ async function doRepAI(sk){
 
 function saveRepResult(){
   const m=window._lastMerged; if(!m) return;
-  const r={...m, id:uid(), date:document.getElementById('repDate')?.value||TS};
+  // 优先用 AI 识别的日期，其次用用户手动填的，最后才用今天
+  const manualDate = document.getElementById('repDate')?.value;
+  const aiDate = m.date;
+  const r={...m, id:uid(), date:aiDate||manualDate||TS};
   AD().reports.unshift(r);
   saveState(); renderSidebar();
   window._lastMerged=null;
@@ -646,7 +659,6 @@ function rImaging(){
         </div>
       </div>
       <div class="db">
-        ${img.imgSrc?`<img src="${img.imgSrc}" style="width:100%;max-height:180px;object-fit:contain;border-radius:var(--radius);border:0.5px solid var(--border);margin-bottom:10px;" alt="影像图片">`:''}
 
         ${(img.findings||[]).length?`<div class="sl">影像所见</div><div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 12px;">${img.findings.map(f=>{const dc=f.status==='ok'?'#9fe1cb':f.status==='warn'?'#fac775':'#b5d4f4';return`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--border);"><div style="width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;background:${dc};"></div><div><div style="font-size:12px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div></div>`;}).join('')}</div>`:''}
         ${img.conclusion?`<div style="background:var(--bg2);border-radius:var(--radius);padding:9px 11px;font-size:12px;line-height:1.7;margin-top:8px;">${esc(img.conclusion)}</div>`:''}
@@ -669,9 +681,8 @@ function showAddImaging(){
     <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加影像报告</h3>
     <div class="analyze-box">
       <h4>📷 上传影像报告图片，AI 自动识别（可多选）</h4>
-      <input type="file" accept="image/*" multiple onchange="onImgImgs(event,'${sk}')" style="margin:8px 0;">
-      <div class="img-grid" id="grid_${sk}"></div>
-      <button class="btn-p" style="width:100%;font-size:12px;margin-top:6px;" onclick="doImagingAI('${sk}')">🤖 AI 识别影像报告</button>
+      <input type="file" accept="image/*" multiple onchange="onImgImgs(event,'img_imgs')" style="margin:8px 0;">
+      <button class="btn-p" style="width:100%;font-size:12px;margin-top:6px;" onclick="doImagingAI('img_imgs')">🤖 AI 识别影像报告</button>
       <div id="img_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
     </div>
     <div style="font-size:11px;color:var(--text3);margin-bottom:6px;">AI 识别后自动填入，也可手动填写修改</div>
@@ -683,7 +694,7 @@ function showAddImaging(){
     <textarea id="iFindings" rows="4" placeholder="AI识别后自动填入"></textarea>
     <label class="fl">影像结论</label><textarea id="iConclusion" rows="2" placeholder="AI识别后自动填入…"></textarea>
     <label class="fl">医生建议 / 复查要求</label><input id="iSugg" placeholder="如：6个月后复查">
-    <div class="rb"><button class="btn-p" onclick="saveImaging('${sk}')" style="flex:1;">保存影像报告</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+    <div class="rb"><button class="btn-p" onclick="saveImaging()" style="flex:1;">保存影像报告</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
   </div>`);
 }
 
@@ -777,11 +788,10 @@ async function doImagingAI(sk){
 }
 
 
-function saveImaging(sk){
+function saveImaging(){
   const rawF=document.getElementById('iFindings').value.trim();
   const findings=rawF?rawF.split('\n').filter(l=>l.trim()).map(l=>{const p=l.split(',').map(s=>s.trim());return{location:p[0]||'',status:p[1]||'ok',desc:p.slice(2).join(',')};}) :[];
-  const files=(window._imgStore||{})[sk]||[];
-  const img={id:uid(),type:document.getElementById('iType').value,date:document.getElementById('iDate').value||TS,hospital:document.getElementById('iHosp').value,department:document.getElementById('iDept').value,doctor:document.getElementById('iDoc').value,findings,conclusion:document.getElementById('iConclusion').value,suggestion:document.getElementById('iSugg').value,imgSrc:files.length?URL.createObjectURL(files[0]):null,imgCount:files.length};
+  const img={id:uid(),type:document.getElementById('iType').value,date:document.getElementById('iDate').value||TS,hospital:document.getElementById('iHosp').value,department:document.getElementById('iDept').value,doctor:document.getElementById('iDoc').value,findings,conclusion:document.getElementById('iConclusion').value,suggestion:document.getElementById('iSugg').value};
   AD().imaging.unshift(img);
   const fu=img.suggestion;
   if(fu){const d=calcFU(img.date,fu);if(d&&confirm('复查建议：「'+fu+'」\n建议日期：'+d+'\n\n是否添加日历？')){AD().events.unshift({id:uid(),title:'影像复查：'+img.type,date:d,hospital:img.hospital,doctor:img.doctor,note:fu});}}
