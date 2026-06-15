@@ -27,17 +27,17 @@
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB',sans-serif;background:var(--bg3);color:var(--text);font-size:14px;min-height:100vh;}
 .app{display:flex;height:100vh;max-width:1100px;margin:0 auto;background:var(--bg);}
-.sidebar{width:200px;border-right:0.5px solid var(--border);display:flex;flex-direction:column;background:var(--bg2);flex-shrink:0;}
-.sh{padding:16px 14px;border-bottom:0.5px solid var(--border);}
-.sh h1{font-size:15px;font-weight:600;color:var(--text);}
-.sh p{font-size:11px;color:var(--text3);margin-top:2px;}
-.member-list{padding:8px;flex:1;overflow-y:auto;}
-.mi{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:var(--radius);cursor:pointer;margin-bottom:2px;transition:background 0.15s;}
-.mi:hover,.mi.active{background:var(--bg);}
-.av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;}
-.mn{font-size:13px;font-weight:500;color:var(--text);}
-.ms{font-size:10px;color:var(--text3);margin-top:1px;}
-.add-member{margin:8px;padding:8px;border:1px dashed var(--border2);border-radius:var(--radius);text-align:center;cursor:pointer;font-size:12px;color:var(--text3);}
+.sidebar{width:64px;border-right:0.5px solid var(--border);display:flex;flex-direction:column;align-items:center;background:var(--bg2);flex-shrink:0;padding:8px 0;}
+.sh{display:none;}
+.member-list{padding:4px;flex:1;overflow-y:auto;width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.mi{display:flex;align-items:center;justify-content:center;padding:4px;border-radius:var(--radius);cursor:pointer;width:48px;height:48px;transition:all 0.15s;position:relative;}
+.mi:hover{background:var(--bg);}
+.mi.active{background:var(--bg);box-shadow:0 0 0 2px var(--border2);}
+.mi.active::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);width:3px;height:20px;background:var(--text);border-radius:2px 0 0 2px;}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;flex-shrink:0;}
+.mn{display:none;}
+.ms{display:none;}
+.add-member{width:40px;height:40px;border:1.5px dashed var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--text3);margin:4px auto;}
 .add-member:hover{background:var(--bg);}
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
 .topbar{padding:12px 16px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg);}
@@ -117,15 +117,14 @@ label,button,.tab,.btn-p,.btn-o,.badge,.mn,.ms,.fl{writing-mode:horizontal-tb !i
 .child-section{margin-bottom:14px;}
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
-@media(max-width:640px){.sidebar{width:52px;}.mn,.ms,.sh p,.sh h1{display:none;}.sh{padding:12px 8px;}.mi{padding:8px;justify-content:center;}.tab{padding:5px 7px;font-size:11px;}}
+@media(max-width:640px){.sidebar{width:56px;}.tab{padding:5px 7px;font-size:11px;}}
 </style>
 </head>
 <body>
 <div class="app">
   <div class="sidebar">
-    <div class="sh"><h1>🏥 家庭健康</h1><p>档案管理</p></div>
     <div class="member-list" id="memberList"></div>
-    <div class="add-member" onclick="showAddMember()">＋ 添加成员</div>
+    <div class="add-member" onclick="showAddMember()" title="添加成员">＋</div>
   </div>
   <div class="main">
     <div class="topbar">
@@ -142,7 +141,8 @@ label,button,.tab,.btn-p,.btn-o,.badge,.mn,.ms,.fl{writing-mode:horizontal-tb !i
 
     </div>
     <div class="tab-bar" id="tabBar">
-      <button class="tab active" onclick="st('notes',this)">📋 病历记录</button>
+      <button class="tab active" onclick="st('feelings',this)">💬 自我感受</button>
+      <button class="tab" onclick="st('notes',this)">📋 病历记录</button>
       <button class="tab" onclick="st('reports',this)">🧪 检查报告</button>
       <button class="tab" onclick="st('imaging',this)">🔬 影像报告</button>
       <button class="tab" onclick="st('meds',this)">💊 用药管理</button>
@@ -187,8 +187,8 @@ function defState(){
       {id:1, name:'成员2', emoji:'👤', c1:'#fbeaf0', c2:'#993556', tags:[], isChild:false},
     ],
     data:{
-      0:{reports:[], notes:[], imaging:[], meds:[], events:[], child:{vaccines:[],growth:[],allergies:[]}},
-      1:{reports:[], notes:[], imaging:[], meds:[], events:[], child:{vaccines:[],growth:[],allergies:[]}},
+      0:{reports:[], notes:[], imaging:[], meds:[], events:[], feelings:[], child:{vaccines:[],growth:[],allergies:[]}},
+      1:{reports:[], notes:[], imaging:[], meds:[], events:[], feelings:[], child:{vaccines:[],growth:[],allergies:[]}},
     }
   };
 }
@@ -305,15 +305,8 @@ function renderSidebar(){
     const am=d.meds.filter(x=>x.active);
     if(am.length) parts.push(am.length+'种药');
     const sub = (m.tags&&m.tags.length) ? m.tags.slice(0,2).join('·') : (parts.join('·')||'暂无记录');
-    return `<div class="mi${CM===m.id?' active':''}" onclick="selMember(${m.id},this)">
+    return `<div class="mi${CM===m.id?' active':''}" onclick="selMember(${m.id},this)" title="${esc(m.name)}" onlongpress="showEditMember(${m.id})">
       <div class="av" style="background:${m.c1};color:${m.c2};">${m.emoji||m.name[0]}</div>
-      <div style="flex:1;min-width:0;">
-        <div class="mn" style="display:flex;align-items:center;gap:4px;">
-          ${esc(m.name)}${m.isChild?'<span style="font-size:10px;">👶</span>':''}
-          <span onclick="event.stopPropagation();showEditMember(${m.id})" style="font-size:10px;color:var(--text3);cursor:pointer;opacity:0.6;">✏️</span>
-        </div>
-        <div class="ms">${esc(sub)}</div>
-      </div>
     </div>`;
   }).join('');
 }
@@ -344,6 +337,7 @@ function rt(t){
   else if(t==='imaging') rImaging();
   else if(t==='meds') rMeds();
   else if(t==='child') rChild();
+  else if(t==='feelings') rFeelings();
   else if(t==='calendar') rCalendar();
   else if(t==='timeline') rTimeline();
 }
@@ -1024,36 +1018,55 @@ function saveAllergy(){
 function showEditTags(){
   const m=state.members.find(x=>x.id===CM); if(!m)return;
   const cur=m.tags||[];
-  const chips=PRESET_TAGS.map(function(t){
+  const presetChips=PRESET_TAGS.map(function(t){
     const active=cur.includes(t);
-    const bg=active?'#eeedfe':'var(--bg2)';
-    const clr=active?'#534ab7':'var(--text)';
-    const bc=active?'#534ab7':'var(--border2)';
-    const dActive=active?'1':'0';
-    return '<div onclick="this.dataset.active=this.dataset.active===\'1\'?\'0\':\'1\';this.style.background=this.dataset.active===\'1\'?\'#eeedfe\':\'var(--bg2)\';this.style.color=this.dataset.active===\'1\'?\'#534ab7\':\'var(--text)\';" data-tag="'+esc(t)+'" data-active="'+dActive+'" style="font-size:11px;padding:3px 10px;border-radius:20px;border:0.5px solid '+bc+';cursor:pointer;background:'+bg+';color:'+clr+';display:inline-block;margin:2px;">'+esc(t)+'</div>';
+    return '<div onclick="this.dataset.active=this.dataset.active===\'1\'?\'0\':\'1\';this.style.background=this.dataset.active===\'1\'?\'#eeedfe\':\'var(--bg2)\';this.style.color=this.dataset.active===\'1\'?\'#534ab7\':\'var(--text)\';this.style.borderColor=this.dataset.active===\'1\'?\'#534ab7\':\'var(--border2)\';" data-tag="'+t+'" data-active="'+(active?'1':'0')+'" style="font-size:12px;padding:3px 10px;border-radius:20px;border:0.5px solid '+(active?'#534ab7':'var(--border2)')+';cursor:pointer;background:'+(active?'#eeedfe':'var(--bg2)')+';color:'+(active?'#534ab7':'var(--text)')+';">'+t+'</div>';
   }).join('');
-  showOverlay(`<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">编辑健康标签</h3>
-    <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;" id="tagPicker">${chips}</div>
-    <label class="fl">自定义标签（输入后按回车）</label><input id="customTag" placeholder="自定义标签" onkeydown="if(event.key==='Enter'){addCustomTagChip();event.preventDefault();}">
-    <div class="rb"><button class="btn-p" onclick="saveTags()" style="flex:1;">保存标签</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
-  </div>`);
+
+  // 自定义标签（不在预设里的）带删除按钮
+  const customTags = cur.filter(t=>!PRESET_TAGS.includes(t));
+  const customChips = customTags.map(function(t){
+    return '<div data-tag="'+t+'" data-active="1" data-custom="1" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 8px;border-radius:20px;border:0.5px solid #534ab7;background:#eeedfe;color:#534ab7;">'
+      +t
+      +'<span onclick="this.parentElement.remove()" style="font-size:13px;font-weight:600;cursor:pointer;color:#534ab7;line-height:1;">×</span>'
+      +'</div>';
+  }).join('');
+
+  showOverlay('<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">编辑健康标签</h3>'
+    +'<div style="font-size:11px;color:var(--text2);margin-bottom:8px;">点击选择或取消，可多选</div>'
+    +'<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;" id="tagPicker">'+presetChips+'</div>'
+    +(customChips?'<div style="font-size:11px;font-weight:600;color:var(--text3);margin-bottom:6px;">自定义标签</div><div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;" id="customTagPicker">'+customChips+'</div>':'<div id="customTagPicker" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;"></div>')
+    +'<label class="fl">添加自定义标签</label>'
+    +'<div style="display:flex;gap:6px;margin-top:4px;">'
+    +'<input id="customTag" placeholder="输入标签名称" style="flex:1;"">'
+    +'<button class="btn-o" onclick="addCustomTagChip()" style="flex-shrink:0;padding:6px 12px;">添加</button>'
+    +'</div>'
+    +'<div class="rb" style="margin-top:12px;"><button class="btn-p" onclick="saveTags()" style="flex:1;">保存标签</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>'
+    +'</div>');
 }
 
+
 function addCustomTagChip(){
-  const inp=document.getElementById('customTag'); const val=inp.value.trim(); if(!val)return;
-  const picker=document.getElementById('tagPicker');
+  const inp=document.getElementById('customTag');
+  const val=inp.value.trim(); if(!val){return;}
+  // 检查是否已存在
+  const existing=Array.from(document.querySelectorAll('#tagPicker [data-tag], #customTagPicker [data-tag]')).map(e=>e.dataset.tag);
+  if(existing.includes(val)){alert('标签已存在');return;}
+  const picker=document.getElementById('customTagPicker');
+  if(!picker) return;
   const div=document.createElement('div');
-  div.dataset.tag=val; div.dataset.active='1';
-  div.style.cssText='font-size:11px;padding:3px 10px;border-radius:20px;border:0.5px solid #534ab7;cursor:pointer;background:#eeedfe;color:#534ab7;display:inline-block;margin:2px;';
-  div.textContent=val;
-  div.onclick=function(){this.dataset.active=this.dataset.active==='1'?'0':'1';this.style.background=this.dataset.active==='1'?'#eeedfe':'var(--bg2)';this.style.color=this.dataset.active==='1'?'#534ab7':'var(--text)';};
-  picker.appendChild(div); inp.value='';
+  div.dataset.tag=val; div.dataset.active='1'; div.dataset.custom='1';
+  div.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 8px;border-radius:20px;border:0.5px solid #534ab7;background:#eeedfe;color:#534ab7;';
+  div.innerHTML=val+'<span onclick="this.parentElement.remove()" style="font-size:13px;font-weight:600;cursor:pointer;color:#534ab7;line-height:1;">×</span>';
+  picker.appendChild(div);
+  inp.value='';
 }
 
 function saveTags(){
   const m=state.members.find(x=>x.id===CM); if(!m)return;
-  const chips=document.querySelectorAll('#tagPicker [data-tag]');
-  m.tags=Array.from(chips).filter(c=>c.dataset.active==='1').map(c=>c.dataset.tag);
+  const presetSelected=Array.from(document.querySelectorAll('#tagPicker [data-tag]')).filter(c=>c.dataset.active==='1').map(c=>c.dataset.tag);
+  const customSelected=Array.from(document.querySelectorAll('#customTagPicker [data-tag]')).filter(c=>c.dataset.active!=='0').map(c=>c.dataset.tag);
+  m.tags=[...presetSelected,...customSelected];
   saveState();renderSidebar();
   // 刷新顶部标签显示
   const tagRow=document.getElementById('tagRow');
@@ -1329,6 +1342,159 @@ function addMember(){
 function delItem(type,id){if(!confirm('确定删除此条记录？'))return;const d=AD();d[type]=d[type].filter(x=>x.id!==id);saveState();renderSidebar();rt(CT);}
 function exportAll(){const json=JSON.stringify(state,null,2);dlFile(json,'application/json','family_health_'+TS+'.json');}
 function importData(){const inp=document.createElement('input');inp.type='file';inp.accept='.json';inp.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(!d.members||!d.data){alert('格式不正确');return;}if(!confirm('导入将覆盖当前数据，确定？'))return;state=d;CM=state.currentMember||0;saveState();renderSidebar();const m=state.members.find(x=>x.id===CM);document.getElementById('mt').textContent=(m?m.name:'')+'的健康档案';rt(CT);alert('导入成功！');}catch(err){alert('导入失败：'+err.message);}};r.readAsText(f);};inp.click();}
+
+// ── 自我感受记录 ──────────────────────────────────────────────────────
+const SYMPTOM_TAGS = {
+  '症状': ['头痛','头晕','恶心','腹痛','胸闷','气短','咳嗽','发烧','乏力','关节痛','皮疹','食欲差'],
+  '睡眠': ['入睡困难','早醒','多梦','睡眠浅','嗜睡','睡眠良好'],
+  '情绪': ['焦虑','低落','烦躁','平静','开心','压力大','疲惫'],
+  '精力': ['精力充沛','状态一般','精力不足','极度疲倦'],
+  '饮食': ['食欲好','食欲差','暴饮暴食','消化不良','饮水不足']
+};
+
+const LEVEL_COLORS = ['#9fe1cb','#fac775','#e24b4a'];
+const LEVEL_LABELS = ['轻微','中等','严重'];
+
+function rFeelings(){
+  const feelings = AD().feelings||[];
+  const c = document.getElementById('mc');
+
+  let html = `<button class="btn-p" style="width:100%;margin-bottom:12px;" onclick="showAddFeeling()">＋ 记录今日感受</button>`;
+
+  if(!feelings.length){
+    html += `<div class="es">💬<br><br>暂无感受记录<br><div style="font-size:12px;margin-top:8px;color:var(--text3);">记录每天的身体和心理状态<br>帮助发现健康规律</div></div>`;
+    c.innerHTML = html; return;
+  }
+
+  // 按日期分组
+  const groups = {};
+  feelings.forEach(f => {
+    const d = f.date.slice(0,7);
+    if(!groups[d]) groups[d] = [];
+    groups[d].push(f);
+  });
+
+  const monthNames = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(month => {
+    const [yr,mo] = month.split('-');
+    html += `<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
+      <div style="font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap;">${yr}年 ${monthNames[parseInt(mo)]}</div>
+      <div style="flex:1;height:0.5px;background:var(--border);"></div>
+    </div>`;
+
+    groups[month].sort((a,b)=>b.date.localeCompare(a.date)).forEach(f => {
+      const tags = f.tags||[];
+      const hasWarn = tags.some(t=>t.level>=1);
+      const dot = hasWarn ? '#fac775' : '#9fe1cb';
+
+      html += `<div class="card cp" onclick="this.classList.toggle('open')" style="margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg2);border:2px solid ${dot};display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">💬</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:13px;font-weight:500;">${f.date} <span style="font-size:11px;font-weight:400;color:var(--text2);">${tags.length}项记录</span></div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;">
+              ${tags.slice(0,4).map(t=>`<span style="font-size:10px;padding:1px 7px;border-radius:20px;background:${LEVEL_COLORS[t.level||0]}22;color:${LEVEL_COLORS[t.level||0]};border:0.5px solid ${LEVEL_COLORS[t.level||0]};">${t.name}</span>`).join('')}
+              ${tags.length>4?`<span style="font-size:10px;color:var(--text3);">+${tags.length-4}</span>`:''}
+            </div>
+          </div>
+          <span style="font-size:10px;color:var(--text3);">▼</span>
+        </div>
+        <div class="db" style="margin-top:10px;">
+          ${Object.keys(SYMPTOM_TAGS).map(cat => {
+            const catTags = tags.filter(t=>t.cat===cat);
+            if(!catTags.length) return '';
+            return `<div style="margin-bottom:8px;">
+              <div style="font-size:10px;font-weight:600;color:var(--text3);margin-bottom:4px;">${cat}</div>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                ${catTags.map(t=>`<span style="font-size:11px;padding:2px 9px;border-radius:20px;background:${LEVEL_COLORS[t.level||0]}22;color:${LEVEL_COLORS[t.level||0]};border:0.5px solid ${LEVEL_COLORS[t.level||0]};">${t.name}${t.level>0?' ('+LEVEL_LABELS[t.level]+')':''}</span>`).join('')}
+              </div>
+            </div>`;
+          }).join('')}
+          ${f.note?`<div style="background:var(--bg2);border-radius:var(--radius);padding:8px 10px;font-size:12px;line-height:1.7;color:var(--text2);margin-top:6px;">📝 ${esc(f.note)}</div>`:''}
+          <div style="margin-top:8px;display:flex;gap:6px;">
+            <button class="btn-o" onclick="event.stopPropagation();delItem('feelings','${f.id}')">🗑 删除</button>
+          </div>
+        </div>
+      </div>`;
+    });
+  });
+
+  c.innerHTML = html;
+}
+
+function showAddFeeling(){
+  const today = new Date().toISOString().split('T')[0];
+  // 构建标签选择器
+  let tagPickerHtml = '';
+  Object.keys(SYMPTOM_TAGS).forEach(cat => {
+    tagPickerHtml += `<div style="margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:5px;">${cat}</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;" id="cat_${cat}">
+        ${SYMPTOM_TAGS[cat].map(tag =>
+          `<div onclick="toggleFeelTag(this,'${cat}','${tag}')"
+            data-cat="${cat}" data-tag="${tag}" data-level="0" data-active="0"
+            style="font-size:12px;padding:3px 10px;border-radius:20px;border:0.5px solid var(--border2);cursor:pointer;background:var(--bg2);color:var(--text);">${tag}</div>`
+        ).join('')}
+      </div>
+    </div>`;
+  });
+
+  showOverlay(`<div class="dialog" style="max-width:400px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">记录今日感受</h3>
+    <label class="fl">日期</label>
+    <input type="date" id="feelDate" value="${today}">
+    <label class="fl" style="margin-top:10px;">选择症状（点一次=轻微，再点=中等，再点=严重，再点=取消）</label>
+    <div style="margin-top:6px;">${tagPickerHtml}</div>
+    <label class="fl">补充说明（选填）</label>
+    <textarea id="feelNote" rows="2" placeholder="比如：头痛从下午开始，可能是睡眠不足导致的…"></textarea>
+    <div class="rb"><button class="btn-p" onclick="saveFeeling()" style="flex:1;">保存记录</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function toggleFeelTag(el, cat, tag){
+  const level = parseInt(el.dataset.level||'0');
+  const newLevel = (level + 1) % 4; // 0=未选, 1=轻微, 2=中等, 3=严重, 回到0=取消
+  el.dataset.level = newLevel;
+  el.dataset.active = newLevel > 0 ? '1' : '0';
+  if(newLevel === 0){
+    el.style.background = 'var(--bg2)';
+    el.style.color = 'var(--text)';
+    el.style.borderColor = 'var(--border2)';
+    el.textContent = tag;
+  } else {
+    const col = LEVEL_COLORS[newLevel-1];
+    el.style.background = col+'22';
+    el.style.color = col;
+    el.style.borderColor = col;
+    el.textContent = tag + ' ' + LEVEL_LABELS[newLevel-1];
+  }
+}
+
+function saveFeeling(){
+  const date = document.getElementById('feelDate').value;
+  if(!date){alert('请选择日期');return;}
+  const tags = [];
+  document.querySelectorAll('[data-active="1"]').forEach(el => {
+    tags.push({
+      cat: el.dataset.cat,
+      name: el.dataset.tag,
+      level: parseInt(el.dataset.level)-1  // 存0=轻微,1=中等,2=严重
+    });
+  });
+  if(!tags.length && !document.getElementById('feelNote').value.trim()){
+    alert('请至少选择一个症状或填写说明');return;
+  }
+  const f = {id:uid(), date, tags, note: document.getElementById('feelNote').value.trim()};
+  if(!AD().feelings) AD().feelings = [];
+  AD().feelings.unshift(f);
+  saveState(); renderSidebar(); closeOverlay();
+  // 跳转时间线
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[0].classList.add('active');
+  CT='feelings'; rFeelings();
+}
+
 
 // ── 保存成功提示 ──────────────────────────────────────────────────────
 function showSaveBanner(msg){
