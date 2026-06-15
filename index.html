@@ -129,7 +129,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--text3);}
   <div class="main">
     <div class="topbar">
       <div class="topbar-left">
-        <h2 id="mt">家庭健康档案</h2>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <h2 id="mt" style="font-size:15px;font-weight:600;">家庭健康档案</h2>
+          <span id="editMemberBtn" onclick="showEditMember(CM)" style="font-size:11px;color:var(--text3);cursor:pointer;padding:2px 6px;border-radius:var(--radius);border:0.5px solid var(--border2);">编辑</span>
+        </div>
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:3px;">
           <div class="tag-row" id="tagRow"></div>
           <span onclick="showEditTags()" style="font-size:10px;padding:1px 7px;border-radius:20px;background:var(--bg2);color:var(--text2);cursor:pointer;border:0.5px solid var(--border2);flex-shrink:0;">＋ 编辑标签</span>
@@ -303,7 +306,13 @@ function renderSidebar(){
     const sub = (m.tags&&m.tags.length) ? m.tags.slice(0,2).join('·') : (parts.join('·')||'暂无记录');
     return `<div class="mi${CM===m.id?' active':''}" onclick="selMember(${m.id},this)">
       <div class="av" style="background:${m.c1};color:${m.c2};">${m.emoji||m.name[0]}</div>
-      <div><div class="mn">${esc(m.name)}${m.isChild?' 👶':''}</div><div class="ms">${esc(sub)}</div></div>
+      <div style="flex:1;min-width:0;">
+        <div class="mn" style="display:flex;align-items:center;gap:4px;">
+          ${esc(m.name)}${m.isChild?'<span style="font-size:10px;">👶</span>':''}
+          <span onclick="event.stopPropagation();showEditMember(${m.id})" style="font-size:10px;color:var(--text3);cursor:pointer;opacity:0.6;">✏️</span>
+        </div>
+        <div class="ms">${esc(sub)}</div>
+      </div>
     </div>`;
   }).join('');
 }
@@ -1326,6 +1335,70 @@ function tlToggle(card, id){
   el.style.display=isOpen?'none':'block';
   const arrow=card.querySelector('.tl-arrow');
   if(arrow) arrow.textContent=isOpen?'▼':'▲';
+}
+
+
+// ── 编辑成员信息 ──────────────────────────────────────────────────────
+function showEditMember(id){
+  const m=state.members.find(x=>x.id===id); if(!m) return;
+  const emojis=['👨','👩','👦','👧','👴','👵','🧑','👶','👱','🧓'];
+  showOverlay(`<div class="dialog">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;">编辑成员信息</h3>
+    <label class="fl">姓名</label>
+    <input id="editName" value="${esc(m.name)}" placeholder="请输入姓名" style="font-size:15px;">
+    <label class="fl" style="margin-top:10px;">头像</label>
+    <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;" id="editEmojiPick">
+      ${emojis.map(e=>`<div onclick="pickEditEmoji('${e}',this)" style="font-size:26px;cursor:pointer;padding:4px 6px;border-radius:8px;border:2px solid ${m.emoji===e?'var(--text2)':'transparent'};">${e}</div>`).join('')}
+    </div>
+    <input type="hidden" id="editEmoji" value="${esc(m.emoji||m.name[0])}">
+    <label class="fl" style="margin-top:10px;">是否为儿童</label>
+    <div style="display:flex;gap:12px;margin-top:4px;">
+      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="editIsChild" value="0" ${!m.isChild?'checked':''}> 成人</label>
+      <label style="display:flex;align-items:center;gap:4px;font-size:13px;cursor:pointer;"><input type="radio" name="editIsChild" value="1" ${m.isChild?'checked':''}> 儿童</label>
+    </div>
+    <div class="rb" style="margin-top:14px;">
+      <button class="btn-p" onclick="saveEditMember(${id})" style="flex:1;">保存</button>
+      <button class="btn-o" onclick="closeOverlay()">取消</button>
+      <button class="btn-o" style="color:var(--danger-text);" onclick="confirmDeleteMember(${id})">删除成员</button>
+    </div>
+  </div>`);
+}
+
+function pickEditEmoji(e, el){
+  document.querySelectorAll('#editEmojiPick div').forEach(d=>d.style.borderColor='transparent');
+  el.style.borderColor='var(--text2)';
+  document.getElementById('editEmoji').value=e;
+}
+
+function saveEditMember(id){
+  const m=state.members.find(x=>x.id===id); if(!m) return;
+  const name=document.getElementById('editName').value.trim();
+  if(!name){alert('请输入姓名');return;}
+  m.name=name;
+  m.emoji=document.getElementById('editEmoji').value;
+  m.isChild=document.querySelector('input[name="editIsChild"]:checked')?.value==='1';
+  saveState(); renderSidebar(); closeOverlay();
+  // 刷新顶部名字
+  document.getElementById('mt').textContent=name+'的健康档案';
+  const tagRow=document.getElementById('tagRow');
+  if(tagRow){
+    const tags=m.tags||[];
+    tagRow.innerHTML=tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+(m.isChild?'<span class="tag-chip child">👶儿童</span>':'');
+  }
+}
+
+function confirmDeleteMember(id){
+  const m=state.members.find(x=>x.id===id); if(!m) return;
+  if(state.members.length<=1){alert('至少保留一个成员');return;}
+  if(!confirm(`确定删除「${m.name}」的所有健康档案？此操作不可恢复。`)) return;
+  state.members=state.members.filter(x=>x.id!==id);
+  delete state.data[id];
+  CM=state.members[0].id;
+  state.currentMember=CM;
+  saveState(); renderSidebar(); closeOverlay();
+  const newM=state.members[0];
+  document.getElementById('mt').textContent=newM.name+'的健康档案';
+  rt(CT);
 }
 
 
