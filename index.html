@@ -1225,12 +1225,12 @@ function rTimeline(){
         </div>
         <div style="flex:1;padding-bottom:4px;">
           <div style="font-size:10px;color:var(--text3);margin-bottom:3px;">${item._sd}${isFut&&item._t!=='report'&&item._t!=='note'&&item._t!=='imaging'?' · <span style="color:var(--warn-text);">待办</span>':''}</div>
-          <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;background:var(--bg);cursor:${detail?'pointer':'default'};" onclick="${detail?'tlToggle(''+tlId+'')':''}">
+          <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;background:var(--bg);" onclick="tlToggle(this,'${tlId}')">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
               <div style="font-size:13px;font-weight:500;flex:1;">${title}</div>
               <div style="display:flex;align-items:center;gap:6px;">
                 ${bc?`<span class="badge ${bc}" style="flex-shrink:0;">${item._t==='report'?(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)===0?'正常':(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)+'项异常':item._t==='note'?esc(item.department||'病历'):item._t==='imaging'?((item.findings||[]).filter(f=>f.status!=='ok').length===0?'未见异常':(item.findings||[]).filter(f=>f.status!=='ok').length+'项需关注'):item._t==='med'?'开药提醒':isFut?'待办':'已完成'}</span>`:''}
-                ${detail?'<span style="font-size:10px;color:var(--text3);">▼</span>':''}
+                ${detail?'<span style="font-size:10px;color:var(--text3);" class="tl-arrow">▼</span>':''}
               </div>
             </div>
             ${sub?`<div style="font-size:11px;color:var(--text2);margin-top:3px;">${sub}</div>`:''}
@@ -1299,12 +1299,11 @@ function showSaveBanner(msg){
 }
 
 
-function tlToggle(id){
+function tlToggle(card, id){
   const el=document.getElementById(id); if(!el)return;
   const isOpen=el.style.display!=='none';
   el.style.display=isOpen?'none':'block';
-  // 旋转箭头
-  const arrow=el.previousElementSibling?.querySelector('span:last-child');
+  const arrow=card.querySelector('.tl-arrow');
   if(arrow) arrow.textContent=isOpen?'▼':'▲';
 }
 
