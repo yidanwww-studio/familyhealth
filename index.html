@@ -647,7 +647,7 @@ function rImaging(){
       </div>
       <div class="db">
         ${img.imgSrc?`<img src="${img.imgSrc}" style="width:100%;max-height:180px;object-fit:contain;border-radius:var(--radius);border:0.5px solid var(--border);margin-bottom:10px;" alt="影像图片">`:''}
-        ${img.aiSummary?`<div class="ai-box">🤖 ${esc(img.aiSummary)}</div>`:''}
+
         ${(img.findings||[]).length?`<div class="sl">影像所见</div><div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 12px;">${img.findings.map(f=>{const dc=f.status==='ok'?'#9fe1cb':f.status==='warn'?'#fac775':'#b5d4f4';return`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--border);"><div style="width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;background:${dc};"></div><div><div style="font-size:12px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div></div>`;}).join('')}</div>`:''}
         ${img.conclusion?`<div style="background:var(--bg2);border-radius:var(--radius);padding:9px 11px;font-size:12px;line-height:1.7;margin-top:8px;">${esc(img.conclusion)}</div>`:''}
         ${img.suggestion?`<div class="nc nw" style="margin-top:7px;"><div style="font-size:10px;color:var(--text3);margin-bottom:2px;">💡 医生建议</div><div style="font-size:12px;">${esc(img.suggestion)}</div></div>`:''}
@@ -675,15 +675,14 @@ function showAddImaging(){
       <div id="img_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
     </div>
     <div style="font-size:11px;color:var(--text3);margin-bottom:6px;">AI 识别后自动填入，也可手动填写修改</div>
-    <label class="fl">影像类型</label>
-    <select id="iType"><option>腹部超声</option><option>妇科超声（子宫/卵巢）</option><option>产科超声</option><option>胸部CT</option><option>腹部CT</option><option>头颅MRI</option><option>颈部超声</option><option>心脏超声（彩超）</option><option>X光（胸片）</option><option>乳腺超声</option><option>甲状腺超声</option><option>骨密度</option><option>胃镜</option><option>肠镜</option><option>其他</option></select>
+    <label class="fl">影像类型（AI识别后自动填入）</label>
+    <input id="iType" placeholder="如：妇科超声、胸部CT（AI自动判断）">
     <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">检查日期</label><input type="date" id="iDate" value="${TS}"></div><div style="flex:1;"><label class="fl">医院</label><input id="iHosp" placeholder="医院"></div></div>
     <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">科室</label><input id="iDept" placeholder="科室"></div><div style="flex:1;"><label class="fl">医生</label><input id="iDoc" placeholder="医生"></div></div>
     <label class="fl">影像所见（每行：部位,ok/warn/danger,描述）</label>
-    <textarea id="iFindings" rows="4" placeholder="肝脏,ok,大小形态正常&#10;胆囊,warn,可见结石&#10;AI识别后自动填入"></textarea>
+    <textarea id="iFindings" rows="4" placeholder="AI识别后自动填入"></textarea>
     <label class="fl">影像结论</label><textarea id="iConclusion" rows="2" placeholder="AI识别后自动填入…"></textarea>
-    <label class="fl">医生建议</label><input id="iSugg" placeholder="如：6个月后复查">
-    <label class="fl">AI解读</label><input id="iAI" placeholder="AI识别后自动填入…">
+    <label class="fl">医生建议 / 复查要求</label><input id="iSugg" placeholder="如：6个月后复查">
     <div class="rb"><button class="btn-p" onclick="saveImaging('${sk}')" style="flex:1;">保存影像报告</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
   </div>`);
 }
@@ -746,38 +745,8 @@ async function doImagingAI(sk){
     }
 
     // 自动填入表单
-    if(main.type){
-      const sel=document.getElementById('iType');
-      const t=main.type.toLowerCase();
-      let matched=false;
-      // 精确匹配
-      for(let i=0;i<sel.options.length;i++){
-        if(sel.options[i].text.includes(main.type)||main.type.includes(sel.options[i].text)){sel.selectedIndex=i;matched=true;break;}
-      }
-      // 关键词模糊匹配
-      if(!matched){
-        const kw=[
-          ['妇科超声','子宫','卵巢','附件','妇科'],
-          ['产科超声','产科','孕'],
-          ['腹部超声','腹部超声','肝','胆','脾','胰','肾'],
-          ['心脏超声（彩超）','心脏','心彩','彩超'],
-          ['胸部CT','胸部ct','肺'],
-          ['腹部CT','腹部ct'],
-          ['头颅MRI','头颅','脑','颅'],
-          ['甲状腺超声','甲状腺'],
-          ['乳腺超声','乳腺','乳房'],
-          ['颈部超声','颈部','颈动脉'],
-        ];
-        for(const [opt,...keys] of kw){
-          if(keys.some(k=>t.includes(k))){
-            for(let i=0;i<sel.options.length;i++){
-              if(sel.options[i].text.startsWith(opt)){sel.selectedIndex=i;break;}
-            }
-            break;
-          }
-        }
-      }
-    }
+    // 直接填入AI识别的类型
+    if(main.type) document.getElementById('iType').value=main.type;
     if(main.hospital) document.getElementById('iHosp').value=main.hospital;
     if(main.department) document.getElementById('iDept').value=main.department;
     if(main.doctor) document.getElementById('iDoc').value=main.doctor;
@@ -789,8 +758,6 @@ async function doImagingAI(sk){
     }
     if(main.conclusion) document.getElementById('iConclusion').value=main.conclusion;
     if(main.suggestion) document.getElementById('iSugg').value=main.suggestion;
-    if(main.aiSummary) document.getElementById('iAI').value=main.aiSummary;
-
     const abnCount=(main.findings||[]).filter(f=>f.status!=='ok').length;
     if(st) st.textContent='✅ 识别完成！发现 '+abnCount+' 项异常，已自动填入，请检查后保存';
   }catch(err){
@@ -814,7 +781,7 @@ function saveImaging(sk){
   const rawF=document.getElementById('iFindings').value.trim();
   const findings=rawF?rawF.split('\n').filter(l=>l.trim()).map(l=>{const p=l.split(',').map(s=>s.trim());return{location:p[0]||'',status:p[1]||'ok',desc:p.slice(2).join(',')};}) :[];
   const files=(window._imgStore||{})[sk]||[];
-  const img={id:uid(),type:document.getElementById('iType').value,date:document.getElementById('iDate').value||TS,hospital:document.getElementById('iHosp').value,department:document.getElementById('iDept').value,doctor:document.getElementById('iDoc').value,findings,conclusion:document.getElementById('iConclusion').value,suggestion:document.getElementById('iSugg').value,aiSummary:document.getElementById('iAI').value,imgSrc:files.length?URL.createObjectURL(files[0]):null,imgCount:files.length};
+  const img={id:uid(),type:document.getElementById('iType').value,date:document.getElementById('iDate').value||TS,hospital:document.getElementById('iHosp').value,department:document.getElementById('iDept').value,doctor:document.getElementById('iDoc').value,findings,conclusion:document.getElementById('iConclusion').value,suggestion:document.getElementById('iSugg').value,imgSrc:files.length?URL.createObjectURL(files[0]):null,imgCount:files.length};
   AD().imaging.unshift(img);
   const fu=img.suggestion;
   if(fu){const d=calcFU(img.date,fu);if(d&&confirm('复查建议：「'+fu+'」\n建议日期：'+d+'\n\n是否添加日历？')){AD().events.unshift({id:uid(),title:'影像复查：'+img.type,date:d,hospital:img.hospital,doctor:img.doctor,note:fu});}}
