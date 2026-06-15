@@ -1187,6 +1187,27 @@ function rTimeline(){
       }
 
       const dayStr=item._sd.split('-')[2]; // DD
+      // 构建详情内容
+      let detail = '';
+      if(item._t==='report'){
+        const warnM=(item.metrics||[]).filter(m=>m.status!=='ok');
+        const okM=(item.metrics||[]).filter(m=>m.status==='ok');
+        if(item.summary) detail+=`<div class="ai-box" style="margin-bottom:8px;">📋 ${esc(item.summary)}</div>`;
+        if(warnM.length) detail+=`<div style="font-size:10px;font-weight:600;color:var(--text3);margin-bottom:4px;">异常指标</div><div class="mg">${warnM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v warn">${esc(m.value)}</div><div class="mc-r">参考 ${esc(m.reference)} ⚠</div></div>`).join('')}</div>`;
+        if(okM.length) detail+=`<div style="font-size:10px;font-weight:600;color:var(--text3);margin:6px 0 4px;">正常（${okM.length}项）</div><div class="mg">${okM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div>`;
+      } else if(item._t==='note'){
+        if(item.content) detail+=`<div style="font-size:12px;line-height:1.7;background:var(--bg2);padding:8px 10px;border-radius:var(--radius);margin-bottom:6px;">${esc(item.content)}</div>`;
+        if(item.followUp) detail+=`<div style="font-size:11px;color:var(--warn-text);margin-top:4px;">⏰ 复查：${esc(item.followUp)}</div>`;
+      } else if(item._t==='imaging'){
+        const findings=item.findings||[];
+        if(findings.length) detail+=`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 10px;margin-bottom:6px;">${findings.map(f=>{const dc=f.status==='ok'?'#9fe1cb':f.status==='warn'?'#fac775':'#e24b4a';return`<div style="display:flex;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--border);"><div style="width:8px;height:8px;border-radius:50%;background:${dc};flex-shrink:0;margin-top:4px;"></div><div><div style="font-size:12px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div></div>`;}).join('')}</div>`;
+        if(item.conclusion) detail+=`<div style="font-size:12px;background:var(--bg2);padding:8px 10px;border-radius:var(--radius);line-height:1.7;">${esc(item.conclusion)}</div>`;
+        if(item.suggestion) detail+=`<div style="font-size:11px;color:var(--warn-text);margin-top:6px;">💡 建议：${esc(item.suggestion)}</div>`;
+      } else if(item._t==='event'){
+        if(item.note) detail+=`<div style="font-size:12px;color:var(--text2);">${esc(item.note)}</div>`;
+      }
+
+      const tlId='tl_'+item.id;
       html+=`<div style="display:flex;gap:10px;margin-bottom:8px;">
         <div style="display:flex;flex-direction:column;align-items:center;width:36px;flex-shrink:0;">
           <div style="width:36px;height:36px;border-radius:50%;background:var(--bg2);border:2px solid ${dot};display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">${icon}</div>
@@ -1194,12 +1215,16 @@ function rTimeline(){
         </div>
         <div style="flex:1;padding-bottom:4px;">
           <div style="font-size:10px;color:var(--text3);margin-bottom:3px;">${item._sd}${isFut&&item._t!=='report'&&item._t!=='note'&&item._t!=='imaging'?' · <span style="color:var(--warn-text);">待办</span>':''}</div>
-          <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;background:var(--bg);">
+          <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;background:var(--bg);cursor:${detail?'pointer':'default'};" onclick="${detail?'tlToggle(''+tlId+'')':''}">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
               <div style="font-size:13px;font-weight:500;flex:1;">${title}</div>
-              ${bc?`<span class="badge ${bc}" style="flex-shrink:0;">${item._t==='report'?(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)===0?'正常':(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)+'项异常':item._t==='note'?esc(item.department||'病历'):item._t==='imaging'?((item.findings||[]).filter(f=>f.status!=='ok').length===0?'未见异常':(item.findings||[]).filter(f=>f.status!=='ok').length+'项需关注'):item._t==='med'?'开药提醒':isFut?'待办':'已完成'}</span>`:''}
+              <div style="display:flex;align-items:center;gap:6px;">
+                ${bc?`<span class="badge ${bc}" style="flex-shrink:0;">${item._t==='report'?(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)===0?'正常':(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)+'项异常':item._t==='note'?esc(item.department||'病历'):item._t==='imaging'?((item.findings||[]).filter(f=>f.status!=='ok').length===0?'未见异常':(item.findings||[]).filter(f=>f.status!=='ok').length+'项需关注'):item._t==='med'?'开药提醒':isFut?'待办':'已完成'}</span>`:''}
+                ${detail?'<span style="font-size:10px;color:var(--text3);">▼</span>':''}
+              </div>
             </div>
             ${sub?`<div style="font-size:11px;color:var(--text2);margin-top:3px;">${sub}</div>`:''}
+            ${detail?`<div id="${tlId}" style="display:none;margin-top:10px;border-top:0.5px solid var(--border);padding-top:10px;">${detail}</div>`:''}
           </div>
         </div>
       </div>`;
@@ -1261,6 +1286,16 @@ function showSaveBanner(msg){
   banner.innerHTML='✅ '+msg+'<span onclick="this.parentElement.remove()" style="margin-left:auto;cursor:pointer;opacity:0.6;font-size:16px;">×</span>';
   c.insertBefore(banner, c.firstChild);
   setTimeout(()=>{ if(banner.parentElement) banner.remove(); }, 4000);
+}
+
+
+function tlToggle(id){
+  const el=document.getElementById(id); if(!el)return;
+  const isOpen=el.style.display!=='none';
+  el.style.display=isOpen?'none':'block';
+  // 旋转箭头
+  const arrow=el.previousElementSibling?.querySelector('span:last-child');
+  if(arrow) arrow.textContent=isOpen?'▼':'▲';
 }
 
 
