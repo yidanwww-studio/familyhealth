@@ -249,26 +249,47 @@ function makeImgGrid(files, storeKey, onRemoveFn){
 }
 
 function renderImgGrid(storeKey, onRemoveFn){
+  const grid = document.getElementById('grid_'+storeKey);
+  if(!grid) return;
   const files = (window._imgStore||{})[storeKey]||[];
-  if(!files.length) return '<div style="font-size:12px;color:var(--text3);padding:4px;">暂无图片</div>';
-  let html='';
-  for(let i=0;i<files.length;i++){
-    const url=URL.createObjectURL(files[i]);
-    const sk=JSON.stringify(storeKey);
-    html+='<div class="img-thumb-wrap">'
-      +'<img class="img-thumb" src="'+url+'" alt="">'
-      +'<div class="img-rm" onclick="'+onRemoveFn+'('+sk+','+i+')">&#215;</div>'
-      +'</div>';
+  grid.innerHTML = '';
+  if(!files.length){
+    grid.innerHTML = '<div style="font-size:12px;color:var(--text3);padding:4px;">暂无图片</div>';
+    return;
   }
-  return html;
+  files.forEach(function(f, i){
+    const url = URL.createObjectURL(f);
+    const wrap = document.createElement('div');
+    wrap.className = 'img-thumb-wrap';
+    const img = document.createElement('img');
+    img.className = 'img-thumb';
+    img.src = url;
+    img.alt = '图片'+(i+1);
+    const rm = document.createElement('div');
+    rm.className = 'img-rm';
+    rm.textContent = '×';
+    rm.addEventListener('click', function(){
+      window._removeImgAt(storeKey, i, onRemoveFn);
+    });
+    wrap.appendChild(img);
+    wrap.appendChild(rm);
+    grid.appendChild(wrap);
+  });
+}
+
+function _removeImgAt(storeKey, idx, onRemoveFn){
+  const files = (window._imgStore||{})[storeKey]||[];
+  files.splice(idx, 1);
+  window._imgStore[storeKey] = files;
+  renderImgGrid(storeKey, onRemoveFn);
+  // 同步更新文件计数显示
+  const countEl = document.getElementById('repFileCount') || document.getElementById('noteImgCount');
+  if(countEl && files.length) countEl.textContent = files.length+'张图片已选';
+  else if(countEl && !files.length) countEl.textContent = '';
 }
 
 function removeImg(storeKey, idx){
-  const files = (window._imgStore||{})[storeKey]||[];
-  files.splice(idx,1);
-  window._imgStore[storeKey]=files;
-  const grid = document.getElementById('grid_'+storeKey);
-  if(grid) grid.innerHTML = renderImgGrid(storeKey,'removeImg');
+  _removeImgAt(storeKey, idx, 'removeImg');
 }
 
 // ── 侧边栏 ────────────────────────────────────────────────────────────
@@ -389,8 +410,9 @@ function onNoteImgs(e){
   const sk='note_imgs';
   window._imgStore=window._imgStore||{};
   window._imgStore[sk]=Array.from(e.target.files);
-  const grid=document.getElementById('grid_'+sk);
-  if(grid) grid.innerHTML=renderImgGrid(sk,'removeImg');
+  renderImgGrid(sk,'removeImg');
+  const countEl=document.getElementById('noteImgCount');
+  if(countEl) countEl.textContent=window._imgStore[sk].length+'张图片已选（点 × 可删除）';
 }
 
 async function doNoteAI(sk){
@@ -522,16 +544,13 @@ function rReports(){
 function onRepImgs(e, sk){
   window._imgStore=window._imgStore||{};
   window._imgStore[sk]=Array.from(e.target.files);
-  const grid=document.getElementById('grid_'+sk);
-  if(grid) grid.innerHTML=renderImgGrid(sk,'removeRepImg');
+  renderImgGrid(sk,'removeRepImg');
+  const countEl=document.getElementById('repFileCount');
+  if(countEl) countEl.textContent=window._imgStore[sk].length+'张图片已选（点 × 可删除）';
 }
 
 function removeRepImg(sk, idx){
-  const files=(window._imgStore||{})[sk]||[];
-  files.splice(idx,1);
-  window._imgStore[sk]=files;
-  const grid=document.getElementById('grid_'+sk);
-  if(grid) grid.innerHTML=renderImgGrid(sk,'removeRepImg');
+  _removeImgAt(sk, idx, 'removeRepImg');
 }
 
 async function doRepAI(sk){
@@ -708,8 +727,7 @@ function showAddImaging(){
 function onImgImgs(e,sk){
   window._imgStore=window._imgStore||{};
   window._imgStore[sk]=Array.from(e.target.files);
-  const grid=document.getElementById('grid_'+sk);
-  if(grid) grid.innerHTML=renderImgGrid(sk,'removeImg');
+  renderImgGrid(sk,'removeImg');
 }
 
 async function doImagingAI(sk){
