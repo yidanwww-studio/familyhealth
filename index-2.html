@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家庭健康档案</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAHFElEQVR4nO2dzXHbOhRGIU8KcANJW17bDWSVFGGv0kCyTlt2A+kgb/Ge/GSJPwB4Adz74ZyZTGYiBQKBo4+XIEWekhM+//z2d3Qf4BhvTy+n0X0Y1gEE1meE4F0/EInnpZfczT8EieGalnI3axiRYY8WYps3iMhQiqXYd1YNpYTMUIelNybfDEQGK46m9eGERmaw5KhPh4RGZmjBEa+q4h2RoRelJUhxQiMz9KTUtyKhkRlGUOJdttDIDCPJ9c90HRpgNFlCk87ggRwPd4VG5uO8Pj5/+Bvq2fNxc0kEmY+zJPGXX98H9ESLteW8T707MgtbaXx+DbHtWS05SOd6cksLSpB61vxcFBqZ6ymVFKnrWfKUksOII2JSgthxk9Ckczk5MufISlqXc+0rJ1YO8Pr4XCRzrtSIXc8HoUnnfHKlu5Y4t6xA6nwuvSWhK8hN5TV5t14r/Rz4CEIXUFpiWLyPEqSM97MtlBvbWIo8ov0ZeHt6OZHQGfSQjRLEBoTewLrEsGiHEmSbU0qUG0uMLgFGf35USOgFPMhECVIHCX1B7dpySzz2yTMI/R8eUnkL7/3zwh0yx5CFEiSP08xCR9ydR+xzT6YVOkIqbxG9/62YTmilhFPaFiumWrZTE4Ar926ZJqHVd9Hq25eLvNBqqbzFTNu6hrTQs6bWrNudknANPfOkzrxmLZfQ7Hb/Z8axkBJ65lTeYqZxkSk5Zpq0UmYqQcIn9Iy71VpmGKvQQpPKdSiPW0ihZ0ia1qiOYbgaWnUieqN62jxUQivvKkeiNK4hhCaV26Myxu6FVkqPCEQfb9c1dPTBjUj0NWuXCa2y+4tM1DlwJzSp7Ito8+Gq5Ig2eDMQrQRxkdBRd28zEWWOhgtNKsfC+3wNLTm8Dw7c4r0EGZLQUXZfsI7XOewuNKmshbf57Ca01280HMfT3HapoT1tMNjj6cq95gntbZcEbRk9382EJpXnZeTcNxHa05kj8I211E1qaFIXcmjhiatrOQCOgtAgBUKDFAgNUgy/2u7M2soIB5j+8DxXJDRIgdAgBUKDFAgNUiA0SIHQIAVCgxQIDVIgNEiB0CAFQoMUCA1SIDRIgdAgBUKDFAgNUiA0SIHQIAVCgxQIDVIgNEiB0CAFQoMUn0Z3wBMld031cA8KuGV6oWtv/Xv5/5DbD1MKbX3/auT2w3Q1dOubsXOz97FMk9A9RTt/FmndnykSelRqktb9kU5oD0KR1n2RTWgPMl/irT+qSCb0njxLaVkjXGk7r4/PJHVjZBO6lC+/vpvIZtUO1CEndE7Sbr2nRMaadig92iIldIksSK2JlNAAMkJvPchmKSn3Uvj6dat2zpDSbZAReo9LsY4ctFm1A22QWLbLTTsrAa3aYRnPnmkSGuYAoUGK8ELvlRsWF/BbtlP6OpQRXmiAS6YQujQF195v1Q60YwqhU8qXy6pEQOYxhF+2u//6kP78+J313q1rk5cEvP/6cPNvf378Lm5nict+e16+89y3JcILndKyeNdcSr8n3VZ759cuxa7pzzVbZzpHEXEvE17onHS+//qQLX2ujHvvy91r7DHqF+VRf2kTXugccqVv0a4lveSOmMxnwh8U1oi4RG85j/b79fH5/Y8lkWVOSSShS2vovfcdbc/qS5aLVXkQXeaUBIS2rqEv/845ODzSL2uOrEgsyRytfk4pqNClSVJbQy/9v5JlwhHUpLVCMp8JV0NfD37vGtpK5tZlyawngMIk9NbAW9bQFvSuodfYK0HUZE4piNBbA9+iht5rKwcvZcma1DX3LomAe6EtUsR6HdqLrLlcS62YzGfC1dCt6F1D9+YssbLMKSH0VPT+7eUIEBqkQGiQAqFBCoSGD0Sun1NCaBADoUEKhAYpEBreiV4/p4TQIAZCgxQIDe8oXOeB0CCFe6EVDlSgH+6FTgmpexK97AghdEo80BLyuHt7ejmN7kQJtVLzZZgD9z/BWiL350RLj2aLvkut4TwOJb8EjxoAIYW+pHTgZ5P6+jF06tsepoa2JGr6lLL2oFDl7b9LKaVodbQFypOaUv0Tbs9ETPK3p5fTlAl9RjGtSrZJbdtTmrTkuEZlYmu2Q+1L/S70jGXHJZEn1qLvR54X44Gzv+FXOayJcoehFl8+hVUQhN7Am9w99iDRpb4pMz7//PZ3REciDyL8y6iS7bJc5qAQpLgRevaDQ4jFta8kNEixKDQpDRFY8nQ1oZEaPLPmp5tlu6gnNcAXmzU0KQ0e2fJy96AQqcETez5mrXIgNXggx0OW7UCKbKFJaRhJrn9FCY3UMIIS74pLDqSGnpT6dkjOUVfmgT61wXnooJC0hhYc8erwKgdSgyVHfTKVkRIEarEKRtN1aNIaarD0ppmApDXs0SIAmycqYsM1LffkXUsE5J6XXuXosJoXufUZcUz1Dzfupp6KiYV5AAAAAElFTkSuQmCC">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="家庭健康">
+<meta name="theme-color" content="#1d9e75">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#ffffff;--bg2:#f7f7f5;--bg3:#f0efea;
+  --text:#1a1a1a;--text2:#666;--text3:#999;
+  --border:rgba(0,0,0,0.1);--border2:rgba(0,0,0,0.18);
+  --info-bg:#e8f2fc;--info-text:#1a5fa8;
+  --success-bg:#eaf5e6;--success-text:#2a7a3b;
+  --warn-bg:#fef4e0;--warn-text:#8a5a00;
+  --danger-bg:#fdecea;--danger-text:#a82a2a;
+  --radius:8px;--radius-lg:12px;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#1c1c1e;--bg2:#2c2c2e;--bg3:#3a3a3c;--text:#f0f0f0;--text2:#aaa;--text3:#666;--border:rgba(255,255,255,0.1);--border2:rgba(255,255,255,0.2);--info-bg:#0d2d4a;--info-text:#7ab8f5;--success-bg:#0d2d18;--success-text:#6ed68a;--warn-bg:#2d1f00;--warn-text:#f0b040;--danger-bg:#2d0d0d;--danger-text:#f07070;}
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB',sans-serif;background:var(--bg3);color:var(--text);font-size:14px;min-height:100vh;}
+.app{display:flex;height:100vh;max-width:1100px;margin:0 auto;background:var(--bg);}
+.sidebar{width:64px;border-right:0.5px solid var(--border);display:flex;flex-direction:column;align-items:center;background:var(--bg2);flex-shrink:0;padding:8px 0;}
+.sh{display:none;}
+.member-list{padding:4px;flex:1;overflow-y:auto;width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.mi{display:flex;align-items:center;justify-content:center;padding:4px;border-radius:var(--radius);cursor:pointer;width:48px;height:48px;transition:all 0.15s;position:relative;}
+.mi:hover{background:var(--bg);}
+.mi.active{background:var(--bg);box-shadow:0 0 0 2px var(--border2);}
+.mi.active::after{content:'';position:absolute;right:-1px;top:50%;transform:translateY(-50%);width:3px;height:20px;background:var(--text);border-radius:2px 0 0 2px;}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;flex-shrink:0;}
+.mn{display:none;}
+.ms{display:none;}
+.add-member{width:40px;height:40px;border:1.5px dashed var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--text3);margin:4px auto;}
+.add-member:hover{background:var(--bg);}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0;}
+.topbar{padding:12px 16px;border-bottom:0.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg);}
+.topbar-left{min-width:0;flex:1;}
+.topbar h2{font-size:15px;font-weight:600;color:var(--text);}
+.tag-row{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;}
+.tag-chip{font-size:10px;padding:1px 7px;border-radius:20px;background:#eeedfe;color:#534ab7;}
+.tag-chip.child{background:#e1f5ee;color:#0f6e56;}
+.tab-bar{display:flex;gap:2px;padding:6px 12px;border-bottom:0.5px solid var(--border);background:var(--bg2);overflow-x:auto;}
+.tab{padding:5px 10px;border-radius:var(--radius);font-size:12px;cursor:pointer;color:var(--text2);border:none;background:transparent;white-space:nowrap;flex-shrink:0;transition:all 0.15s;}
+.tab:hover{color:var(--text);}
+.tab.active{background:var(--bg);color:var(--text);font-weight:500;border:0.5px solid var(--border);}
+.content{flex:1;overflow-y:auto;padding:16px;}
+.btn-p{background:var(--text);color:var(--bg);border:none;padding:8px 14px;border-radius:var(--radius);font-size:12px;cursor:pointer;font-weight:500;}
+.btn-p:hover{opacity:0.85;}
+.btn-o{border:0.5px solid var(--border2);background:transparent;color:var(--text);padding:6px 10px;border-radius:var(--radius);font-size:11px;cursor:pointer;}
+.btn-o:hover{background:var(--bg2);}
+.card{border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:12px;margin-bottom:8px;background:var(--bg);}
+.card.cp{cursor:pointer;}
+.card.cp:hover{border-color:var(--border2);}
+.card.open .db{display:block;}
+.db{display:none;margin-top:10px;border-top:0.5px solid var(--border);padding-top:10px;}
+.badge{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:500;display:inline-block;}
+.bok{background:var(--success-bg);color:var(--success-text);}
+.bwarn{background:var(--warn-bg);color:var(--warn-text);}
+.bdanger{background:var(--danger-bg);color:var(--danger-text);}
+.binfo{background:var(--info-bg);color:var(--info-text);}
+.bpurple{background:#eeedfe;color:#534ab7;}
+.ok{color:var(--success-text);}
+.warn{color:var(--warn-text);}
+.danger{color:var(--danger-text);}
+.ai-box{background:var(--info-bg);border-radius:var(--radius);padding:10px 12px;font-size:12px;color:var(--info-text);line-height:1.7;margin-bottom:8px;}
+.mg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:8px;}
+.mc{background:var(--bg2);border-radius:var(--radius);padding:8px 10px;}
+.mc-n{font-size:10px;color:var(--text2);margin-bottom:2px;}
+.mc-v{font-size:13px;font-weight:500;}
+.mc-r{font-size:10px;color:var(--text3);margin-top:1px;}
+.fl{font-size:11px;color:var(--text2);display:block;margin-bottom:3px;margin-top:9px;}
+.af{border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:14px;margin-bottom:12px;background:var(--bg2);}
+.af h3{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;}
+input,select,textarea{width:100%;padding:7px 10px;border:0.5px solid var(--border2);border-radius:var(--radius);font-size:12px;color:var(--text);background:var(--bg);font-family:inherit;outline:none;writing-mode:horizontal-tb;}
+input:focus,select:focus,textarea:focus{border-color:var(--text3);}
+label,button,.tab,.btn-p,.btn-o,.badge,.mn,.ms,.fl{writing-mode:horizontal-tb !important;text-orientation:mixed !important;}
+.nc{border-left:2px solid #378add;padding:8px 11px;margin-bottom:7px;background:var(--bg2);border-radius:var(--radius);}
+.nc.nw{border-left-color:#ba7517;}
+.pw{height:6px;background:var(--bg2);border-radius:3px;overflow:hidden;margin:6px 0 3px;}
+.pb{height:100%;border-radius:3px;}
+.ab{background:var(--danger-bg);border-radius:var(--radius);padding:9px 12px;margin-bottom:8px;font-size:12px;color:var(--danger-text);display:flex;align-items:center;gap:8px;}
+.ab.aw{background:var(--warn-bg);color:var(--warn-text);}
+.sl{font-size:10px;font-weight:600;color:var(--text3);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:7px;}
+.icz{border:1.5px dashed var(--border2);border-radius:var(--radius-lg);padding:24px 16px;text-align:center;cursor:pointer;margin-bottom:12px;}
+.icz:hover{background:var(--bg2);}
+.es{text-align:center;padding:40px 16px;color:var(--text3);font-size:13px;}
+.rb{display:flex;gap:6px;margin-top:10px;}
+.icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:var(--radius);font-size:16px;flex-shrink:0;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;z-index:200;padding:20px;}
+.dialog{background:var(--bg);border-radius:var(--radius-lg);padding:18px;width:100%;max-width:360px;border:0.5px solid var(--border);max-height:90vh;overflow-y:auto;}
+/* 多图预览 */
+.img-grid{display:flex;flex-wrap:wrap;gap:5px;padding:8px;background:var(--bg2);border-radius:var(--radius);margin-bottom:8px;min-height:44px;}
+.img-thumb-wrap{position:relative;display:inline-block;}
+.img-thumb{width:68px;height:68px;object-fit:cover;border-radius:6px;border:0.5px solid var(--border);display:block;}
+.img-rm{position:absolute;top:-4px;right:-4px;width:16px;height:16px;background:#e24b4a;color:#fff;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:700;}
+/* 上传分析区 */
+.analyze-box{border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:12px;margin-bottom:12px;background:var(--bg2);}
+.analyze-box h4{font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;}
+.analyzing{text-align:center;padding:20px;font-size:12px;color:var(--text2);}
+/* ICS */
+.ib{font-size:11px;color:var(--info-text);cursor:pointer;text-decoration:underline;background:none;border:none;padding:0;margin-top:4px;margin-right:10px;}
+/* Cal */
+.cal-day{text-align:center;font-size:12px;padding:5px 2px;border-radius:var(--radius);cursor:default;}
+.ev-item{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:0.5px solid var(--border);border-radius:var(--radius);margin-bottom:6px;background:var(--bg);}
+/* TL */
+.tl-item{display:flex;gap:10px;margin-bottom:12px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex-shrink:0;}
+.tl-line{width:1px;background:var(--border);flex:1;margin-top:3px;}
+/* Child */
+.child-section{margin-bottom:14px;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+@media(max-width:640px){.sidebar{width:56px;}.tab{padding:5px 7px;font-size:11px;}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <div class="member-list" id="memberList"></div>
+    <div class="add-member" onclick="showAddMember()" title="添加成员">＋</div>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-left">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <h2 id="mt" style="font-size:15px;font-weight:600;">家庭健康档案</h2>
+          <span id="editMemberBtn" onclick="showEditMember(CM)" style="font-size:11px;color:var(--text3);cursor:pointer;padding:2px 6px;border-radius:var(--radius);border:0.5px solid var(--border2);">编辑</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:3px;">
+          <div class="tag-row" id="tagRow"></div>
+          <span onclick="showEditTags()" style="font-size:10px;padding:1px 7px;border-radius:20px;background:var(--bg2);color:var(--text2);cursor:pointer;border:0.5px solid var(--border2);flex-shrink:0;">＋ 编辑标签</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;">
+        <button class="btn-o" onclick="showSettings()" style="font-size:16px;padding:6px 10px;">⚙️</button>
+      </div>
+
+    </div>
+    <div class="tab-bar" id="tabBar">
+      <button class="tab active" onclick="st('feelings',this)">💬 自我感受</button>
+      <button class="tab" onclick="st('checkin',this)">📊 每日打卡</button>
+      <button class="tab" onclick="st('visits',this)">🏥 就诊记录</button>
+      <button class="tab" onclick="st('meds',this)">💊 用药管理</button>
+      <button class="tab" onclick="st('child',this)">👶 儿童健康</button>
+      <button class="tab" onclick="st('calendar',this)">📅 日历</button>
+      <button class="tab" onclick="st('timeline',this)">📈 时间线</button>
+    </div>
+    <div class="content" id="mc"></div>
+  </div>
+</div>
+
+<script>
+// ── 配置 ──────────────────────────────────────────────────────────────
+const WORKER_URL = 'https://familyhealthv1.wangyidan1113.workers.dev';
+const STORE_KEY  = 'family_health_v2';
+
+// ── 工具函数 ──────────────────────────────────────────────────────────
+function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2); }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function fmtDate(s){ if(!s)return''; const p=s.split('-'); return p[0]+'年'+parseInt(p[1])+'月'+parseInt(p[2])+'日'; }
+function dBet(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+function addD(s,n){ const d=new Date(s); d.setDate(d.getDate()+n); return d.toISOString().split('T')[0]; }
+function calcFU(from,text){
+  const d=new Date(from);
+  const m2=text.match(/(\d+)\s*周/), m3=text.match(/(\d+)\s*个?月/), m4=text.match(/(\d+)\s*天/);
+  if(m2) d.setDate(d.getDate()+parseInt(m2[1])*7);
+  else if(m3) d.setMonth(d.getMonth()+parseInt(m3[1]));
+  else if(m4) d.setDate(d.getDate()+parseInt(m4[1]));
+  else return null;
+  return d.toISOString().split('T')[0];
+}
+const today = new Date(); today.setHours(0,0,0,0);
+const TS = today.toISOString().split('T')[0];
+let calMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+// ── 状态管理 ──────────────────────────────────────────────────────────
+function defState(){
+  return {
+    currentMember: 0,
+    members:[
+      {id:0, name:'成员1', emoji:'👤', c1:'#e1f5ee', c2:'#0f6e56', tags:[], isChild:false},
+      {id:1, name:'成员2', emoji:'👤', c1:'#fbeaf0', c2:'#993556', tags:[], isChild:false},
+    ],
+    data:{
+      0:{reports:[], notes:[], imaging:[], meds:[], events:[], feelings:[], checkins:[], visits:[], child:{vaccines:[],growth:[],allergies:[]}},
+      1:{reports:[], notes:[], imaging:[], meds:[], events:[], feelings:[], checkins:[], visits:[], child:{vaccines:[],growth:[],allergies:[]}},
+    }
+  };
+}
+function loadState(){
+  try{ const r=localStorage.getItem(STORE_KEY); if(r) return JSON.parse(r); }catch(e){}
+  return defState();
+}
+function saveState(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }catch(e){} }
+
+let state = loadState();
+let CM = state.currentMember||0;
+let CT = 'feelings';
+
+function AD(id){ 
+  if(id===undefined) id=CM;
+  if(!state.data[id]) state.data[id]={reports:[],notes:[],imaging:[],meds:[],events:[],child:{vaccines:[],growth:[],allergies:[]}};
+  if(!state.data[id].child) state.data[id].child={vaccines:[],growth:[],allergies:[]};
+  return state.data[id];
+}
+
+// ── AI 识别核心 ───────────────────────────────────────────────────────
+function readFile(file){
+  return new Promise(resolve=>{
+    const r=new FileReader();
+    r.onload=ev=>resolve({b64:ev.target.result.split(',')[1], mime:file.type||'image/jpeg'});
+    r.readAsDataURL(file);
+  });
+}
+
+async function callAI(b64, mime, prompt){
+  const resp = await fetch(WORKER_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({imageBase64:b64, imageMime:mime, customPrompt:prompt})
+  });
+  const data = await resp.json();
+  if(data.error) throw new Error(data.error);
+  let text = data.text||'';
+  // 如果 worker 标记了非 JSON
+  if(data._notJson){
+    return {_raw: text};
+  }
+  // 提取 JSON
+  const s=text.indexOf('{'), e=text.lastIndexOf('}');
+  if(s!==-1&&e>s) text=text.slice(s,e+1).trim();
+  else return {_raw: text};
+  try {
+    return JSON.parse(text);
+  } catch(parseErr) {
+    return {_raw: text, _parseError: parseErr.message};
+  }
+}
+
+// 渲染多图预览网格（返回HTML字符串 + 存储files到window._imgStore）
+function makeImgGrid(files, storeKey, onRemoveFn){
+  window._imgStore = window._imgStore||{};
+  window._imgStore[storeKey] = Array.from(files);
+  return renderImgGrid(storeKey, onRemoveFn);
+}
+
+function renderImgGrid(storeKey, onRemoveFn){
+  const grid = document.getElementById('grid_'+storeKey);
+  if(!grid) return;
+  const files = (window._imgStore||{})[storeKey]||[];
+  grid.innerHTML = '';
+  if(!files.length){
+    grid.innerHTML = '<div style="font-size:12px;color:var(--text3);padding:4px;">暂无图片</div>';
+    return;
+  }
+  files.forEach(function(f, i){
+    const url = URL.createObjectURL(f);
+    const wrap = document.createElement('div');
+    wrap.className = 'img-thumb-wrap';
+    const img = document.createElement('img');
+    img.className = 'img-thumb';
+    img.src = url;
+    img.alt = '图片'+(i+1);
+    const rm = document.createElement('div');
+    rm.className = 'img-rm';
+    rm.textContent = '×';
+    rm.addEventListener('click', function(){
+      window._removeImgAt(storeKey, i, onRemoveFn);
+    });
+    wrap.appendChild(img);
+    wrap.appendChild(rm);
+    grid.appendChild(wrap);
+  });
+}
+
+function _removeImgAt(storeKey, idx, onRemoveFn){
+  const files = (window._imgStore||{})[storeKey]||[];
+  files.splice(idx, 1);
+  window._imgStore[storeKey] = files;
+  renderImgGrid(storeKey, onRemoveFn);
+  // 同步更新文件计数显示
+  const countEl = document.getElementById('repFileCount') || document.getElementById('noteImgCount');
+  if(countEl && files.length) countEl.textContent = files.length+'张图片已选';
+  else if(countEl && !files.length) countEl.textContent = '';
+}
+
+function removeImg(storeKey, idx){
+  _removeImgAt(storeKey, idx, 'removeImg');
+}
+
+// ── 侧边栏 ────────────────────────────────────────────────────────────
+function renderSidebar(){
+  const list = document.getElementById('memberList');
+  list.innerHTML = state.members.map(m=>{
+    const d=AD(m.id);
+    const parts=[];
+    if(d.reports.length) parts.push(d.reports.length+'报告');
+    if(d.notes.length) parts.push(d.notes.length+'病历');
+    if(d.imaging.length) parts.push(d.imaging.length+'影像');
+    const am=d.meds.filter(x=>x.active);
+    if(am.length) parts.push(am.length+'种药');
+    const sub = (m.tags&&m.tags.length) ? m.tags.slice(0,2).join('·') : (parts.join('·')||'暂无记录');
+    return `<div class="mi${CM===m.id?' active':''}" onclick="selMember(${m.id},this)" title="${esc(m.name)}" onlongpress="showEditMember(${m.id})">
+      <div class="av" style="background:${m.c1};color:${m.c2};">${m.emoji||m.name[0]}</div>
+    </div>`;
+  }).join('');
+}
+
+function selMember(id, el){
+  document.querySelectorAll('.mi').forEach(e=>e.classList.remove('active'));
+  if(el) el.classList.add('active');
+  CM=id; state.currentMember=id;
+  const m=state.members.find(x=>x.id===id);
+  document.getElementById('mt').textContent=(m?m.name:'')+'的健康档案';
+  const tagRow=document.getElementById('tagRow');
+  if(tagRow&&m){
+    const tags=m.tags||[];
+    tagRow.innerHTML=tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+(m.isChild?'<span class="tag-chip child">👶儿童</span>':'');
+  }
+  saveState(); rt(CT);
+}
+
+function st(t,el){
+  document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));
+  if(el) el.classList.add('active');
+  CT=t; rt(t);
+}
+
+function rt(t){
+  if(t==='checkin') rCheckin();
+  else if(t==='visits') rVisits();
+  else if(t==='notes') rNotes();
+  else if(t==='reports') rReports();
+  else if(t==='imaging') rImaging();
+  else if(t==='meds') rMeds();
+  else if(t==='child') rChild();
+  else if(t==='feelings') rFeelings();
+  else if(t==='calendar') rCalendar();
+  else if(t==='timeline') rTimeline();
+}
+
+// ── 弹窗 ──────────────────────────────────────────────────────────────
+function showOverlay(html){
+  let ov=document.getElementById('ov');
+  if(!ov){ov=document.createElement('div');ov.id='ov';ov.className='overlay';ov.onclick=e=>{if(e.target===ov)closeOverlay();};document.body.appendChild(ov);}
+  ov.innerHTML=html; ov.style.display='flex';
+}
+function closeOverlay(){ const ov=document.getElementById('ov'); if(ov) ov.style.display='none'; }
+function dlFile(content,mime,name){ const b=new Blob([content],{type:mime}); const u=URL.createObjectURL(b); const a=document.createElement('a'); a.href=u; a.download=name; a.click(); URL.revokeObjectURL(u); }
+
+// ── 病历记录 ──────────────────────────────────────────────────────────
+function rNotes(){
+  const notes=AD().notes; const c=document.getElementById('mc');
+  let html=`<div style="display:flex;gap:6px;margin-bottom:12px;"><button class="btn-p" style="flex:1;" onclick="showAddNote()">＋ 添加病历记录</button><button class="btn-o" onclick="showBatchImport("notes")">📦 批量导入</button></div>`;
+  if(!notes.length){html+=`<div class="es">📋<br><br>暂无病历记录</div>`;c.innerHTML=html;return;}
+  html+=notes.map(n=>`<div class="card cp" onclick="this.classList.toggle('open')">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="icon" style="background:#e6f1fb;font-size:18px;">🩺</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:13px;font-weight:500;">${esc(n.type||'门诊病历')} — ${esc(n.diagnosis||'')} <span class="badge binfo">${esc(n.department||'')}</span></div>
+        <div style="font-size:11px;color:var(--text2);margin-top:1px;">${fmtDate(n.date)}${n.doctor?' · '+esc(n.doctor)+'医生':''} · ${esc(n.hospital||'')}</div>
+      </div>
+    </div>
+    <div class="db">
+      <div class="nc"><div style="font-size:10px;color:var(--text3);margin-bottom:3px;">病历内容 / 医嘱</div><div style="font-size:12px;line-height:1.7;">${esc(n.content)}</div></div>
+      ${n.followUp?`<div class="nc nw"><div style="font-size:10px;color:var(--text3);margin-bottom:2px;">⏰ 复查要求</div><div style="font-size:12px;">${esc(n.followUp)}</div></div>`:''}
+      <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
+        <button class="btn-o" onclick="event.stopPropagation();showEvDialog('复查：${esc(n.diagnosis||'')}','','${esc(n.hospital||'')}','${esc(n.department||'')}','${esc(n.doctor||'')}','${esc(n.followUp||'')}')">📅 复查提醒</button>
+        <button class="btn-o" onclick="event.stopPropagation();delItem('notes','${n.id}')">🗑 删除</button>
+      </div>
+    </div>
+  </div>`).join('');
+  c.innerHTML=html;
+}
+
+function showAddNote(){
+  const sk='note_imgs';
+  window._imgStore=window._imgStore||{};
+  window._imgStore[sk]=[];
+  showOverlay(`<div class="dialog" style="max-width:400px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加病历记录</h3>
+    <div class="analyze-box">
+      <h4>📷 上传病历图片，AI 自动识别填入（可选多张）</h4>
+      <input type="file" accept="image/*" multiple onchange="onNoteImgs(event)" style="margin-bottom:8px;">
+      <div class="img-grid" id="grid_${sk}"><div style="font-size:12px;color:var(--text3);">选择图片后显示预览</div></div>
+      <button class="btn-p" style="width:100%;font-size:12px;" onclick="doNoteAI('${sk}')">🤖 AI 识别病历内容</button>
+      <div id="note_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
+    </div>
+    <div style="font-size:11px;color:var(--text3);margin-bottom:6px;">识别后自动填入，也可手动填写</div>
+    <div style="display:flex;gap:6px;">
+      <div style="flex:1;"><label class="fl">就诊日期</label><input type="date" id="nDate" value="${TS}"></div>
+      <div style="flex:1;"><label class="fl">类型</label><select id="nType"><option>门诊病历</option><option>住院记录</option><option>急诊记录</option><option>复诊记录</option></select></div>
+    </div>
+    <label class="fl">医院</label><input id="nHosp" placeholder="医院名称">
+    <div style="display:flex;gap:6px;">
+      <div style="flex:1;"><label class="fl">科室</label><input id="nDept" placeholder="科室"></div>
+      <div style="flex:1;"><label class="fl">医生</label><input id="nDoc" placeholder="医生姓名"></div>
+    </div>
+    <label class="fl">诊断</label><input id="nDiag" placeholder="主要诊断">
+    <label class="fl">病历内容 / 医嘱</label>
+    <textarea id="nContent" rows="3" placeholder="医生说了什么、开了什么药、注意事项…"></textarea>
+    <label class="fl">复查要求</label><input id="nFollowUp" placeholder="如：2周后复查血常规">
+    <div class="rb"><button class="btn-p" onclick="saveNote()" style="flex:1;">保存病历</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function onNoteImgs(e){
+  const sk='note_imgs';
+  window._imgStore=window._imgStore||{};
+  window._imgStore[sk]=Array.from(e.target.files);
+  renderImgGrid(sk,'removeImg');
+  const countEl=document.getElementById('noteImgCount');
+  if(countEl) countEl.textContent=window._imgStore[sk].length+'张图片已选（点 × 可删除）';
+}
+
+async function doNoteAI(sk){
+  const files=(window._imgStore||{})[sk]||[];
+  if(!files.length){alert('请先选择图片');return;}
+  const st=document.getElementById('note_ai_status');
+  if(st) st.textContent='⏳ AI 识别中，请稍候…';
+  const prompt='请仔细识别这张医疗病历图片（门诊病历/处方单/诊断书/出院小结等）。'
+    +'只输出JSON，不要任何markdown，第一个字符必须是{：'
+    +'{"type":"门诊病历或住院记录或急诊记录或复诊记录","date":"就诊日期YYYY-MM-DD",'
+    +'"hospital":"医院全称","department":"科室","doctor":"医生姓名",'
+    +'"diagnosis":"主要诊断（完整）",'
+    +'"content":"病历内容和医嘱的完整文字，包括检查结果、治疗方案、用药说明、注意事项",'
+    +'"followUp":"复查要求和时间",'
+    +'"medications":"本次开具的所有药物，逗号分隔"}'
+    +'。请完整提取报告中的文字内容，不要遗漏。无法识别返回{"error":"原因"}';
+  try{
+    const results=[];
+    for(let i=0;i<files.length;i++){
+      if(st) st.textContent=`⏳ 正在识别第${i+1}/${files.length}张…`;
+      const {b64,mime}=await readFile(files[i]);
+      try{
+        results.push(await callAI(b64,mime,prompt));
+      }catch(e){
+        if(st) st.textContent='❌ 错误：'+e.message;
+        results.push({_raw:e.message, error:e.message});
+      }
+    }
+    if(!results.length){if(st) st.textContent='❌ 识别失败，请手动填写';return;}
+    const main=results[0];
+    // 如果 JSON 解析失败，把原始文本放到结论框里
+    if(main._raw){
+      if(st) st.textContent='⚠️ AI识别完成，但格式转换失败，已将原始内容填入结论框，请手动整理';
+      const concl=document.getElementById('iConclusion');
+      if(concl) concl.value=main._raw.slice(0,1000);
+      return;
+    }
+    if(main.error){if(st) st.textContent='⚠️ '+main.error;return;}
+    // 合并多张
+    if(results.length>1){
+      const extra=results.slice(1).map(r=>r.content||'').filter(Boolean).join('\n');
+      if(extra) main.content=(main.content||'')+'\n\n'+extra;
+      const meds=results.slice(1).map(r=>r.medications||'').filter(Boolean).join('、');
+      if(meds) main.medications=[main.medications,meds].filter(Boolean).join('、');
+    }
+    // 填入表单
+    if(main.date) document.getElementById('nDate').value=main.date;
+    if(main.type){const sel=document.getElementById('nType');for(let i=0;i<sel.options.length;i++){if(sel.options[i].text.includes(main.type)){sel.selectedIndex=i;break;}}}
+    if(main.hospital) document.getElementById('nHosp').value=main.hospital;
+    if(main.department) document.getElementById('nDept').value=main.department;
+    if(main.doctor) document.getElementById('nDoc').value=main.doctor;
+    if(main.diagnosis) document.getElementById('nDiag').value=main.diagnosis;
+    let ct=main.content||'';
+    if(main.medications) ct+=(ct?'\n\n':'')+'【开具药物】'+main.medications;
+    if(ct) document.getElementById('nContent').value=ct;
+    if(main.followUp) document.getElementById('nFollowUp').value=main.followUp;
+    if(st) st.textContent=`✅ 识别完成（${files.length}张），已自动填入，请检查后保存`;
+  }catch(err){
+    const msg=err.message||'';
+    if(st) st.textContent='❌ '+(msg.startsWith('RAW:')||msg.startsWith('PARSE_FAIL:')?'AI返回格式有误，请手动填写':'错误：'+msg);
+  }
+}
+
+function saveNote(){
+  const n={id:uid(),type:document.getElementById('nType').value,date:document.getElementById('nDate').value,hospital:document.getElementById('nHosp').value,department:document.getElementById('nDept').value,doctor:document.getElementById('nDoc').value,diagnosis:document.getElementById('nDiag').value,content:document.getElementById('nContent').value,followUp:document.getElementById('nFollowUp').value};
+  if(!n.date||!n.content){alert('请填写日期和病历内容');return;}
+  AD().notes.unshift(n);
+  if(n.followUp){const d=calcFU(n.date,n.followUp);if(d&&confirm('检测到复查要求：「'+n.followUp+'」\n建议日期：'+d+'\n\n是否添加到日历？')){AD().events.unshift({id:uid(),title:'复查：'+n.diagnosis,date:d,hospital:n.hospital,department:n.department,doctor:n.doctor,note:n.followUp});}}
+  saveState();renderSidebar();closeOverlay();
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[6].classList.add('active');
+  CT='timeline'; rTimeline();
+  showSaveBanner('病历已保存！可在时间线中查看。');
+}
+
+// ── 检查报告 ──────────────────────────────────────────────────────────
+function rReports(){
+  const recs=AD().reports; const c=document.getElementById('mc');
+  const sk='rep_imgs';
+  window._imgStore=window._imgStore||{};
+  if(!window._imgStore[sk]) window._imgStore[sk]=[];
+  let html=`
+  <div class="af">
+    <h3>📷 上传检查报告图片，AI 自动识别指标</h3>
+    <div style="display:flex;gap:6px;margin-bottom:8px;">
+      <button class="btn-o" style="flex:1;font-size:12px;" onclick="showBatchImport("reports")">📦 批量导入历史报告</button>
+    </div>
+    <input type="file" accept="image/*" multiple onchange="onRepImgs(event,'${sk}')" style="margin:8px 0;">
+    <div class="img-grid" id="grid_${sk}"></div>
+    <div style="display:flex;gap:8px;margin-bottom:8px;">
+      <div style="flex:1;"><label class="fl" style="margin-top:0;">报告类型</label>
+        <select id="repType"><option value="auto">自动识别</option><option>血常规</option><option>生化全套</option><option>尿常规</option><option>甲状腺功能</option><option>血糖/糖化血红蛋白</option><option>影像报告</option><option>其他</option></select>
+      </div>
+      <div style="flex:1;"><label class="fl" style="margin-top:0;">检查日期</label><input type="date" id="repDate" value="${TS}"></div>
+    </div>
+    <div style="margin-bottom:8px;"><label class="fl" style="margin-top:0;">医院</label><input id="repHosp" placeholder="AI识别后自动填入"></div>
+    <button class="btn-p" style="width:100%;" onclick="doRepAI('${sk}')">🤖 AI 识别所有指标</button>
+    <div id="rep_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
+    <div id="rep_result"></div>
+  </div>
+  <button class="btn-o" style="width:100%;margin-bottom:12px;" onclick="showManualReport()">✏️ 手动录入报告</button>`;
+  if(!recs.length){html+=`<div class="es">🧪<br><br>暂无检查报告</div>`;c.innerHTML=html;return;}
+  html+=`<div class="sl">历史报告（${recs.length}）</div>`;
+  html+=recs.map(r=>{
+    const abn=r.abnormalCount||(r.metrics||[]).filter(m=>m.status!=='ok').length;
+    const bc=abn===0?'bok':abn<=2?'bwarn':'bdanger';
+    const warnM=(r.metrics||[]).filter(m=>m.status!=='ok');
+    const okM=(r.metrics||[]).filter(m=>m.status==='ok');
+    return `<div class="card cp" onclick="this.classList.toggle('open')">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="icon" style="background:#f0efea;font-size:18px;">🧪</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:500;">${esc(r.reportType)} <span class="badge bpurple">已存档</span>${r.pageCount>1?`<span style="font-size:10px;color:var(--text3);margin-left:5px;">${r.pageCount}张</span>`:''}</div>
+          <div style="font-size:11px;color:var(--text2);margin-top:1px;">${fmtDate(r.date)}${r.hospital?' · '+esc(r.hospital):''}</div>
+        </div>
+        <span class="badge ${bc}">${abn===0?'全部正常':abn+'项异常'}</span>
+      </div>
+      <div class="db">
+        ${r.summary?`<div class="ai-box">🤖 ${esc(r.summary)}</div>`:''}
+        ${warnM.length?`<div class="sl">异常指标</div><div class="mg">${warnM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v warn">${esc(m.value)}</div><div class="mc-r">参考 ${esc(m.reference)} ⚠</div></div>`).join('')}</div>`:''}
+        ${okM.length?`<div class="sl">正常（${okM.length}项）</div><div class="mg">${okM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div>`:''}
+        <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
+          <button class="btn-o" onclick="event.stopPropagation();showEvDialog('复查：${esc(r.reportType)}','','${esc(r.hospital||'')}','','','')">📅 复查提醒</button>
+          <button class="btn-o" onclick="event.stopPropagation();delItem('reports','${r.id}')">🗑 删除</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  c.innerHTML=html;
+}
+
+function onRepImgs(e, sk){
+  window._imgStore=window._imgStore||{};
+  window._imgStore[sk]=Array.from(e.target.files);
+  renderImgGrid(sk,'removeRepImg');
+  const countEl=document.getElementById('repFileCount');
+  if(countEl) countEl.textContent=window._imgStore[sk].length+'张图片已选（点 × 可删除）';
+}
+
+function removeRepImg(sk, idx){
+  _removeImgAt(sk, idx, 'removeRepImg');
+}
+
+async function doRepAI(sk){
+  const files=(window._imgStore||{})[sk]||[];
+  if(!files.length){alert('请先选择图片');return;}
+  const typeVal=document.getElementById('repType')?.value||'auto';
+  const st2=document.getElementById('rep_ai_status');
+  const res=document.getElementById('rep_result');
+  if(st2) st2.textContent='⏳ AI 识别中…';
+  if(res) res.innerHTML='';
+  const typeStr=typeVal!=='auto'?`（报告类型：${typeVal}）`:'';
+  const prompt='请仔细识别这张医疗检查报告图片'+typeStr+'。'
+    +'只输出JSON，不要任何markdown或多余文字，第一个字符必须是{：'
+    +'{"reportType":"报告类型名称","date":"检查日期YYYY-MM-DD","hospital":"医院名称","summary":"2-3句分析总结，说明哪些指标异常及临床意义","abnormalCount":数字,'
+    +'"metrics":[{"name":"指标全称（英文缩写）","value":"数值+单位","reference":"参考范围","status":"ok或warn或danger"}]}'
+    +'。status规则：在参考范围内=ok，轻度偏高/偏低=warn，明显异常=danger。'
+    +'把报告中所有指标都列出来，不要遗漏。无法识别返回{"error":"原因"}';
+  try{
+    const results=[];
+    for(let i=0;i<files.length;i++){
+      if(st2) st2.textContent=`⏳ 正在识别第${i+1}/${files.length}张…`;
+      const {b64,mime}=await readFile(files[i]);
+      try{
+        results.push(await callAI(b64,mime,prompt));
+      }catch(e){
+        if(st2) st2.textContent='❌ 错误：'+e.message;
+        results.push({_raw:e.message, error:e.message});
+      }
+    }
+    if(!results.length){if(st2) st2.textContent='❌ 识别失败';return;}
+    // 过滤掉解析失败的（_raw）和 error
+    const valid=results.filter(r=>!r.error&&!r._raw);
+    if(!valid.length){
+      // 如果有 _raw，说明 AI 有返回但解析失败
+      const hasRaw=results.find(r=>r._raw);
+      if(hasRaw){if(st2) st2.textContent='⚠️ AI有返回内容但格式有误，请切换到"手动录入报告"粘贴内容';return;}
+      if(st2) st2.textContent='❌ '+(results[0].error||'识别失败');return;
+    }
+    const metricsMap={};
+    valid.forEach(r=>(r.metrics||[]).forEach(m=>{ metricsMap[m.name]=m; }));
+    const allMetrics=Object.values(metricsMap);
+    const abn=allMetrics.filter(m=>m.status!=='ok').length;
+    const merged={
+      reportType:valid[0].reportType||'医疗报告',
+      date:valid[0].date||'',
+      hospital:valid[0].hospital||'',
+      summary:(valid.length===1?valid[0].summary:'共'+valid.length+'张报告。'+valid.map(r=>r.summary).filter(Boolean).join(' ')),
+      abnormalCount:abn, metrics:allMetrics, pageCount:files.length
+    };
+    window._lastMerged=merged;
+    if(st2) st2.textContent=`✅ 识别完成（${files.length}张）`;
+    // 把识别到的日期填入日期框
+    if(merged.date && document.getElementById('repDate')){
+      document.getElementById('repDate').value=merged.date;
+    }
+    if(merged.hospital && document.getElementById('repHosp')){
+      document.getElementById('repHosp').value=merged.hospital;
+    }
+    // 显示结果
+    const bc=abn===0?'bok':abn<=2?'bwarn':'bdanger';
+    const warnM=allMetrics.filter(m=>m.status!=='ok');
+    const okM=allMetrics.filter(m=>m.status==='ok');
+    if(res) res.innerHTML=`
+      <div style="margin-top:10px;border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+          <span style="font-weight:500;">${esc(merged.reportType)}</span>
+          <span class="badge ${bc}">${abn===0?'全部正常':abn+'项异常'}</span>
+        </div>
+        <div class="ai-box">🤖 ${esc(merged.summary)}</div>
+        ${warnM.length?`<div class="sl">异常指标</div><div class="mg">${warnM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v warn">${esc(m.value)}</div><div class="mc-r">参考 ${esc(m.reference)} ⚠</div></div>`).join('')}</div>`:''}
+        ${okM.length?`<div class="sl">正常（${okM.length}项）</div><div class="mg">${okM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div>`:''}
+        <div style="display:flex;gap:6px;margin-top:8px;">
+          <button class="btn-p" onclick="saveRepResult()" style="flex:1;">💾 保存到档案</button>
+          <button class="btn-o" onclick="window._lastMerged=null;document.getElementById('rep_result').innerHTML='';document.getElementById('rep_ai_status').textContent='';">清除</button>
+        </div>
+      </div>`;
+  }catch(err){
+    const msg=err.message||'';
+    if(st2) st2.textContent='❌ '+(msg.startsWith('RAW:')||msg.startsWith('PARSE_FAIL:')?'AI返回格式有误，请重试或手动录入':'错误：'+msg);
+  }
+}
+
+function saveRepResult(){
+  const m=window._lastMerged; if(!m) return;
+  // 优先用 AI 识别的日期，其次用用户手动填的，最后才用今天
+  const manualDate = document.getElementById('repDate')?.value;
+  const aiDate = m.date;
+  const r={...m, id:uid(), date:aiDate||manualDate||TS};
+  AD().reports.unshift(r);
+  saveState(); renderSidebar();
+  window._lastMerged=null;
+  document.getElementById('rep_result').innerHTML='';
+  document.getElementById('rep_ai_status').textContent='✅ 已保存！';
+  window._imgStore['rep_imgs']=[];
+  document.getElementById('grid_rep_imgs').innerHTML='';
+}
+
+function showManualReport(){
+  showOverlay(`<div class="dialog">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">手动录入检查报告</h3>
+    <label class="fl">报告类型</label><select id="mrType"><option>血常规</option><option>生化全套</option><option>尿常规</option><option>甲状腺功能</option><option>其他</option></select>
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">检查日期</label><input type="date" id="mrDate" value="${TS}"></div><div style="flex:1;"><label class="fl">医院</label><input id="mrHosp" placeholder="医院名称"></div></div>
+    <label class="fl">AI分析/备注</label><textarea id="mrSum" rows="2" placeholder="报告总结或备注…"></textarea>
+    <label class="fl">指标（每行：名称, 数值, 参考范围, ok/warn/danger）</label>
+    <textarea id="mrMetrics" rows="5" placeholder="白蛋白 ALB, 38.2 g/L, 40-55, warn&#10;血糖 GLU, 4.78 mmol/L, 3.61-6.11, ok"></textarea>
+    <div class="rb"><button class="btn-p" onclick="saveManualReport()" style="flex:1;">保存</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function saveManualReport(){
+  const rawM=document.getElementById('mrMetrics').value.trim();
+  const metrics=rawM?rawM.split('\n').filter(l=>l.trim()).map(l=>{const p=l.split(',').map(s=>s.trim());return{name:p[0]||'',value:p[1]||'',reference:p[2]||'',status:p[3]||'ok'};}):[];
+  const r={id:uid(),reportType:document.getElementById('mrType').value,date:document.getElementById('mrDate').value,hospital:document.getElementById('mrHosp').value,summary:document.getElementById('mrSum').value,abnormalCount:metrics.filter(m=>m.status!=='ok').length,metrics};
+  AD().reports.unshift(r); saveState(); renderSidebar(); closeOverlay(); rt('reports');
+}
+
+// ── 影像报告 ──────────────────────────────────────────────────────────
+function rImaging(){
+  const imgs=AD().imaging; const c=document.getElementById('mc');
+  let html=`<div style="display:flex;gap:6px;margin-bottom:12px;"><button class="btn-p" style="flex:1;" onclick="showAddImaging()">＋ 添加影像报告</button><button class="btn-o" onclick="showBatchImport("imaging")">📦 批量导入</button></div>`;
+  if(!imgs.length){html+=`<div class="es">🔬<br><br>暂无影像报告</div>`;c.innerHTML=html;return;}
+  html+=imgs.map(img=>{
+    const abn=(img.findings||[]).filter(f=>f.status!=='ok').length;
+    const bc=abn===0?'bok':abn<=2?'bwarn':'bdanger';
+    return `<div class="card cp" onclick="this.classList.toggle('open')">
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="icon" style="background:#e1f5ee;font-size:18px;">🔬</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:500;">${esc(img.type)} <span class="badge ${bc}">${abn===0?'未见异常':abn+'项需关注'}</span></div>
+          <div style="font-size:11px;color:var(--text2);margin-top:2px;">${fmtDate(img.date)} · ${esc(img.hospital||'')} · ${esc(img.doctor||'')}${img.doctor?'医生':''}</div>
+        </div>
+      </div>
+      <div class="db">
+
+        ${(img.findings||[]).length?`<div class="sl">影像所见</div><div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 12px;">${img.findings.map(f=>{const dc=f.status==='ok'?'#9fe1cb':f.status==='warn'?'#fac775':'#e24b4a';const label=f.status==='ok'?'正常':f.status==='warn'?'异常':'需关注';return`<div style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:0.5px solid var(--border);"><div style="display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;margin-top:2px;"><div style="width:8px;height:8px;border-radius:50%;background:${dc};"></div>${f.status!=='ok'?`<div style="font-size:9px;color:${dc};font-weight:500;">${label}</div>`:''}</div><div><div style="font-size:12px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div></div>`;}).join('')}</div>`:''}
+        ${img.conclusion?`<div style="background:var(--bg2);border-radius:var(--radius);padding:9px 11px;font-size:12px;line-height:1.7;margin-top:8px;">${esc(img.conclusion)}</div>`:''}
+        ${img.suggestion?`<div class="nc nw" style="margin-top:7px;"><div style="font-size:10px;color:var(--text3);margin-bottom:2px;">💡 医生建议</div><div style="font-size:12px;">${esc(img.suggestion)}</div></div>`:''}
+        <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;">
+          <button class="btn-o" onclick="event.stopPropagation();showEvDialog('影像复查：${esc(img.type)}','','${esc(img.hospital||'')}','${esc(img.department||'')}','${esc(img.doctor||'')}','${esc(img.suggestion||'')}')">📅 复查提醒</button>
+          <button class="btn-o" onclick="event.stopPropagation();delItem('imaging','${img.id}')">🗑 删除</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  c.innerHTML=html;
+}
+
+function showAddImaging(){
+  const sk='img_imgs';
+  window._imgStore=window._imgStore||{};
+  window._imgStore[sk]=[];
+  showOverlay(`<div class="dialog" style="max-width:420px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加影像报告</h3>
+    <div class="analyze-box">
+      <h4>📷 上传影像报告图片，AI 自动识别（可多选）</h4>
+      <input type="file" accept="image/*" multiple onchange="onImgImgs(event,'img_imgs')" style="margin:8px 0;">
+      <button class="btn-p" style="width:100%;font-size:12px;margin-top:6px;" onclick="doImagingAI('img_imgs')">🤖 AI 识别影像报告</button>
+      <div id="img_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
+    </div>
+    <div style="font-size:11px;color:var(--text3);margin-bottom:6px;">AI 识别后自动填入，也可手动填写修改</div>
+    <label class="fl">影像类型（AI识别后自动填入）</label>
+    <input id="iType" placeholder="如：妇科超声、胸部CT（AI自动判断）">
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">检查日期</label><input type="date" id="iDate" value="${TS}"></div><div style="flex:1;"><label class="fl">医院</label><input id="iHosp" placeholder="医院"></div></div>
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">科室</label><input id="iDept" placeholder="科室"></div><div style="flex:1;"><label class="fl">医生</label><input id="iDoc" placeholder="医生"></div></div>
+    <label class="fl">影像所见（每行：部位,ok/warn/danger,描述）</label>
+    <textarea id="iFindings" rows="4" placeholder="AI识别后自动填入"></textarea>
+    <label class="fl">影像结论</label><textarea id="iConclusion" rows="2" placeholder="AI识别后自动填入…"></textarea>
+    <label class="fl">医生建议 / 复查要求</label><input id="iSugg" placeholder="如：6个月后复查">
+    <div class="rb"><button class="btn-p" onclick="saveImaging()" style="flex:1;">保存影像报告</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+
+function onImgImgs(e,sk){
+  window._imgStore=window._imgStore||{};
+  window._imgStore[sk]=Array.from(e.target.files);
+  renderImgGrid(sk,'removeImg');
+}
+
+async function doImagingAI(sk){
+  const files=(window._imgStore||{})[sk]||[];
+  if(!files.length){alert('请先选择影像图片');return;}
+  const st=document.getElementById('img_ai_status');
+  if(st) st.textContent='⏳ AI 正在识别影像报告…';
+
+  const prompt='请仔细识别这张医疗影像报告图片（超声/CT/MRI/X光/内镜等）。'
+    +'只输出JSON，不要任何markdown，第一个字符必须是{：'
+    +'{"type":"影像类型全称","hospital":"医院全称","department":"科室","doctor":"报告医生姓名","date":"检查日期YYYY-MM-DD",'
+    +'"findings":[{"location":"解剖部位名称","status":"ok或warn或danger","desc":"该部位所见的完整原文描述"}],'
+    +'"conclusion":"影像提示/结论的完整原文","suggestion":"随访建议和复查要求","aiSummary":"2-3句临床总结，说明主要发现和建议"}'
+    +'。status规则：完全正常=ok；有任何异常发现（结石/肌瘤/囊肿/占位/积液/钙化/增大/缩小/回声不均/边界不清等）=warn；高度怀疑恶性或危急情况=danger。'
+    +'严格忠实于报告原文，凡报告中提到的异常必须标warn或danger，不得美化为ok。'
+    +'无法识别返回{"error":"原因"}';
+
+  try{
+    const results=[];
+    for(let i=0;i<files.length;i++){
+      if(st) st.textContent='⏳ 正在识别第'+(i+1)+'/'+files.length+'张…';
+      const {b64,mime}=await readFile(files[i]);
+      try{
+        const r=await callAI(b64,mime,prompt);
+        results.push(r);
+      }catch(e){
+        if(st) st.textContent='❌ 错误：'+e.message;
+        console.error('callAI error:', e);
+        results.push({_raw: e.message, error: e.message});
+      }
+    }
+    if(!results.length){if(st) st.textContent='❌ 识别失败，请手动填写';return;}
+    const main=results[0];
+    // 如果 JSON 解析失败，把原始文本放到结论框里
+    if(main._raw){
+      if(st) st.textContent='⚠️ AI识别完成，但格式转换失败，已将原始内容填入结论框，请手动整理';
+      const concl=document.getElementById('iConclusion');
+      if(concl) concl.value=main._raw.slice(0,1000);
+      return;
+    }
+    if(main.error){if(st) st.textContent='⚠️ '+main.error;return;}
+
+    // 合并多张结果的findings
+    if(results.length>1){
+      results.slice(1).forEach(r=>{
+        (r.findings||[]).forEach(f=>{
+          if(!main.findings.find(x=>x.location===f.location)) main.findings.push(f);
+        });
+      });
+    }
+
+    // 自动填入表单
+    // 直接填入AI识别的类型
+    if(main.type) document.getElementById('iType').value=main.type;
+    if(main.hospital) document.getElementById('iHosp').value=main.hospital;
+    if(main.department) document.getElementById('iDept').value=main.department;
+    if(main.doctor) document.getElementById('iDoc').value=main.doctor;
+    if(main.date) document.getElementById('iDate').value=main.date;
+
+    // 填入findings（每行：部位,状态,描述）
+    if(main.findings&&main.findings.length){
+      document.getElementById('iFindings').value=main.findings.map(f=>f.location+','+f.status+','+f.desc).join('\n');
+    }
+    if(main.conclusion) document.getElementById('iConclusion').value=main.conclusion;
+    if(main.suggestion) document.getElementById('iSugg').value=main.suggestion;
+    const abnCount=(main.findings||[]).filter(f=>f.status!=='ok').length;
+    if(st) st.textContent='✅ 识别完成！发现 '+abnCount+' 项异常，已自动填入，请检查后保存';
+  }catch(err){
+    const msg = err.message||'';
+    if(msg.startsWith('RAW:')){
+      if(st) st.textContent='⚠️ AI返回了内容但格式有误，请手动填写。原始内容：'+msg.slice(4,100);
+    } else if(msg.startsWith('PARSE_FAIL:')){
+      // Try to use raw text as conclusion at least
+      if(st) st.textContent='⚠️ JSON解析失败，请手动填写。';
+      const rawText = msg.slice(11);
+      const concl = document.getElementById('iConclusion');
+      if(concl && !concl.value) concl.value = rawText;
+    } else {
+      if(st) st.textContent='❌ 错误：'+msg;
+    }
+  }
+}
+
+
+function saveImaging(){
+  const rawF=document.getElementById('iFindings').value.trim();
+  const findings=rawF?rawF.split('\n').filter(l=>l.trim()).map(l=>{const p=l.split(',').map(s=>s.trim());return{location:p[0]||'',status:p[1]||'ok',desc:p.slice(2).join(',')};}) :[];
+  const img={id:uid(),type:document.getElementById('iType').value,date:document.getElementById('iDate').value||TS,hospital:document.getElementById('iHosp').value,department:document.getElementById('iDept').value,doctor:document.getElementById('iDoc').value,findings,conclusion:document.getElementById('iConclusion').value,suggestion:document.getElementById('iSugg').value};
+  AD().imaging.unshift(img);
+  const fu=img.suggestion;
+  if(fu){const d=calcFU(img.date,fu);if(d&&confirm('复查建议：「'+fu+'」\n建议日期：'+d+'\n\n是否添加日历？')){AD().events.unshift({id:uid(),title:'影像复查：'+img.type,date:d,hospital:img.hospital,doctor:img.doctor,note:fu});}}
+  saveState();renderSidebar();closeOverlay();
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[6].classList.add('active');
+  CT='timeline'; rTimeline();
+  showSaveBanner('影像报告已保存！可在时间线中查看。');
+}
+
+// ── 用药管理 ──────────────────────────────────────────────────────────
+function getRD(m){const du=Math.max(0,dBet(m.startDate,TS));return Math.max(0,m.totalQty-du*m.timesPerDay*m.dosePerTime);}
+function getDays(m){const r=getRD(m),d=m.timesPerDay*m.dosePerTime;return d>0?Math.floor(r/d):999;}
+function getROD(m){return addD(TS,getDays(m));}
+function getRRD(m){return addD(getROD(m),-7);}
+function getMSt(m){if(!m.active)return'done';const d=getDays(m);return d<=0?'empty':d<=7?'urgent':d<=14?'warning':'ok';}
+
+function rMeds(){
+  const meds=AD().meds; const active=meds.filter(m=>m.active); const done=meds.filter(m=>!m.active);
+  const c=document.getElementById('mc'); let html='';
+  active.filter(m=>['urgent','empty'].includes(getMSt(m))).forEach(m=>{ html+=`<div class="ab">⚠️ ${esc(m.name)} 仅剩 ${getRD(m)} ${esc(m.unit)}，约 ${getDays(m)} 天用完，请尽快开药！</div>`; });
+  active.filter(m=>getMSt(m)==='warning').forEach(m=>{ html+=`<div class="ab aw">🔔 ${esc(m.name)} 将在 ${getDays(m)} 天后用完，建议 ${getRRD(m)} 前开药。</div>`; });
+  html+=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><div class="sl" style="margin-bottom:0;">在用药品（${active.length}）</div><button class="btn-p" onclick="showAddMed()">＋ 添加药品</button></div>`;
+  if(!active.length) html+=`<div class="es">💊<br><br>暂无在用药品</div>`;
+  active.forEach(m=>{
+    const rem=getRD(m),days=getDays(m),pct=Math.max(0,Math.min(100,Math.round(rem/m.totalQty*100)));
+    const s=getMSt(m),bc=s==='urgent'||s==='empty'?'#e24b4a':s==='warning'?'#ba7517':'#1d9e75';
+    const ub=s==='urgent'||s==='empty'?'bdanger':s==='warning'?'bwarn':'bok';
+    html+=`<div class="card">
+      <div style="display:flex;align-items:flex-start;gap:10px;">
+        <div class="icon" style="background:#eeedfe;font-size:18px;">💊</div>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;"><span style="font-size:13px;font-weight:500;">${esc(m.name)}</span><span style="font-size:11px;color:var(--text2);">${esc(m.spec||'')}</span>${m.indication?`<span class="badge binfo">${esc(m.indication)}</span>`:''}<span class="badge ${ub}">${s==='urgent'||s==='empty'?'即将用完':s==='warning'?'需备药':'充足'}</span>${m.warnings?'<span class="badge bwarn">⚠️ 有禁忌</span>':''}</div>
+          <div style="font-size:11px;color:var(--text2);margin-top:3px;">每日${m.timesPerDay}次，每次${m.dosePerTime}${esc(m.unit)} · 开药：${m.startDate}</div>
+          <div class="pw"><div class="pb" style="width:${pct}%;background:${bc};"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);"><span>剩余${rem}${esc(m.unit)}（约${days}天）</span><span>共${m.totalQty}${esc(m.unit)}</span></div>
+          <div style="display:flex;gap:5px;margin-top:6px;flex-wrap:wrap;">${(m.times||[]).map(t=>`<span style="background:var(--bg2);border-radius:20px;padding:2px 8px;font-size:11px;color:var(--text2);">⏰${esc(t)}</span>`).join('')}</div>
+          ${m.note?`<div style="font-size:11px;color:var(--text2);margin-top:4px;">📌 ${esc(m.note)}</div>`:''}
+          ${m.warnings?`<div style="font-size:11px;color:var(--warn-text);margin-top:4px;background:var(--warn-bg);padding:4px 8px;border-radius:var(--radius);">⚠️ ${esc(m.warnings)}</div>`:``}
+          <div style="margin-top:6px;font-size:11px;color:var(--text3);">预计用完：${getROD(m)} · 建议开药：${getRRD(m)}</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:6px;margin-top:9px;flex-wrap:wrap;">
+        <button class="btn-o" onclick="exportMedICS('${m.id}')">📅 导出开药提醒</button>
+        <button class="btn-o" onclick="mkDone('${m.id}')">✅ 停药</button>
+        <button class="btn-o" onclick="delItem('meds','${m.id}')">🗑 删除</button>
+      </div>
+    </div>`;
+  });
+  if(done.length){html+=`<div class="sl" style="margin-top:14px;">已停药（${done.length}）</div>`;done.forEach(m=>{html+=`<div class="card" style="opacity:0.55;"><div style="display:flex;align-items:center;gap:10px;"><div class="icon" style="background:var(--bg2);font-size:16px;">💊</div><div style="flex:1;"><div style="font-size:13px;font-weight:500;text-decoration:line-through;">${esc(m.name)}</div><div style="font-size:11px;color:var(--text3);">开药${m.startDate}·已停药</div></div><button class="btn-o" onclick="reAct('${m.id}')">恢复</button><button class="btn-o" onclick="delItem('meds','${m.id}')">🗑</button></div></div>`;});}
+  c.innerHTML=html;
+}
+
+function showAddMed(){
+  showOverlay(`<div class="dialog">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加药品</h3>
+    <label class="fl">药品名称 *</label><input id="mN" placeholder="如：阿莫西林">
+    <label class="fl">规格</label><input id="mSp" placeholder="如：0.5g/粒">
+    <label class="fl">适应症</label><input id="mIn" placeholder="如：消炎止痛">
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">开药日期</label><input type="date" id="mSt" value="${TS}"></div><div style="flex:1;"><label class="fl">总数量 *</label><input type="number" id="mTot" min="1" placeholder="30"></div><div style="flex:0 0 60px;"><label class="fl">单位</label><input id="mUn" placeholder="粒"></div></div>
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">每日次数</label><input type="number" id="mTm" min="1" max="6" value="3" oninput="updTF()"></div><div style="flex:1;"><label class="fl">每次剂量</label><input type="number" id="mDs" min="1" value="1"></div></div>
+    <label class="fl">服药时间</label><div id="tfWrap" style="display:flex;gap:5px;flex-wrap:wrap;margin-top:4px;"></div>
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">医生</label><input id="mDc" placeholder="医生"></div><div style="flex:1;"><label class="fl">医院</label><input id="mHp" placeholder="医院"></div></div>
+    <label class="fl">服用说明</label><input id="mNt" placeholder="如：饭后服用、睡前服用">
+    <label class="fl">⚠️ 注意事项 / 禁忌（医生叮嘱）</label>
+    <textarea id="mWarn" rows="2" placeholder="如：不能和阿司匹林同时服用&#10;服药期间不能饮酒&#10;（请根据医生叮嘱填写）"></textarea>
+    <div class="rb"><button class="btn-p" onclick="saveMed()" style="flex:1;">保存药品</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+  updTF();
+}
+
+function updTF(){
+  const n=parseInt(document.getElementById('mTm')?.value)||3;
+  const defs=['早饭前','午饭前','晚饭前','睡前','早饭后','午饭后'];
+  const w=document.getElementById('tfWrap'); if(!w)return; w.innerHTML='';
+  for(let i=0;i<n;i++){const inp=document.createElement('input');inp.type='text';inp.value=defs[i]||'';inp.placeholder='时间';inp.style.cssText='width:calc(33% - 4px);min-width:70px;font-size:12px;';inp.id='tf_'+i;w.appendChild(inp);}
+}
+
+function saveMed(){
+  const name=document.getElementById('mN')?.value.trim(), tot=parseInt(document.getElementById('mTot')?.value);
+  if(!name||!tot){alert('请填写名称和数量');return;}
+  const n=parseInt(document.getElementById('mTm').value)||1; const times=[];
+  for(let i=0;i<n;i++) times.push(document.getElementById('tf_'+i)?.value||'');
+  const m={id:uid(),name,spec:document.getElementById('mSp').value,startDate:document.getElementById('mSt').value||TS,totalQty:tot,unit:document.getElementById('mUn').value||'粒',timesPerDay:n,dosePerTime:parseInt(document.getElementById('mDs').value)||1,times,indication:document.getElementById('mIn').value,doctor:document.getElementById('mDc').value,hospital:document.getElementById('mHp').value,note:document.getElementById('mNt').value,warnings:document.getElementById('mWarn')?.value||'',active:true};
+  AD().meds.unshift(m);
+  const rod=getROD(m),rrd=getRRD(m);
+  if(confirm('药品已保存！\n预计用完：'+rod+'\n建议开药：'+rrd+'\n\n是否添加开药提醒到日历？')){AD().events.unshift({id:uid(),title:'开药提醒：'+m.name,date:rrd,hospital:m.hospital,note:m.name+'预计'+rod+'用完',isMedReminder:true});}
+  saveState();renderSidebar();closeOverlay();rt('meds');
+}
+
+function mkDone(id){const m=AD().meds.find(x=>x.id===id);if(m){m.active=false;saveState();renderSidebar();rMeds();}}
+function reAct(id){const m=AD().meds.find(x=>x.id===id);if(m){m.active=true;saveState();renderSidebar();rMeds();}}
+function exportMedICS(id){
+  const m=AD().meds.find(x=>x.id===id); if(!m)return;
+  const d=getRRD(m).replace(/-/g,''),rod=getROD(m);
+  const ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:med'+m.id+'@health\r\nDTSTART;VALUE=DATE:'+d+'\r\nDTEND;VALUE=DATE:'+d+'\r\nSUMMARY:【开药提醒】'+m.name+'\r\nDESCRIPTION:'+m.name+'预计'+rod+'用完\r\nBEGIN:VALARM\r\nTRIGGER:-PT0S\r\nACTION:DISPLAY\r\nDESCRIPTION:开药提醒：'+m.name+'\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+  dlFile(ics,'text/calendar','开药提醒_'+m.name+'.ics');
+}
+
+// ── 儿童健康 ──────────────────────────────────────────────────────────
+const PRESET_TAGS=['高血压','糖尿病','高血脂','心脏病','过敏体质','哮喘','甲状腺','贫血','骨质疏松','近视'];
+const VAX_PRESET=[{name:'乙肝疫苗（第1针）',age:'出生24h内'},{name:'卡介苗',age:'出生时'},{name:'乙肝疫苗（第2针）',age:'1月龄'},{name:'脊髓灰质炎疫苗',age:'2月龄'},{name:'百白破（第1针）',age:'3月龄'},{name:'乙肝疫苗（第3针）',age:'6月龄'},{name:'麻腮风（第1针）',age:'8月龄'},{name:'甲肝疫苗',age:'18月龄'},{name:'百白破加强',age:'18月龄'},{name:'麻腮风（第2针）',age:'18月龄'}];
+
+function rChild(){
+  const c=document.getElementById('mc');
+  const m=state.members.find(x=>x.id===CM); if(!m)return;
+  if(!m.isChild){c.innerHTML=`<div class="es">👶<br><br>此成员未开启儿童健康模块<br><br><button class="btn-p" onclick="enableChild()">开启儿童健康模块</button><div style="font-size:11px;color:var(--text3);margin-top:8px;">适用于18岁以下儿童</div></div>`;return;}
+  const d=AD(); if(!d.child) d.child={vaccines:[],growth:[],allergies:[]};
+  const {vaccines,growth,allergies}=d.child;
+  const tags=m.tags||[];
+  const lastG=growth.length?growth[growth.length-1]:null;
+  c.innerHTML=`
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <div><div style="font-size:15px;font-weight:600;">${esc(m.name)} 的儿童档案</div><div style="font-size:11px;color:var(--text2);margin-top:2px;">${lastG?'最近：'+lastG.date+' 身高'+lastG.height+'cm 体重'+lastG.weight+'kg':'暂无生长记录'}</div></div>
+      <span style="font-size:24px;">👶</span>
+    </div>
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;">
+      ${tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')}
+      <span class="tag-chip" style="background:var(--bg2);color:var(--text2);cursor:pointer;" onclick="showEditTags()">＋ 编辑标签</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><div class="sl" style="margin-bottom:0;">💉 疫苗记录（${vaccines.length}）</div><button class="btn-o" onclick="showAddVax()">＋ 添加</button></div>
+    ${vaccines.length?vaccines.map(v=>`<div class="card" style="margin-bottom:6px;"><div style="display:flex;align-items:center;gap:10px;"><div style="font-size:20px;">💉</div><div style="flex:1;"><div style="font-size:13px;font-weight:500;">${esc(v.name)} <span class="badge ${v.done?'bok':'bwarn'}">${v.done?'已接种':'待接种'}</span></div><div style="font-size:11px;color:var(--text2);">${v.done?fmtDate(v.date):'建议'+fmtDate(v.dueDate)+'前接种'} · ${esc(v.hospital||'')}</div></div><button class="btn-o" style="font-size:10px;" onclick="toggleVax('${v.id}')">${v.done?'撤销':'完成'}</button><button class="btn-o" style="font-size:10px;" onclick="delChild('vaccines','${v.id}')">🗑</button></div></div>`).join(''):`<div style="font-size:12px;color:var(--text3);text-align:center;padding:12px;">暂无疫苗记录</div>`}
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 8px;"><div class="sl" style="margin-bottom:0;">📏 生长记录（${growth.length}）</div><button class="btn-o" onclick="showAddGrowth()">＋ 记录</button></div>
+    ${growth.length?`<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:12px;"><thead><tr style="background:var(--bg2);"><th style="padding:6px 8px;text-align:left;">日期</th><th style="padding:6px 8px;text-align:center;">身高cm</th><th style="padding:6px 8px;text-align:center;">体重kg</th><th style="padding:6px 8px;text-align:center;">头围cm</th><th></th></tr></thead><tbody>${growth.slice().reverse().map(g=>`<tr style="border-top:0.5px solid var(--border);"><td style="padding:6px 8px;">${g.date}</td><td style="text-align:center;padding:6px 8px;">${g.height||'—'}</td><td style="text-align:center;padding:6px 8px;">${g.weight||'—'}</td><td style="text-align:center;padding:6px 8px;">${g.headCirc||'—'}</td><td style="padding:6px 8px;"><button class="btn-o" style="font-size:10px;" onclick="delChild('growth','${g.id}')">🗑</button></td></tr>`).join('')}</tbody></table></div>`:`<div style="font-size:12px;color:var(--text3);text-align:center;padding:12px;">暂无生长记录</div>`}
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 8px;"><div class="sl" style="margin-bottom:0;">⚠️ 过敏档案（${allergies.length}）</div><button class="btn-o" onclick="showAddAllergy()">＋ 添加</button></div>
+    ${allergies.length?allergies.map(a=>`<div class="card" style="margin-bottom:6px;border-left:2px solid #E24B4A;"><div style="display:flex;align-items:center;gap:8px;"><div style="font-size:18px;">⚠️</div><div style="flex:1;"><div style="font-size:13px;font-weight:500;">${esc(a.allergen)} <span class="badge bdanger">${esc(a.severity||'轻度')}</span></div><div style="font-size:11px;color:var(--text2);">类型：${esc(a.type||'—')} · 发现：${fmtDate(a.date)}</div>${a.reaction?`<div style="font-size:11px;color:var(--text3);">反应：${esc(a.reaction)}</div>`:''}</div><button class="btn-o" style="font-size:10px;" onclick="delChild('allergies','${a.id}')">🗑</button></div></div>`).join(''):`<div style="font-size:12px;color:var(--text3);text-align:center;padding:12px;">暂无过敏记录</div>`}
+  `;
+}
+
+function enableChild(){const m=state.members.find(x=>x.id===CM);if(m){m.isChild=true;saveState();renderSidebar();rChild();}}
+function toggleVax(id){const d=AD();const v=d.child.vaccines.find(x=>x.id===id);if(v){v.done=!v.done;if(v.done)v.date=new Date().toISOString().split('T')[0];saveState();rChild();}}
+function delChild(type,id){if(!confirm('确定删除？'))return;const d=AD();d.child[type]=d.child[type].filter(x=>x.id!==id);saveState();rChild();}
+
+function showAddVax(){
+  const opts=VAX_PRESET.map(v=>`<option value="${esc(v.name)}">${esc(v.name)}（${v.age}）</option>`).join('');
+  showOverlay(`<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加疫苗记录</h3>
+    <label class="fl">疫苗</label><select id="vN" onchange="document.getElementById('vNC').style.display=this.value==='custom'?'block':'none';"><option value="">-- 选择 --</option>${opts}<option value="custom">自定义…</option></select>
+    <input id="vNC" placeholder="输入疫苗名称" style="display:none;margin-top:5px;">
+    <label class="fl">状态</label>
+    <div style="display:flex;flex-direction:row;gap:16px;margin-top:6px;margin-bottom:2px;">
+      <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+        <input type="radio" name="vD" value="1" style="width:16px;height:16px;flex-shrink:0;"> 已接种
+      </label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+        <input type="radio" name="vD" value="0" checked style="width:16px;height:16px;flex-shrink:0;"> 待接种
+      </label>
+    </div>
+    <label class="fl">日期</label><input type="date" id="vDate" value="${TS}">
+    <label class="fl">医院（选填）</label><input id="vHosp" placeholder="医院">
+    <div class="rb"><button class="btn-p" onclick="saveVax()" style="flex:1;">保存</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function saveVax(){
+  const sel=document.getElementById('vN').value;
+  const name=sel==='custom'?document.getElementById('vNC').value.trim():sel;
+  if(!name){alert('请选择疫苗');return;}
+  const done=document.querySelector('input[name="vD"]:checked').value==='1';
+  const dateVal=document.getElementById('vDate').value;
+  const v={id:uid(),name,done,hospital:document.getElementById('vHosp').value};
+  if(done) v.date=dateVal; else v.dueDate=dateVal;
+  AD().child.vaccines.unshift(v);
+  if(!done&&dateVal&&confirm('是否添加接种提醒到日历？')){AD().events.unshift({id:uid(),title:'疫苗：'+name,date:dateVal,note:'请按时带孩子接种'});}
+  saveState();closeOverlay();rChild();
+}
+
+function showAddGrowth(){
+  showOverlay(`<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">记录生长数据</h3>
+    <label class="fl">日期</label><input type="date" id="gDate" value="${TS}">
+    <div style="display:flex;gap:6px;"><div style="flex:1;"><label class="fl">身高（cm）</label><input type="number" id="gH" step="0.1" placeholder="85.5"></div><div style="flex:1;"><label class="fl">体重（kg）</label><input type="number" id="gW" step="0.1" placeholder="12.3"></div></div>
+    <label class="fl">头围（cm，选填）</label><input type="number" id="gHC" step="0.1" placeholder="46.5">
+    <div class="rb"><button class="btn-p" onclick="saveGrowth()" style="flex:1;">保存</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function saveGrowth(){
+  const g={id:uid(),date:document.getElementById('gDate').value,height:document.getElementById('gH').value,weight:document.getElementById('gW').value,headCirc:document.getElementById('gHC').value};
+  if(!g.date){alert('请填写日期');return;}
+  const d=AD(); if(!d.child) d.child={vaccines:[],growth:[],allergies:[]};
+  d.child.growth.push(g); d.child.growth.sort((a,b)=>a.date.localeCompare(b.date));
+  saveState();closeOverlay();rChild();
+}
+
+function showAddAllergy(){
+  showOverlay(`<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加过敏记录</h3>
+    <label class="fl">过敏原</label><input id="aN" placeholder="如：花生、青霉素">
+    <label class="fl">类型</label><select id="aType"><option>食物过敏</option><option>药物过敏</option><option>环境过敏</option><option>接触性过敏</option><option>其他</option></select>
+    <label class="fl">严重程度</label><select id="aSev"><option>轻度</option><option>中度</option><option>重度（危及生命）</option></select>
+    <label class="fl">过敏反应</label><input id="aReact" placeholder="如：皮疹、呼吸困难">
+    <label class="fl">发现日期</label><input type="date" id="aDate" value="${TS}">
+    <div class="rb"><button class="btn-p" onclick="saveAllergy()" style="flex:1;">保存</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function saveAllergy(){
+  const name=document.getElementById('aN').value.trim(); if(!name){alert('请填写过敏原');return;}
+  const a={id:uid(),allergen:name,type:document.getElementById('aType').value,severity:document.getElementById('aSev').value,reaction:document.getElementById('aReact').value,date:document.getElementById('aDate').value};
+  AD().child.allergies.unshift(a); saveState();closeOverlay();rChild();
+}
+
+// ── 健康标签 ──────────────────────────────────────────────────────────
+function showEditTags(){
+  const m=state.members.find(x=>x.id===CM); if(!m)return;
+  const cur=m.tags||[];
+  const presetChips=PRESET_TAGS.map(function(t){
+    const active=cur.includes(t);
+    return '<div onclick="this.dataset.active=this.dataset.active===\'1\'?\'0\':\'1\';this.style.background=this.dataset.active===\'1\'?\'#eeedfe\':\'var(--bg2)\';this.style.color=this.dataset.active===\'1\'?\'#534ab7\':\'var(--text)\';this.style.borderColor=this.dataset.active===\'1\'?\'#534ab7\':\'var(--border2)\';" data-tag="'+t+'" data-active="'+(active?'1':'0')+'" style="font-size:12px;padding:3px 10px;border-radius:20px;border:0.5px solid '+(active?'#534ab7':'var(--border2)')+';cursor:pointer;background:'+(active?'#eeedfe':'var(--bg2)')+';color:'+(active?'#534ab7':'var(--text)')+';">'+t+'</div>';
+  }).join('');
+
+  // 自定义标签（不在预设里的）带删除按钮
+  const customTags = cur.filter(t=>!PRESET_TAGS.includes(t));
+  const customChips = customTags.map(function(t){
+    return '<div data-tag="'+t+'" data-active="1" data-custom="1" style="display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 8px;border-radius:20px;border:0.5px solid #534ab7;background:#eeedfe;color:#534ab7;">'
+      +t
+      +'<span onclick="this.parentElement.remove()" style="font-size:13px;font-weight:600;cursor:pointer;color:#534ab7;line-height:1;">×</span>'
+      +'</div>';
+  }).join('');
+
+  showOverlay('<div class="dialog"><h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">编辑健康标签</h3>'
+    +'<div style="font-size:11px;color:var(--text2);margin-bottom:8px;">点击选择或取消，可多选</div>'
+    +'<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;" id="tagPicker">'+presetChips+'</div>'
+    +(customChips?'<div style="font-size:11px;font-weight:600;color:var(--text3);margin-bottom:6px;">自定义标签</div><div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;" id="customTagPicker">'+customChips+'</div>':'<div id="customTagPicker" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;"></div>')
+    +'<label class="fl">添加自定义标签</label>'
+    +'<div style="display:flex;gap:6px;margin-top:4px;">'
+    +'<input id="customTag" placeholder="输入标签名称" style="flex:1;"">'
+    +'<button class="btn-o" onclick="addCustomTagChip()" style="flex-shrink:0;padding:6px 12px;">添加</button>'
+    +'</div>'
+    +'<div class="rb" style="margin-top:12px;"><button class="btn-p" onclick="saveTags()" style="flex:1;">保存标签</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>'
+    +'</div>');
+}
+
+
+function addCustomTagChip(){
+  const inp=document.getElementById('customTag');
+  const val=inp.value.trim(); if(!val){return;}
+  // 检查是否已存在
+  const existing=Array.from(document.querySelectorAll('#tagPicker [data-tag], #customTagPicker [data-tag]')).map(e=>e.dataset.tag);
+  if(existing.includes(val)){alert('标签已存在');return;}
+  const picker=document.getElementById('customTagPicker');
+  if(!picker) return;
+  const div=document.createElement('div');
+  div.dataset.tag=val; div.dataset.active='1'; div.dataset.custom='1';
+  div.style.cssText='display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 8px;border-radius:20px;border:0.5px solid #534ab7;background:#eeedfe;color:#534ab7;';
+  div.innerHTML=val+'<span onclick="this.parentElement.remove()" style="font-size:13px;font-weight:600;cursor:pointer;color:#534ab7;line-height:1;">×</span>';
+  picker.appendChild(div);
+  inp.value='';
+}
+
+function saveTags(){
+  const m=state.members.find(x=>x.id===CM); if(!m)return;
+  const presetSelected=Array.from(document.querySelectorAll('#tagPicker [data-tag]')).filter(c=>c.dataset.active==='1').map(c=>c.dataset.tag);
+  const customSelected=Array.from(document.querySelectorAll('#customTagPicker [data-tag]')).filter(c=>c.dataset.active!=='0').map(c=>c.dataset.tag);
+  m.tags=[...presetSelected,...customSelected];
+  saveState();renderSidebar();
+  // 刷新顶部标签显示
+  const tagRow=document.getElementById('tagRow');
+  if(tagRow){
+    const tags=m.tags||[];
+    tagRow.innerHTML=tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+(m.isChild?'<span class="tag-chip child">👶儿童</span>':'');
+  }
+  closeOverlay();rt(CT);
+}
+
+// ── 日历提醒 ──────────────────────────────────────────────────────────
+function rCalendar(){
+  const evs=AD().events, meds=AD().meds.filter(m=>m.active);
+  const c=document.getElementById('mc');
+  const yr=calMonth.getFullYear(), mo=calMonth.getMonth();
+  const mNames=['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'];
+  const dNames=['日','一','二','三','四','五','六'];
+  const eMap={}, mMap={};
+  evs.forEach(e=>{if(e.date)(eMap[e.date]=eMap[e.date]||[]).push(e);});
+  meds.forEach(m=>{const d=getRRD(m);if(d)(mMap[d]=mMap[d]||[]).push(m);});
+  const fd=new Date(yr,mo,1).getDay(), dim=new Date(yr,mo+1,0).getDate(), pd=new Date(yr,mo,0).getDate();
+  let cells='';
+  for(let i=0;i<fd;i++) cells+=`<div style="text-align:center;font-size:12px;padding:5px 2px;color:var(--text3);">${pd-fd+1+i}</div>`;
+  for(let d=1;d<=dim;d++){
+    const ds=yr+'-'+String(mo+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
+    const isT=new Date(yr,mo,d).getTime()===today.getTime();
+    const eArr=eMap[ds]||[], mArr=mMap[ds]||[];
+    let bg='',tc='var(--text)',fw='400';
+    if(eArr.length){bg='#faeeda';tc='#854f0b';fw='600';}
+    else if(mArr.length){bg='#eeedfe';tc='#534ab7';fw='600';}
+    else if(isT){bg='var(--bg2)';}
+    const oc=(eArr.length||mArr.length)?'onclick="hlEv(\''+ds+'\')" style="cursor:pointer;"' :'';
+    cells+=`<div ${oc} style="text-align:center;font-size:12px;padding:5px 2px;border-radius:var(--radius);background:${bg};color:${tc};font-weight:${fw};">${d}${(eArr.length||mArr.length)?`<div style="width:4px;height:4px;border-radius:50%;background:currentColor;margin:1px auto 0;"></div>`:'<div style="height:5px;"></div>'}</div>`;
+  }
+  const rem=(7-(fd+dim)%7)%7; for(let i=1;i<=rem;i++) cells+=`<div style="text-align:center;font-size:12px;padding:5px 2px;color:var(--text3);">${i}</div>`;
+  const allEvs=[...evs].sort((a,b)=>a.date.localeCompare(b.date));
+  const up=allEvs.filter(e=>e.date>=TS), past=allEvs.filter(e=>e.date<TS).reverse();
+  const rEv=(e,ip)=>{
+    const pts=e.date.split('-');
+    const mon=['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'][parseInt(pts[1])];
+    const evT = EV_TYPES.find(x=>x.key===e.evType)||(e.isMedReminder?EV_TYPES.find(x=>x.key==='med'):EV_TYPES.find(x=>x.key==='other'));
+    const bgC = evT.color+'18';
+    const txC = evT.color;
+    return `<div class="ev-item" id="ev_${e.date.replace(/-/g,'')}" style="${ip?'opacity:0.5;':''}">
+      <div style="border-radius:var(--radius);padding:3px 7px;text-align:center;min-width:44px;flex-shrink:0;background:${ip?'var(--bg2)':bgC};">
+        <div style="font-size:18px;">${evT.icon}</div>
+        <div style="font-size:9px;color:${ip?'var(--text3)':txC};">${mon}</div>
+        <div style="font-size:15px;font-weight:600;line-height:1.2;color:${ip?'var(--text2)':txC};">${parseInt(pts[2])}</div>
+      </div>
+      <div style="flex:1;min-width:0;">
+        <div style="display:flex;align-items:center;gap:5px;">
+          <span style="font-size:13px;font-weight:500;">${esc(e.title)}</span>
+          <span style="font-size:10px;padding:1px 6px;border-radius:10px;background:${evT.color+'18'};color:${evT.color};">${evT.label}</span>
+        </div>
+        <div style="font-size:11px;color:var(--text2);margin-top:2px;">
+          ${e.time?e.time+' · ':''}${[e.hospital,e.department,e.doctor?e.doctor+'医生':''].filter(Boolean).join(' · ')}
+        </div>
+        ${e.note?`<div style="font-size:11px;color:var(--text3);margin-top:2px;">${esc(e.note)}</div>`:''}
+        <div style="margin-top:5px;">
+          <button class="ib" onclick="dlICS('${e.id}')">📅 导出.ics</button>
+          <button class="ib" style="color:var(--text2);" onclick="cpEv('${e.id}')">📋 复制</button>
+          <button class="ib" style="color:var(--danger-text);" onclick="delEv('${e.id}')">🗑 删除</button>
+        </div>
+      </div>
+    </div>`;
+  };
+  c.innerHTML=`
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+      <button class="btn-o" onclick="chM(-1)">◀</button>
+      <span style="font-size:15px;font-weight:600;">${yr}年 ${mNames[mo]}</span>
+      <button class="btn-o" onclick="chM(1)">▶</button>
+    </div>
+    <div style="display:flex;gap:5px;flex-wrap:wrap;font-size:10px;margin-bottom:8px;">
+      ${EV_TYPES.map(t=>`<span style="background:${t.color}18;padding:2px 7px;border-radius:10px;color:${t.color};">${t.icon} ${t.label}</span>`).join('')}
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:12px;">
+      ${dNames.map(d=>`<div style="text-align:center;font-size:10px;color:var(--text3);padding:3px 0;">${d}</div>`).join('')}${cells}
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <div class="sl" style="margin-bottom:0;">即将到来（${up.length}）</div>
+      <button class="btn-o" onclick="showEvDialog('复查','','','','','')">＋ 新增提醒</button>
+    </div>
+    ${up.length?up.map(e=>rEv(e,false)).join(''):'<div style="text-align:center;color:var(--text3);padding:12px;font-size:12px;">暂无即将到来的提醒</div>'}
+    ${past.length?`<div class="sl" style="margin-top:14px;margin-bottom:7px;">已过期（${past.length}）</div>${past.map(e=>rEv(e,true)).join('')}`:''}
+  `;
+}
+
+function chM(d){calMonth.setMonth(calMonth.getMonth()+d);rCalendar();}
+function hlEv(ds){const el=document.getElementById('ev_'+ds.replace(/-/g,''));if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.style.outline='2px solid var(--info-text)';setTimeout(()=>el.style.outline='',1500);}}
+
+const EV_TYPES = [
+  {key:'checkup', icon:'🔬', label:'影像检查', color:'#185fa5'},
+  {key:'blood',   icon:'🩸', label:'抽血化验', color:'#993556'},
+  {key:'surgery', icon:'🏥', label:'手术/操作', color:'#a32d2d'},
+  {key:'followup',icon:'👨‍⚕️', label:'门诊复查',  color:'#0f6e56'},
+  {key:'med',     icon:'💊', label:'开药提醒',  color:'#534ab7'},
+  {key:'vaccine', icon:'💉', label:'疫苗接种',  color:'#854f0b'},
+  {key:'physical',icon:'📋', label:'体检',      color:'#185fa5'},
+  {key:'other',   icon:'📅', label:'其他',      color:'#666'},
+];
+
+function showEvDialog(title,date,hosp,dept,doc,note,evType){
+  const typeSelector = EV_TYPES.map(t=>
+    `<div onclick="selectEvType('${t.key}',this)" data-evtype="${t.key}"
+      style="display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;border-radius:var(--radius);border:1.5px solid ${(evType||'followup')===t.key?t.color:'var(--border2)'};cursor:pointer;background:${(evType||'followup')===t.key?t.color+'18':'var(--bg2)'};flex-shrink:0;min-width:52px;">
+      <span style="font-size:18px;">${t.icon}</span>
+      <span style="font-size:10px;white-space:nowrap;">${t.label}</span>
+    </div>`
+  ).join('');
+
+  showOverlay(`<div class="dialog" style="max-width:400px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加日历提醒</h3>
+    <label class="fl">类型</label>
+    <div style="display:flex;gap:5px;overflow-x:auto;padding-bottom:4px;margin-top:4px;" id="evTypeRow">
+      ${typeSelector}
+    </div>
+    <input type="hidden" id="evType" value="${evType||'followup'}">
+    <label class="fl">事项标题</label>
+    <input id="evT" value="${esc(title)}" placeholder="如：复查白蛋白、取病理报告">
+    <label class="fl">日期</label><input type="date" id="evD" value="${esc(date)||TS}">
+    <label class="fl">时间（选填）</label><input type="time" id="evTime" placeholder="如：09:30">
+    <div style="display:flex;gap:6px;">
+      <div style="flex:1;"><label class="fl">医院</label><input id="evH" value="${esc(hosp)}" placeholder="医院"></div>
+      <div style="flex:1;"><label class="fl">科室</label><input id="evDp" value="${esc(dept)}" placeholder="科室"></div>
+    </div>
+    <label class="fl">医生</label><input id="evDc" value="${esc(doc)}" placeholder="医生">
+    <label class="fl">备注</label><input id="evN" value="${esc(note)}" placeholder="如：需空腹、带上次报告">
+    <div class="rb">
+      <button class="btn-p" onclick="saveEv()" style="flex:1;">保存提醒</button>
+      <button class="btn-o" onclick="closeOverlay()">取消</button>
+    </div>
+  </div>`);
+}
+
+function selectEvType(key, el){
+  document.getElementById('evType').value = key;
+  const t = EV_TYPES.find(x=>x.key===key);
+  document.querySelectorAll('#evTypeRow [data-evtype]').forEach(d=>{
+    const dt = EV_TYPES.find(x=>x.key===d.dataset.evtype);
+    d.style.borderColor = d.dataset.evtype===key ? dt.color : 'var(--border2)';
+    d.style.background = d.dataset.evtype===key ? dt.color+'18' : 'var(--bg2)';
+    d.querySelector('span:last-child').style.color = d.dataset.evtype===key ? dt.color : 'var(--text2)';
+  });
+}
+
+function saveEv(){
+  const evType = document.getElementById('evType')?.value||'other';
+  const t = EV_TYPES.find(x=>x.key===evType)||EV_TYPES[EV_TYPES.length-1];
+  const ev={
+    id:uid(),
+    evType,
+    icon:t.icon,
+    color:t.color,
+    title:document.getElementById('evT').value,
+    date:document.getElementById('evD').value,
+    time:document.getElementById('evTime')?.value||'',
+    hospital:document.getElementById('evH').value,
+    department:document.getElementById('evDp').value,
+    doctor:document.getElementById('evDc').value,
+    note:document.getElementById('evN').value
+  };
+  if(!ev.title||!ev.date){alert('请填写事项和日期');return;}
+  AD().events.unshift(ev); saveState();renderSidebar();closeOverlay();
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[5].classList.add('active');
+  CT='calendar'; rCalendar();
+}
+
+function dlICS(id){
+  const e=AD().events.find(x=>x.id===id); if(!e)return;
+  const d=e.date.replace(/-/g,'');
+  const ics='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:'+id+'@health\r\nDTSTART;VALUE=DATE:'+d+'\r\nDTEND;VALUE=DATE:'+d+'\r\nSUMMARY:'+e.title+'\r\nLOCATION:'+[e.hospital,e.department].filter(Boolean).join(' ')+'\r\nDESCRIPTION:'+(e.note||'')+(e.doctor?'\\n医生：'+e.doctor:'')+'\r\nBEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:明天提醒：'+e.title+'\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR';
+  dlFile(ics,'text/calendar','提醒_'+e.title+'.ics');
+}
+function cpEv(id){const e=AD().events.find(x=>x.id===id);if(!e)return;const t=e.title+'\n日期：'+e.date+'\n地点：'+([e.hospital,e.department].filter(Boolean).join(' ')||'—')+'\n医生：'+(e.doctor||'—')+'\n备注：'+(e.note||'—');navigator.clipboard?.writeText(t).then(()=>alert('已复制！')).catch(()=>alert(t));}
+function delEv(id){if(!confirm('删除此提醒？'))return;const d=AD();d.events=d.events.filter(x=>x.id!==id);saveState();rCalendar();}
+
+// ── 时间线 ────────────────────────────────────────────────────────────
+function rTimeline(){
+  const {reports,notes,imaging,meds,events}=AD();
+  const c=document.getElementById('mc');
+  const all=[
+    ...reports.map(r=>({...r,_t:'report',_sd:r.date})),
+    ...notes.map(n=>({...n,_t:'note',_sd:n.date})),
+    ...imaging.map(i=>({...i,_t:'imaging',_sd:i.date})),
+    ...meds.filter(m=>m.active).map(m=>({...m,_t:'med',_sd:getRRD(m)})),
+    ...events.map(e=>({...e,_t:'event',_sd:e.date}))
+  ].sort((a,b)=>b._sd.localeCompare(a._sd));
+
+  if(!all.length){c.innerHTML=`<div class="es">📈<br><br>暂无记录<br><br>上传报告或添加病历后会在这里显示</div>`;return;}
+
+  // 按月分组
+  const groups={};
+  all.forEach(item=>{
+    const month=item._sd.slice(0,7); // YYYY-MM
+    if(!groups[month]) groups[month]=[];
+    groups[month].push(item);
+  });
+
+  const monthNames=['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  let html='<div style="font-size:11px;color:var(--text3);margin-bottom:12px;">共 '+all.length+' 条记录，按时间倒序排列</div>';
+
+  Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(month=>{
+    const [yr,mo]=month.split('-');
+    html+=`<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
+      <div style="font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap;">${yr}年 ${monthNames[parseInt(mo)]}</div>
+      <div style="flex:1;height:0.5px;background:var(--border);"></div>
+    </div>`;
+
+    groups[month].forEach((item,i)=>{
+      const isFut=item._sd>TS;
+      const isLast=i===groups[month].length-1;
+      let dot,icon,title,sub,bc='';
+
+      if(item._t==='report'){
+        const abn=item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length;
+        dot=abn===0?'#9fe1cb':'#fac775';icon='🧪';
+        title=esc(item.reportType||'检查报告')+(item.pageCount>1?' ('+item.pageCount+'张)':'');
+        sub=(item.hospital?esc(item.hospital)+' · ':'')+( abn===0?'<span style="color:var(--success-text);">全部正常</span>':'<span style="color:var(--warn-text);">'+abn+'项异常</span>');
+        bc=abn===0?'bok':abn<=2?'bwarn':'bdanger';
+      } else if(item._t==='note'){
+        dot='#b5d4f4';icon='🩺';
+        title=esc(item.type||'门诊病历')+(item.diagnosis?' — '+esc(item.diagnosis):'');
+        sub=(item.hospital?esc(item.hospital)+' · ':'')+( item.doctor?esc(item.doctor)+'医生':'');
+        bc='binfo';
+      } else if(item._t==='imaging'){
+        const abn=(item.findings||[]).filter(f=>f.status!=='ok').length;
+        dot=abn===0?'#9fe1cb':'#fac775';icon='🔬';
+        title=esc(item.type);
+        sub=(item.hospital?esc(item.hospital)+' · ':'')+(abn===0?'<span style="color:var(--success-text);">未见异常</span>':'<span style="color:var(--warn-text);">'+abn+'项需关注</span>');
+        bc=abn===0?'bok':'bwarn';
+      } else if(item._t==='med'){
+        dot='#afa9ec';icon='💊';
+        title='开药提醒：'+esc(item.name);
+        sub='约剩 '+getDays(item)+' 天用完，建议此前开药';
+        bc='bpurple';
+      } else {
+        dot=isFut?'#fac775':'#d3d1c7';
+        icon=item.isMedReminder?'💊':'📅';
+        title=esc(item.title);
+        sub=[item.hospital,item.doctor?item.doctor+'医生':''].filter(Boolean).map(esc).join(' · ');
+        bc=isFut?'bwarn':'';
+      }
+
+      const dayStr=item._sd.split('-')[2]; // DD
+      // 构建详情内容
+      let detail = '';
+      if(item._t==='report'){
+        const warnM=(item.metrics||[]).filter(m=>m.status!=='ok');
+        const okM=(item.metrics||[]).filter(m=>m.status==='ok');
+        if(item.summary) detail+=`<div class="ai-box" style="margin-bottom:8px;">📋 ${esc(item.summary)}</div>`;
+        if(warnM.length) detail+=`<div style="font-size:10px;font-weight:600;color:var(--text3);margin-bottom:4px;">异常指标</div><div class="mg">${warnM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v warn">${esc(m.value)}</div><div class="mc-r">参考 ${esc(m.reference)} ⚠</div></div>`).join('')}</div>`;
+        if(okM.length) detail+=`<div style="font-size:10px;font-weight:600;color:var(--text3);margin:6px 0 4px;">正常（${okM.length}项）</div><div class="mg">${okM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div>`;
+      } else if(item._t==='note'){
+        if(item.content) detail+=`<div style="font-size:12px;line-height:1.7;background:var(--bg2);padding:8px 10px;border-radius:var(--radius);margin-bottom:6px;">${esc(item.content)}</div>`;
+        if(item.followUp) detail+=`<div style="font-size:11px;color:var(--warn-text);margin-top:4px;">⏰ 复查：${esc(item.followUp)}</div>`;
+      } else if(item._t==='imaging'){
+        const findings=item.findings||[];
+        if(findings.length) detail+=`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 10px;margin-bottom:6px;">${findings.map(f=>{const dc=f.status==='ok'?'#9fe1cb':f.status==='warn'?'#fac775':'#e24b4a';const label=f.status==='ok'?'正常':f.status==='warn'?'异常':'需关注';return`<div style="display:flex;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--border);"><div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;margin-top:2px;"><div style="width:8px;height:8px;border-radius:50%;background:${dc};"></div>${f.status!=='ok'?`<div style="font-size:9px;color:${dc};font-weight:500;">${label}</div>`:''}</div><div><div style="font-size:12px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div></div>`;}).join('')}</div>`;
+        if(item.conclusion) detail+=`<div style="font-size:12px;background:var(--bg2);padding:8px 10px;border-radius:var(--radius);line-height:1.7;">${esc(item.conclusion)}</div>`;
+        if(item.suggestion) detail+=`<div style="font-size:11px;color:var(--warn-text);margin-top:6px;">💡 建议：${esc(item.suggestion)}</div>`;
+      } else if(item._t==='event'){
+        if(item.note) detail+=`<div style="font-size:12px;color:var(--text2);">${esc(item.note)}</div>`;
+      }
+
+      const tlId='tl_'+item.id;
+      html+=`<div style="display:flex;gap:10px;margin-bottom:8px;">
+        <div style="display:flex;flex-direction:column;align-items:center;width:36px;flex-shrink:0;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg2);border:2px solid ${dot};display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">${icon}</div>
+          ${!isLast?'<div style="width:1.5px;background:var(--border);flex:1;margin-top:3px;min-height:8px;"></div>':''}
+        </div>
+        <div style="flex:1;padding-bottom:4px;">
+          <div style="font-size:10px;color:var(--text3);margin-bottom:3px;">${item._sd}${isFut&&item._t!=='report'&&item._t!=='note'&&item._t!=='imaging'?' · <span style="color:var(--warn-text);">待办</span>':''}</div>
+          <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;background:var(--bg);" onclick="tlToggle(this,'${tlId}')">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+              <div style="font-size:13px;font-weight:500;flex:1;">${title}</div>
+              <div style="display:flex;align-items:center;gap:6px;">
+                ${bc?`<span class="badge ${bc}" style="flex-shrink:0;">${item._t==='report'?(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)===0?'正常':(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)+'项异常':item._t==='note'?esc(item.department||'病历'):item._t==='imaging'?((item.findings||[]).filter(f=>f.status!=='ok').length===0?'未见异常':(item.findings||[]).filter(f=>f.status!=='ok').length+'项需关注'):item._t==='med'?'开药提醒':isFut?'待办':'已完成'}</span>`:''}
+                ${detail?'<span style="font-size:10px;color:var(--text3);" class="tl-arrow">▼</span>':''}
+              </div>
+            </div>
+            ${sub?`<div style="font-size:11px;color:var(--text2);margin-top:3px;">${sub}</div>`:''}
+            ${detail?`<div id="${tlId}" style="display:none;margin-top:10px;border-top:0.5px solid var(--border);padding-top:10px;">${detail}</div>`:''}
+          </div>
+        </div>
+      </div>`;
+    });
+  });
+
+  c.innerHTML=html;
+}
+
+
+// ── 成员管理 ──────────────────────────────────────────────────────────
+function showAddMember(){
+  const emojis=['👨','👩','👦','👧','👴','👵','🧑','👶'];
+  showOverlay(`<div class="dialog">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">添加家庭成员</h3>
+    <label class="fl">姓名</label><input id="newName" placeholder="如：爷爷">
+    <label class="fl">头像</label>
+    <div style="display:flex;gap:8px;margin-top:4px;flex-wrap:wrap;" id="emojiPick">
+      ${emojis.map(e=>`<div onclick="pickEmoji('${e}',this)" style="font-size:24px;cursor:pointer;padding:4px;border-radius:8px;border:1.5px solid transparent;">${e}</div>`).join('')}
+    </div>
+    <input type="hidden" id="newEmoji" value="👤">
+    <label class="fl" style="margin-top:10px;">是否为儿童？</label>
+    <div style="display:flex;flex-direction:row;gap:16px;margin-top:6px;">
+      <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+        <input type="radio" name="newIsChild" value="0" checked style="width:16px;height:16px;flex-shrink:0;"> 成人
+      </label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+        <input type="radio" name="newIsChild" value="1" style="width:16px;height:16px;flex-shrink:0;"> 儿童
+      </label>
+    </div>
+    <label class="fl" style="margin-top:10px;">健康标签（可多选）</label>
+    <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:5px;" id="newTagPicker">
+      ${PRESET_TAGS.map(t=>`<div onclick="this.dataset.active=this.dataset.active==='1'?'0':'1';this.style.background=this.dataset.active==='1'?'#eeedfe':'var(--bg2)';this.style.color=this.dataset.active==='1'?'#534ab7':'var(--text)';" data-tag="${esc(t)}" data-active="0" style="font-size:11px;padding:3px 10px;border-radius:20px;border:0.5px solid var(--border2);cursor:pointer;background:var(--bg2);">${esc(t)}</div>`).join('')}
+    </div>
+    <div class="rb"><button class="btn-p" onclick="addMember()" style="flex:1;">添加成员</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function pickEmoji(e,el){document.querySelectorAll('#emojiPick div').forEach(d=>d.style.borderColor='transparent');el.style.borderColor='var(--text2)';document.getElementById('newEmoji').value=e;}
+
+function addMember(){
+  const name=document.getElementById('newName').value.trim(); if(!name){alert('请输入姓名');return;}
+  const colors=[['#e1f5ee','#0f6e56'],['#fbeaf0','#993556'],['#eeedfe','#534ab7'],['#faeeda','#854f0b'],['#e6f1fb','#185fa5'],['#faecea','#a32d2d']];
+  const ci=state.members.length%colors.length; const id=Date.now();
+  const isChild=document.querySelector('input[name="newIsChild"]:checked')?.value==='1';
+  const tags=Array.from(document.querySelectorAll('#newTagPicker [data-active="1"]')).map(c=>c.dataset.tag);
+  state.members.push({id,name,emoji:document.getElementById('newEmoji').value,c1:colors[ci][0],c2:colors[ci][1],tags,isChild});
+  state.data[id]={reports:[],notes:[],imaging:[],meds:[],events:[],child:{vaccines:[],growth:[],allergies:[]}};
+  saveState();renderSidebar();closeOverlay();
+}
+
+// ── 删除 & 导出导入 ────────────────────────────────────────────────────
+function delItem(type,id){if(!confirm('确定删除此条记录？'))return;const d=AD();d[type]=d[type].filter(x=>x.id!==id);saveState();renderSidebar();rt(CT);}
+function exportAll(){const json=JSON.stringify(state,null,2);dlFile(json,'application/json','family_health_'+TS+'.json');}
+function importData(){const inp=document.createElement('input');inp.type='file';inp.accept='.json';inp.onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const d=JSON.parse(ev.target.result);if(!d.members||!d.data){alert('格式不正确');return;}if(!confirm('导入将覆盖当前数据，确定？'))return;state=d;CM=state.currentMember||0;saveState();renderSidebar();const m=state.members.find(x=>x.id===CM);document.getElementById('mt').textContent=(m?m.name:'')+'的健康档案';rt(CT);alert('导入成功！');}catch(err){alert('导入失败：'+err.message);}};r.readAsText(f);};inp.click();}
+
+// ── 自我感受记录 ──────────────────────────────────────────────────────
+const SYMPTOM_TAGS = {
+  '症状': ['头痛','头晕','恶心','腹痛','腹泻','胸闷','气短','咳嗽','发烧','乏力','关节痛','皮疹','食欲差'],
+  '睡眠': ['入睡困难','早醒','多梦','睡眠浅','嗜睡','睡眠良好'],
+  '情绪': ['焦虑','低落','烦躁','平静','开心','压力大','疲惫'],
+  '精力': ['精力充沛','状态一般','精力不足','极度疲倦'],
+  '饮食': ['食欲好','食欲差','暴饮暴食','消化不良','饮水不足']
+};
+
+const LEVEL_COLORS = ['#9fe1cb','#fac775','#e24b4a'];
+const LEVEL_LABELS = ['轻微','中等','严重'];
+
+function rFeelings(){
+  const feelings = AD().feelings||[];
+  const c = document.getElementById('mc');
+
+  let html = `<button class="btn-p" style="width:100%;margin-bottom:12px;" onclick="showAddFeeling()">＋ 记录今日感受</button>`;
+
+  if(!feelings.length){
+    html += `<div class="es">💬<br><br>暂无感受记录<br><div style="font-size:12px;margin-top:8px;color:var(--text3);">记录每天的身体和心理状态<br>帮助发现健康规律</div></div>`;
+    c.innerHTML = html; return;
+  }
+
+  // 按日期分组
+  const groups = {};
+  feelings.forEach(f => {
+    const d = f.date.slice(0,7);
+    if(!groups[d]) groups[d] = [];
+    groups[d].push(f);
+  });
+
+  const monthNames = ['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(month => {
+    const [yr,mo] = month.split('-');
+    html += `<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
+      <div style="font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap;">${yr}年 ${monthNames[parseInt(mo)]}</div>
+      <div style="flex:1;height:0.5px;background:var(--border);"></div>
+    </div>`;
+
+    groups[month].sort((a,b)=>b.date.localeCompare(a.date)).forEach(f => {
+      const tags = f.tags||[];
+      const hasWarn = tags.some(t=>t.level>=1);
+      const dot = hasWarn ? '#fac775' : '#9fe1cb';
+
+      html += `<div class="card cp" onclick="this.classList.toggle('open')" style="margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg2);border:2px solid ${dot};display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">💬</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:13px;font-weight:500;">${f.date} <span style="font-size:11px;font-weight:400;color:var(--text2);">${tags.length}项记录</span></div>
+            <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;">
+              ${tags.slice(0,4).map(t=>`<span style="font-size:10px;padding:1px 7px;border-radius:20px;background:${LEVEL_COLORS[t.level||0]}22;color:${LEVEL_COLORS[t.level||0]};border:0.5px solid ${LEVEL_COLORS[t.level||0]};">${t.name}</span>`).join('')}
+              ${tags.length>4?`<span style="font-size:10px;color:var(--text3);">+${tags.length-4}</span>`:''}
+            </div>
+          </div>
+          <span style="font-size:10px;color:var(--text3);">▼</span>
+        </div>
+        <div class="db" style="margin-top:10px;">
+          ${Object.keys(SYMPTOM_TAGS).map(cat => {
+            const catTags = tags.filter(t=>t.cat===cat);
+            if(!catTags.length) return '';
+            return `<div style="margin-bottom:8px;">
+              <div style="font-size:10px;font-weight:600;color:var(--text3);margin-bottom:4px;">${cat}</div>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                ${catTags.map(t=>`<span style="font-size:11px;padding:2px 9px;border-radius:20px;background:${LEVEL_COLORS[t.level||0]}22;color:${LEVEL_COLORS[t.level||0]};border:0.5px solid ${LEVEL_COLORS[t.level||0]};">${t.name}${t.level>0?' ('+LEVEL_LABELS[t.level]+')':''}</span>`).join('')}
+              </div>
+            </div>`;
+          }).join('')}
+          ${f.note?`<div style="background:var(--bg2);border-radius:var(--radius);padding:8px 10px;font-size:12px;line-height:1.7;color:var(--text2);margin-top:6px;">📝 ${esc(f.note)}</div>`:''}
+          <div style="margin-top:8px;display:flex;gap:6px;">
+            <button class="btn-o" onclick="event.stopPropagation();delItem('feelings','${f.id}')">🗑 删除</button>
+          </div>
+        </div>
+      </div>`;
+    });
+  });
+
+  c.innerHTML = html;
+}
+
+function showAddFeeling(){
+  const today = new Date().toISOString().split('T')[0];
+  // 构建标签选择器
+  let tagPickerHtml = '';
+  Object.keys(SYMPTOM_TAGS).forEach(cat => {
+    tagPickerHtml += `<div style="margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:5px;">${cat}</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;" id="cat_${cat}">
+        ${SYMPTOM_TAGS[cat].map(tag =>
+          `<div onclick="toggleFeelTag(this,'${cat}','${tag}')"
+            data-cat="${cat}" data-tag="${tag}" data-level="0" data-active="0"
+            style="font-size:12px;padding:3px 10px;border-radius:20px;border:0.5px solid var(--border2);cursor:pointer;background:var(--bg2);color:var(--text);">${tag}</div>`
+        ).join('')}
+      </div>
+    </div>`;
+  });
+
+  showOverlay(`<div class="dialog" style="max-width:400px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:10px;">记录今日感受</h3>
+    <label class="fl">日期</label>
+    <input type="date" id="feelDate" value="${today}">
+    <label class="fl" style="margin-top:10px;">选择症状（点一次=轻微，再点=中等，再点=严重，再点=取消）</label>
+    <div style="margin-top:6px;">${tagPickerHtml}</div>
+    <label class="fl">补充说明（选填）</label>
+    <textarea id="feelNote" rows="2" placeholder="比如：头痛从下午开始，可能是睡眠不足导致的…"></textarea>
+    <div class="rb"><button class="btn-p" onclick="saveFeeling()" style="flex:1;">保存记录</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function toggleFeelTag(el, cat, tag){
+  const level = parseInt(el.dataset.level||'0');
+  const newLevel = (level + 1) % 4; // 0=未选, 1=轻微, 2=中等, 3=严重, 回到0=取消
+  el.dataset.level = newLevel;
+  el.dataset.active = newLevel > 0 ? '1' : '0';
+  if(newLevel === 0){
+    el.style.background = 'var(--bg2)';
+    el.style.color = 'var(--text)';
+    el.style.borderColor = 'var(--border2)';
+    el.textContent = tag;
+  } else {
+    const col = LEVEL_COLORS[newLevel-1];
+    el.style.background = col+'22';
+    el.style.color = col;
+    el.style.borderColor = col;
+    el.textContent = tag + ' ' + LEVEL_LABELS[newLevel-1];
+  }
+}
+
+function saveFeeling(){
+  const date = document.getElementById('feelDate').value;
+  if(!date){alert('请选择日期');return;}
+  const tags = [];
+  document.querySelectorAll('[data-active="1"]').forEach(el => {
+    tags.push({
+      cat: el.dataset.cat,
+      name: el.dataset.tag,
+      level: parseInt(el.dataset.level)-1  // 存0=轻微,1=中等,2=严重
+    });
+  });
+  if(!tags.length && !document.getElementById('feelNote').value.trim()){
+    alert('请至少选择一个症状或填写说明');return;
+  }
+  const f = {id:uid(), date, tags, note: document.getElementById('feelNote').value.trim()};
+  if(!AD().feelings) AD().feelings = [];
+  AD().feelings.unshift(f);
+  saveState(); renderSidebar(); closeOverlay();
+  // 跳转时间线
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[0].classList.add('active');
+  CT='feelings'; rFeelings();
+}
+
+
+// ── 保存成功提示 ──────────────────────────────────────────────────────
+function showSaveBanner(msg){
+  const c=document.getElementById('mc');
+  if(!c) return;
+  const banner=document.createElement('div');
+  banner.style.cssText='background:var(--success-bg);color:var(--success-text);border-radius:var(--radius);padding:10px 14px;margin-bottom:12px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;';
+  banner.innerHTML='✅ '+msg+'<span onclick="this.parentElement.remove()" style="margin-left:auto;cursor:pointer;opacity:0.6;font-size:16px;">×</span>';
+  c.insertBefore(banner, c.firstChild);
+  setTimeout(()=>{ if(banner.parentElement) banner.remove(); }, 4000);
+}
+
+
+function tlToggle(card, id){
+  const el=document.getElementById(id); if(!el)return;
+  const isOpen=el.style.display!=='none';
+  el.style.display=isOpen?'none':'block';
+  const arrow=card.querySelector('.tl-arrow');
+  if(arrow) arrow.textContent=isOpen?'▼':'▲';
+}
+
+
+// ── 编辑成员信息 ──────────────────────────────────────────────────────
+function showEditMember(id){
+  const m=state.members.find(x=>x.id===id); if(!m) return;
+  const emojis=['👨','👩','👦','👧','👴','👵','🧑','👶','👱','🧓'];
+  showOverlay(`<div class="dialog">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:12px;">编辑成员信息</h3>
+    <label class="fl">姓名</label>
+    <input id="editName" value="${esc(m.name)}" placeholder="请输入姓名" style="font-size:15px;">
+    <label class="fl" style="margin-top:10px;">头像</label>
+    <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;" id="editEmojiPick">
+      ${emojis.map(e=>`<div onclick="pickEditEmoji('${e}',this)" style="font-size:26px;cursor:pointer;padding:4px 6px;border-radius:8px;border:2px solid ${m.emoji===e?'var(--text2)':'transparent'};">${e}</div>`).join('')}
+    </div>
+    <input type="hidden" id="editEmoji" value="${esc(m.emoji||m.name[0])}">
+    <label class="fl" style="margin-top:10px;">是否为儿童</label>
+    <div style="display:flex;flex-direction:row;gap:16px;margin-top:6px;">
+      <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+        <input type="radio" name="editIsChild" value="0" ${!m.isChild?'checked':''} style="width:16px;height:16px;flex-shrink:0;"> 成人
+      </label>
+      <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+        <input type="radio" name="editIsChild" value="1" ${m.isChild?'checked':''} style="width:16px;height:16px;flex-shrink:0;"> 儿童
+      </label>
+    </div>
+    <div class="rb" style="margin-top:14px;">
+      <button class="btn-p" onclick="saveEditMember(${id})" style="flex:1;">保存</button>
+      <button class="btn-o" onclick="closeOverlay()">取消</button>
+      <button class="btn-o" style="color:var(--danger-text);" onclick="confirmDeleteMember(${id})">删除成员</button>
+    </div>
+  </div>`);
+}
+
+function pickEditEmoji(e, el){
+  document.querySelectorAll('#editEmojiPick div').forEach(d=>d.style.borderColor='transparent');
+  el.style.borderColor='var(--text2)';
+  document.getElementById('editEmoji').value=e;
+}
+
+function saveEditMember(id){
+  const m=state.members.find(x=>x.id===id); if(!m) return;
+  const name=document.getElementById('editName').value.trim();
+  if(!name){alert('请输入姓名');return;}
+  m.name=name;
+  m.emoji=document.getElementById('editEmoji').value;
+  m.isChild=document.querySelector('input[name="editIsChild"]:checked')?.value==='1';
+  saveState(); renderSidebar(); closeOverlay();
+  // 刷新顶部名字
+  document.getElementById('mt').textContent=name+'的健康档案';
+  const tagRow=document.getElementById('tagRow');
+  if(tagRow){
+    const tags=m.tags||[];
+    tagRow.innerHTML=tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+(m.isChild?'<span class="tag-chip child">👶儿童</span>':'');
+  }
+}
+
+function confirmDeleteMember(id){
+  const m=state.members.find(x=>x.id===id); if(!m) return;
+  if(state.members.length<=1){alert('至少保留一个成员');return;}
+  if(!confirm(`确定删除「${m.name}」的所有健康档案？此操作不可恢复。`)) return;
+  state.members=state.members.filter(x=>x.id!==id);
+  delete state.data[id];
+  CM=state.members[0].id;
+  state.currentMember=CM;
+  saveState(); renderSidebar(); closeOverlay();
+  const newM=state.members[0];
+  document.getElementById('mt').textContent=newM.name+'的健康档案';
+  rt(CT);
+}
+
+function rTimeline(){
+  const {reports,notes,imaging,meds,events,feelings}=AD();
+  const c=document.getElementById('mc');
+  const m=state.members.find(x=>x.id===CM);
+  const memberTags=(m&&m.tags)||[];
+
+  // 当前选中的筛选标签
+  if(!window._tlFilter) window._tlFilter='all';
+
+  const all=[
+    ...reports.map(r=>({...r,_t:'report',_sd:r.date})),
+    ...notes.map(n=>({...n,_t:'note',_sd:n.date})),
+    ...imaging.map(i=>({...i,_t:'imaging',_sd:i.date})),
+    ...meds.filter(m=>m.active).map(m=>({...m,_t:'med',_sd:getRRD(m)})),
+    ...events.map(e=>({...e,_t:'event',_sd:e.date})),
+    ...(feelings||[]).map(f=>({...f,_t:'feeling',_sd:f.date}))
+  ].sort((a,b)=>b._sd.localeCompare(a._sd));
+
+  if(!all.length){c.innerHTML=`<div class="es">📈<br><br>暂无记录<br><div style="font-size:12px;margin-top:8px;color:var(--text3);">上传报告或添加病历后会在这里显示</div></div>`;return;}
+
+  // 筛选逻辑：按类型筛选
+  const typeFilters=[
+    {key:'all',label:'全部',icon:''},
+    {key:'abnormal',label:'异常追踪',icon:'⚠️'},
+    {key:'report',label:'检查报告',icon:'🧪'},
+    {key:'note',label:'病历',icon:'🩺'},
+    {key:'imaging',label:'影像',icon:'🔬'},
+    {key:'feeling',label:'感受',icon:'💬'},
+    {key:'med',label:'用药',icon:'💊'},
+    {key:'event',label:'日历',icon:'📅'},
+  ];
+
+  // 异常追踪单独处理
+  if(window._tlFilter==='abnormal'){rAbnormalTracking();return;}
+
+  const filtered = window._tlFilter==='all' ? all : all.filter(x=>x._t===window._tlFilter);
+
+  // 按月分组
+  const groups={};
+  filtered.forEach(item=>{
+    const month=item._sd.slice(0,7);
+    if(!groups[month]) groups[month]=[];
+    groups[month].push(item);
+  });
+
+  const monthNames=['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  // 筛选栏
+  let html=`<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">
+    ${typeFilters.map(f=>`<div onclick="window._tlFilter='${f.key}';rTimeline();" style="font-size:11px;padding:3px 10px;border-radius:20px;cursor:pointer;border:0.5px solid ${window._tlFilter===f.key?'var(--text)':'var(--border2)'};background:${window._tlFilter===f.key?'var(--text)':'var(--bg2)'};color:${window._tlFilter===f.key?'var(--bg)':'var(--text2)'};">${f.icon} ${f.label}</div>`).join('')}
+  </div>`;
+
+  // 健康标签筛选（只有有标签时才显示）
+  if(memberTags.length){
+    html+=`<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px;align-items:center;">
+      <span style="font-size:10px;color:var(--text3);">标签：</span>
+      ${memberTags.map(t=>`<div onclick="tlTagFilter('${esc(t)}')" id="tltag_${esc(t)}" style="font-size:11px;padding:2px 9px;border-radius:20px;cursor:pointer;border:0.5px solid var(--border2);background:var(--bg2);color:var(--text2);">${esc(t)}</div>`).join('')}
+    </div>`;
+  }
+
+  html+=`<div style="font-size:11px;color:var(--text3);margin-bottom:10px;">共 ${filtered.length} 条记录</div>`;
+
+  if(!filtered.length){
+    html+=`<div class="es">🔍<br><br>没有符合条件的记录</div>`;
+    c.innerHTML=html; return;
+  }
+
+  Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(month=>{
+    const [yr,mo]=month.split('-');
+    html+=`<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
+      <div style="font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap;">${yr}年 ${monthNames[parseInt(mo)]}</div>
+      <div style="flex:1;height:0.5px;background:var(--border);"></div>
+    </div>`;
+
+    groups[month].forEach((item,i)=>{
+      const isFut=item._sd>TS;
+      const isLast=i===groups[month].length-1;
+      let dot,icon,title,sub,bc='',detail='';
+
+      if(item._t==='report'){
+        const abn=item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length;
+        dot=abn===0?'#9fe1cb':'#fac775';icon='🧪';
+        title=esc(item.reportType||'检查报告')+(item.pageCount>1?' ('+item.pageCount+'张)':'');
+        sub=[item.hospital,item.date].filter(Boolean).map(esc).join(' · ');
+        bc=abn===0?'bok':abn<=2?'bwarn':'bdanger';
+        const warnM=(item.metrics||[]).filter(m=>m.status!=='ok');
+        const okM=(item.metrics||[]).filter(m=>m.status==='ok');
+        if(item.summary) detail+=`<div class="ai-box" style="margin-bottom:8px;">📋 ${esc(item.summary)}</div>`;
+        if(warnM.length) detail+=`<div style="font-size:10px;font-weight:600;color:var(--text3);margin-bottom:4px;">异常指标</div><div class="mg">${warnM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v warn">${esc(m.value)}</div><div class="mc-r">参考 ${esc(m.reference)}</div></div>`).join('')}</div>`;
+        if(okM.length) detail+=`<div style="font-size:10px;color:var(--text3);margin:4px 0 3px;">正常（${okM.length}项）</div><div class="mg">${okM.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div>`;
+      } else if(item._t==='note'){
+        dot='#b5d4f4';icon='🩺';
+        title=esc(item.type||'门诊病历')+(item.diagnosis?' — '+esc(item.diagnosis):'');
+        sub=[item.hospital,item.date,item.doctor?item.doctor+'医生':''].filter(Boolean).map(esc).join(' · ');
+        bc='binfo';
+        if(item.content) detail+=`<div style="font-size:12px;line-height:1.7;background:var(--bg2);padding:8px 10px;border-radius:var(--radius);margin-bottom:6px;">${esc(item.content)}</div>`;
+        if(item.followUp) detail+=`<div style="font-size:11px;color:var(--warn-text);margin-top:4px;">⏰ 复查：${esc(item.followUp)}</div>`;
+      } else if(item._t==='imaging'){
+        const abn=(item.findings||[]).filter(f=>f.status!=='ok').length;
+        dot=abn===0?'#9fe1cb':'#fac775';icon='🔬';
+        title=esc(item.type||'影像报告');
+        sub=[item.hospital,item.date,item.doctor?item.doctor+'医生':''].filter(Boolean).map(esc).join(' · ');
+        bc=abn===0?'bok':'bwarn';
+        const findings=item.findings||[];
+        if(findings.length) detail+=`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 10px;margin-bottom:6px;">${findings.map(f=>{const dc=f.status==='ok'?'#9fe1cb':f.status==='warn'?'#fac775':'#e24b4a';const label=f.status==='ok'?'':f.status==='warn'?'异常':'需关注';return`<div style="display:flex;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--border);"><div style="display:flex;flex-direction:column;align-items:center;gap:2px;flex-shrink:0;margin-top:2px;"><div style="width:8px;height:8px;border-radius:50%;background:${dc};"></div>${label?`<div style="font-size:9px;color:${dc};">${label}</div>`:''}</div><div><div style="font-size:12px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div></div>`;}).join('')}</div>`;
+        if(item.conclusion) detail+=`<div style="font-size:12px;background:var(--bg2);padding:8px 10px;border-radius:var(--radius);">${esc(item.conclusion)}</div>`;
+        if(item.suggestion) detail+=`<div style="font-size:11px;color:var(--warn-text);margin-top:6px;">💡 ${esc(item.suggestion)}</div>`;
+      } else if(item._t==='feeling'){
+        dot='#b5d4f4';icon='💬';
+        const tags=item.tags||[];
+        title='自我感受记录';
+        sub=item.date+(tags.length?' · '+tags.slice(0,3).map(t=>t.name).join('、'):'');
+        bc='bpurple';
+        if(tags.length) detail+=`<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px;">${tags.map(t=>`<span style="font-size:11px;padding:2px 8px;border-radius:20px;background:${LEVEL_COLORS[t.level||0]}22;color:${LEVEL_COLORS[t.level||0]};">${esc(t.name)}</span>`).join('')}</div>`;
+        if(item.note) detail+=`<div style="font-size:12px;color:var(--text2);background:var(--bg2);padding:8px 10px;border-radius:var(--radius);">${esc(item.note)}</div>`;
+      } else if(item._t==='med'){
+        dot='#afa9ec';icon='💊';
+        title='开药提醒：'+esc(item.name);
+        sub='约剩 '+getDays(item)+' 天用完';
+        bc='bpurple';
+      } else {
+        dot=isFut?'#fac775':'#d3d1c7';
+        icon=item.isMedReminder?'💊':'📅';
+        title=esc(item.title);
+        sub=[item.hospital,item.date].filter(Boolean).map(esc).join(' · ');
+        bc=isFut?'bwarn':'';
+        if(item.note) detail+=`<div style="font-size:12px;color:var(--text2);">${esc(item.note)}</div>`;
+      }
+
+      const tlId='tl_'+item.id;
+      html+=`<div style="display:flex;gap:10px;margin-bottom:8px;">
+        <div style="display:flex;flex-direction:column;align-items:center;width:36px;flex-shrink:0;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg2);border:2px solid ${dot};display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">${icon}</div>
+          ${!isLast?'<div style="width:1.5px;background:var(--border);flex:1;margin-top:3px;min-height:8px;"></div>':''}
+        </div>
+        <div style="flex:1;padding-bottom:4px;">
+          <div style="font-size:11px;color:var(--text3);margin-bottom:3px;">${item._sd}</div>
+          <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:9px 12px;background:var(--bg);" onclick="tlToggle(this,'${tlId}')">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+              <div style="min-width:0;">
+                <div style="font-size:13px;font-weight:500;">${title}</div>
+                ${sub?`<div style="font-size:11px;color:var(--text2);margin-top:2px;">${sub}</div>`:''}
+              </div>
+              <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;">
+                ${bc?`<span class="badge ${bc}">${item._t==='report'?(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)===0?'正常':(item.abnormalCount||(item.metrics||[]).filter(m=>m.status!=='ok').length)+'项异常':item._t==='note'?esc(item.department||'病历'):item._t==='imaging'?((item.findings||[]).filter(f=>f.status!=='ok').length===0?'未见异常':(item.findings||[]).filter(f=>f.status!=='ok').length+'项需关注'):item._t==='feeling'?'感受':item._t==='med'?'开药':isFut?'待办':'已完成'}</span>`:''}
+                ${detail?'<span class="tl-arrow" style="font-size:10px;color:var(--text3);">▼</span>':''}
+              </div>
+            </div>
+            ${detail?`<div id="${tlId}" style="display:none;margin-top:10px;border-top:0.5px solid var(--border);padding-top:10px;">${detail}</div>`:''}
+          </div>
+        </div>
+      </div>`;
+    });
+  });
+
+  c.innerHTML=html;
+}
+
+function tlTagFilter(tag){
+  // 按标签筛选：在所有记录里找包含该标签关键词的
+  // 先重置类型筛选
+  window._tlFilter='all';
+  window._tlTagFilter = window._tlTagFilter===tag ? null : tag;
+  // 重新渲染（简化版：高亮提示用户该功能在开发中）
+  // 实际筛选：找诊断/内容包含标签关键词的记录
+  rTimeline();
+  // 高亮选中的标签
+  document.querySelectorAll('[id^="tltag_"]').forEach(el=>{
+    const isActive = el.id === 'tltag_'+tag && window._tlTagFilter===tag;
+    el.style.background = isActive ? '#eeedfe' : 'var(--bg2)';
+    el.style.color = isActive ? '#534ab7' : 'var(--text2)';
+    el.style.borderColor = isActive ? '#534ab7' : 'var(--border2)';
+  });
+}
+
+
+// ── 批量导入 ──────────────────────────────────────────────────────────
+function showBatchImport(type){
+  const typeNames = {reports:'检查报告', notes:'病历记录', imaging:'影像报告'};
+  const typeName = typeNames[type]||type;
+  showOverlay(`<div class="dialog" style="max-width:420px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">📦 批量导入${typeName}</h3>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px;">一次选多张图片，AI 逐张识别后自动保存</div>
+    <input type="file" accept="image/*" multiple id="batchFileInput" style="margin-bottom:10px;" onchange="onBatchFiles(event,'${type}')">
+    <div id="batchPreviewGrid" class="img-grid" style="min-height:44px;"></div>
+    <div id="batchStatus" style="font-size:12px;color:var(--text2);margin:8px 0;"></div>
+    <div id="batchResults" style="max-height:300px;overflow-y:auto;"></div>
+    <div class="rb">
+      <button class="btn-p" id="batchStartBtn" onclick="startBatchImport('${type}')" style="flex:1;display:none;">🤖 开始批量识别</button>
+      <button class="btn-o" onclick="closeOverlay()">关闭</button>
+    </div>
+  </div>`);
+}
+
+let _batchFiles = [];
+
+function onBatchFiles(e, type){
+  _batchFiles = Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));
+  const grid = document.getElementById('batchPreviewGrid');
+  const status = document.getElementById('batchStatus');
+  const btn = document.getElementById('batchStartBtn');
+  if(!grid||!_batchFiles.length) return;
+
+  grid.innerHTML = '';
+  _batchFiles.forEach(function(f,i){
+    const url = URL.createObjectURL(f);
+    const div = document.createElement('div');
+    div.className = 'img-thumb-wrap';
+    div.id = 'batch_thumb_'+i;
+    div.innerHTML = '<img class="img-thumb" src="'+url+'" alt="">'
+      +'<div class="img-rm" id="batch_status_'+i+'" style="background:var(--bg2);color:var(--text3);font-size:9px;width:18px;height:18px;">⏳</div>';
+    grid.appendChild(div);
+  });
+
+  if(status) status.textContent = _batchFiles.length + '张图片已选，点击开始识别';
+  if(btn) btn.style.display = 'block';
+}
+
+async function startBatchImport(type){
+  if(!_batchFiles.length) return;
+  const btn = document.getElementById('batchStartBtn');
+  if(btn) btn.style.display = 'none';
+  const status = document.getElementById('batchStatus');
+  const results = document.getElementById('batchResults');
+  if(results) results.innerHTML = '';
+
+  let saved = 0, failed = 0;
+
+  for(let i=0; i<_batchFiles.length; i++){
+    const f = _batchFiles[i];
+    const statusDot = document.getElementById('batch_status_'+i);
+    if(status) status.textContent = '正在识别第 '+(i+1)+' / '+_batchFiles.length+' 张：'+f.name;
+    if(statusDot) { statusDot.textContent='⏳'; statusDot.style.background='var(--bg2)'; }
+
+    try {
+      const {b64, mime} = await readFile(f);
+      let parsed;
+
+      if(type==='reports'){
+        const prompt = '请仔细识别这张医疗检查报告图片。只输出JSON，不要任何markdown，第一个字符必须是{：'
+          +'{"reportType":"报告类型名称","date":"检查日期YYYY-MM-DD","hospital":"医院名称","summary":"2-3句分析总结","abnormalCount":数字,'
+          +'"metrics":[{"name":"指标全称（英文缩写）","value":"数值+单位","reference":"参考范围","status":"ok或warn或danger"}]}'
+          +'。把所有指标都列出来。无法识别返回{"error":"原因"}';
+        parsed = await callAI(b64, mime, prompt);
+        if(!parsed._raw && !parsed.error){
+          const r = {...parsed, id:uid(), date:parsed.date||TS, pageCount:1};
+          AD().reports.unshift(r);
+          saved++;
+          if(statusDot){statusDot.textContent='✅';statusDot.style.background='#1d9e75';}
+          if(results) results.innerHTML += '<div style="font-size:11px;padding:4px 6px;border-bottom:0.5px solid var(--border);color:var(--success-text);">✅ '+f.name+' → '+(parsed.reportType||'报告')+' '+( parsed.date||'')+'</div>';
+        } else {
+          throw new Error(parsed.error||'识别失败');
+        }
+
+      } else if(type==='notes'){
+        const prompt = '请识别这张医疗病历图片。只输出JSON，不要markdown，第一个字符必须是{：'
+          +'{"type":"门诊病历或住院记录或急诊记录或复诊记录","date":"YYYY-MM-DD","hospital":"医院","department":"科室","doctor":"医生","diagnosis":"主要诊断","content":"病历内容完整文字","followUp":"复查要求","medications":"开具药物"}'
+          +'。无法识别返回{"error":"原因"}';
+        parsed = await callAI(b64, mime, prompt);
+        if(!parsed._raw && !parsed.error){
+          const n = {...parsed, id:uid()};
+          AD().notes.unshift(n);
+          saved++;
+          if(statusDot){statusDot.textContent='✅';statusDot.style.background='#1d9e75';}
+          if(results) results.innerHTML += '<div style="font-size:11px;padding:4px 6px;border-bottom:0.5px solid var(--border);color:var(--success-text);">✅ '+f.name+' → '+(parsed.diagnosis||'病历')+' '+(parsed.date||'')+'</div>';
+        } else {
+          throw new Error(parsed.error||'识别失败');
+        }
+
+      } else if(type==='imaging'){
+        const prompt = '请识别这张医疗影像报告图片。只输出JSON，不要markdown，第一个字符必须是{：'
+          +'{"type":"影像类型","hospital":"医院","department":"科室","doctor":"医生","date":"YYYY-MM-DD",'
+          +'"findings":[{"location":"部位","status":"ok或warn或danger","desc":"所见描述"}],'
+          +'"conclusion":"结论原文","suggestion":"复查建议"}'
+          +'。有异常必须标warn/danger。无法识别返回{"error":"原因"}';
+        parsed = await callAI(b64, mime, prompt);
+        if(!parsed._raw && !parsed.error){
+          const img = {...parsed, id:uid(), date:parsed.date||TS};
+          AD().imaging.unshift(img);
+          saved++;
+          if(statusDot){statusDot.textContent='✅';statusDot.style.background='#1d9e75';}
+          if(results) results.innerHTML += '<div style="font-size:11px;padding:4px 6px;border-bottom:0.5px solid var(--border);color:var(--success-text);">✅ '+f.name+' → '+(parsed.type||'影像')+' '+(parsed.date||'')+'</div>';
+        } else {
+          throw new Error(parsed.error||'识别失败');
+        }
+      }
+
+    } catch(err) {
+      failed++;
+      if(statusDot){statusDot.textContent='❌';statusDot.style.background='#e24b4a';}
+      if(results) results.innerHTML += '<div style="font-size:11px;padding:4px 6px;border-bottom:0.5px solid var(--border);color:var(--danger-text);">❌ '+f.name+' → '+err.message.slice(0,50)+'</div>';
+    }
+
+    // 每张识别完立刻保存
+    saveState(); renderSidebar();
+  }
+
+  if(status) status.textContent = '完成！成功 '+saved+' 张，失败 '+failed+' 张';
+  // 刷新当前页面
+  rt(type);
+}
+
+
+// ── 每日健康打卡 ──────────────────────────────────────────────────────
+const CHECKIN_NORMAL = {
+  sbp: [90, 140],   // 收缩压
+  dbp: [60, 90],    // 舒张压
+  hr:  [50, 100],   // 心率
+  bsgf: [3.9, 6.1], // 血糖空腹
+  bspp: [3.9, 7.8], // 血糖餐后
+  weight: [0, 999]
+};
+
+function valColor(key, val){
+  const r = CHECKIN_NORMAL[key];
+  if(!r || !val) return 'var(--text)';
+  return (val >= r[0] && val <= r[1]) ? 'var(--success-text)' : 'var(--danger-text)';
+}
+
+function rCheckin(){
+  const c = document.getElementById('mc');
+  const checkins = AD().checkins||[];
+  const today = TS;
+  const todayRec = checkins.find(x=>x.date===today);
+
+  // 提醒设置
+  const reminderTime = localStorage.getItem('checkin_reminder_'+CM)||'';
+
+  // 今日打卡卡片
+  let html = `
+  <div class="af" style="margin-bottom:14px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <h3 style="font-size:14px;font-weight:600;">📊 今日健康打卡</h3>
+      <span style="font-size:11px;color:var(--text3);">${today}</span>
+    </div>
+    ${todayRec ? `<div style="background:var(--success-bg);color:var(--success-text);border-radius:var(--radius);padding:8px 12px;font-size:12px;margin-bottom:10px;">✅ 今日已打卡</div>` : ''}
+    <button class="btn-p" style="width:100%;margin-bottom:8px;" onclick="showCheckinForm('${today}')">
+      ${todayRec ? '✏️ 修改今日数据' : '＋ 开始打卡'}
+    </button>
+    ${todayRec ? renderCheckinCard(todayRec, false) : ''}
+  </div>`;
+
+  // 提醒设置
+  html += `<div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;padding:10px 12px;border:0.5px solid var(--border);border-radius:var(--radius);background:var(--bg2);">
+    <span style="font-size:13px;">⏰</span>
+    <span style="font-size:12px;color:var(--text2);flex:1;">每日打卡提醒</span>
+    <input type="time" id="reminderTime" value="${reminderTime}" onchange="saveReminderTime()" style="width:auto;font-size:12px;padding:4px 8px;">
+  </div>`;
+
+  // 30天趋势图
+  const last30 = checkins.slice(0,30).reverse();
+  if(last30.length >= 2){
+    html += renderTrendChart(last30);
+  }
+
+  // 历史记录
+  if(checkins.length > 0){
+    html += `<div class="sl" style="margin-bottom:8px;">历史记录（${checkins.length}天）</div>`;
+    html += checkins.slice(0, 30).map(r => `
+      <div class="card cp" onclick="this.classList.toggle('open')" style="margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="font-size:11px;color:var(--text3);min-width:80px;">${r.date}</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;flex:1;">
+            ${r.sbp?`<span style="font-size:12px;color:${valColor('sbp',r.sbp)};">血压 ${r.sbp}/${r.dbp}</span>`:''}
+            ${r.bsgf?`<span style="font-size:12px;color:${valColor('bsgf',r.bsgf)};">空腹血糖 ${r.bsgf}</span>`:''}
+            ${r.weight?`<span style="font-size:12px;color:var(--text2);">体重 ${r.weight}kg</span>`:''}
+          </div>
+          <span style="font-size:10px;color:var(--text3);">▼</span>
+        </div>
+        <div class="db">${renderCheckinCard(r, true)}</div>
+      </div>`).join('');
+  }
+
+  c.innerHTML = html;
+}
+
+function renderCheckinCard(r, compact){
+  const items = [
+    {label:'收缩压', val:r.sbp, unit:'mmHg', key:'sbp'},
+    {label:'舒张压', val:r.dbp, unit:'mmHg', key:'dbp'},
+    {label:'心率', val:r.hr, unit:'次/分', key:'hr'},
+    {label:'空腹血糖', val:r.bsgf, unit:'mmol/L', key:'bsgf'},
+    {label:'餐后血糖', val:r.bspp, unit:'mmol/L', key:'bspp'},
+    {label:'体重', val:r.weight, unit:'kg', key:'weight'},
+  ].filter(x=>x.val);
+
+  if(!items.length) return '<div style="font-size:12px;color:var(--text3);">暂无数据</div>';
+
+  return `<div class="mg" style="margin-top:${compact?'10px':'0'};">
+    ${items.map(x=>`<div class="mc">
+      <div class="mc-n">${x.label}</div>
+      <div class="mc-v" style="color:${valColor(x.key,x.val)};">${x.val} <span style="font-size:10px;font-weight:400;">${x.unit}</span></div>
+      <div class="mc-r">${(function(){const r=CHECKIN_NORMAL[x.key];if(!r)return'';if(x.val<r[0])return'⬇ 偏低';if(x.val>r[1])return'⬆ 偏高';return'✓ 正常';})()}</div>
+    </div>`).join('')}
+  </div>${r.medTaken!==undefined?`<div style="font-size:11px;margin-top:6px;color:var(--text2);">💊 今日用药：${r.medTaken?'✅ 已服用':'❌ 未服用'}</div>`:''}
+  ${r.note?`<div style="font-size:11px;margin-top:4px;color:var(--text2);">📝 ${esc(r.note)}</div>`:''}`;
+}
+
+function renderTrendChart(data){
+  // 简单 SVG 折线图
+  const W=320, H=120, PAD=32;
+  const chartW=W-PAD*2, chartH=H-PAD;
+
+  // 血压趋势
+  const sbpVals = data.map(d=>parseFloat(d.sbp)||null);
+  const hasBlood = sbpVals.some(v=>v!==null);
+  if(!hasBlood) return '';
+
+  const validSbp = sbpVals.filter(v=>v!==null);
+  const minV = Math.min(...validSbp)-10;
+  const maxV = Math.max(...validSbp)+10;
+  const n = data.length;
+
+  function x(i){ return PAD + (i/(n-1))*chartW; }
+  function y(v){ return PAD + (1-(v-minV)/(maxV-minV))*chartH; }
+
+  // 生成折线点
+  let sbpPath='', dbpPath='';
+  data.forEach((d,i)=>{
+    if(d.sbp){
+      const px=x(i), py=y(parseFloat(d.sbp));
+      sbpPath+=(i===0||!data.slice(0,i).some(x=>x.sbp)?'M':'L')+px+','+py+' ';
+    }
+    if(d.dbp){
+      const px=x(i), py=y(parseFloat(d.dbp));
+      dbpPath+=(i===0||!data.slice(0,i).some(x=>x.dbp)?'M':'L')+px+','+py+' ';
+    }
+  });
+
+  // 正常范围参考线
+  const refHigh = y(140), refLow = y(90);
+
+  return `<div style="margin-bottom:14px;">
+    <div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;">血压趋势（近${data.length}天）</div>
+    <div style="overflow-x:auto;">
+    <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="display:block;">
+      <!-- 背景 -->
+      <rect x="${PAD}" y="${PAD}" width="${chartW}" height="${chartH}" fill="none" stroke="var(--border)" stroke-width="0.5"/>
+      <!-- 正常范围 -->
+      <rect x="${PAD}" y="${refHigh}" width="${chartW}" height="${refLow-refHigh}" fill="#9fe1cb" opacity="0.15"/>
+      <line x1="${PAD}" y1="${refHigh}" x2="${PAD+chartW}" y2="${refHigh}" stroke="#9fe1cb" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="${PAD}" y1="${refLow}" x2="${PAD+chartW}" y2="${refLow}" stroke="#9fe1cb" stroke-width="1" stroke-dasharray="3,3"/>
+      <!-- 折线 -->
+      ${sbpPath?`<path d="${sbpPath}" fill="none" stroke="#e05c45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`:''}
+      ${dbpPath?`<path d="${dbpPath}" fill="none" stroke="#534ab7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`:''}
+      <!-- 数据点 -->
+      ${data.map((d,i)=>d.sbp?`<circle cx="${x(i)}" cy="${y(parseFloat(d.sbp))}" r="3" fill="#e05c45"/>`:'').join('')}
+      ${data.map((d,i)=>d.dbp?`<circle cx="${x(i)}" cy="${y(parseFloat(d.dbp))}" r="3" fill="#534ab7"/>`:'').join('')}
+      <!-- 日期标签 -->
+      ${data.filter((_,i)=>i===0||i===Math.floor(n/2)||i===n-1).map((d,_,arr)=>{
+        const i=data.indexOf(d);
+        return `<text x="${x(i)}" y="${H-4}" text-anchor="middle" font-size="9" fill="var(--text3)">${d.date.slice(5)}</text>`;
+      }).join('')}
+      <!-- 图例 -->
+      <circle cx="${PAD+4}" cy="${PAD-10}" r="4" fill="#e05c45"/>
+      <text x="${PAD+10}" y="${PAD-6}" font-size="9" fill="var(--text2)">收缩压</text>
+      <circle cx="${PAD+50}" cy="${PAD-10}" r="4" fill="#534ab7"/>
+      <text x="${PAD+56}" y="${PAD-6}" font-size="9" fill="var(--text2)">舒张压</text>
+      <rect x="${PAD+96}" y="${PAD-14}" width="8" height="8" fill="#9fe1cb" opacity="0.4"/>
+      <text x="${PAD+106}" y="${PAD-6}" font-size="9" fill="var(--text2)">正常范围</text>
+    </svg>
+    </div>
+  </div>`;
+}
+
+function showCheckinForm(date){
+  const existing = (AD().checkins||[]).find(x=>x.date===date)||{};
+  const activeMeds = AD().meds.filter(m=>m.active);
+
+  showOverlay(`<div class="dialog" style="max-width:400px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">📊 健康打卡</h3>
+    <div style="font-size:11px;color:var(--text3);margin-bottom:12px;">${date}</div>
+
+    <div style="background:var(--bg2);border-radius:var(--radius);padding:10px 12px;margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px;">🩸 血压 / 心率</div>
+      <div style="display:flex;gap:6px;">
+        <div style="flex:1;"><label class="fl" style="margin-top:0;">收缩压</label><input type="number" id="ci_sbp" value="${existing.sbp||''}" placeholder="120" style="text-align:center;"></div>
+        <div style="flex:1;"><label class="fl" style="margin-top:0;">舒张压</label><input type="number" id="ci_dbp" value="${existing.dbp||''}" placeholder="80" style="text-align:center;"></div>
+        <div style="flex:1;"><label class="fl" style="margin-top:0;">心率</label><input type="number" id="ci_hr" value="${existing.hr||''}" placeholder="72" style="text-align:center;"></div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border-radius:var(--radius);padding:10px 12px;margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px;">🍬 血糖（mmol/L）</div>
+      <div style="display:flex;gap:6px;">
+        <div style="flex:1;"><label class="fl" style="margin-top:0;">空腹血糖</label><input type="number" id="ci_bsgf" value="${existing.bsgf||''}" placeholder="5.0" step="0.1" style="text-align:center;"></div>
+        <div style="flex:1;"><label class="fl" style="margin-top:0;">餐后2h血糖</label><input type="number" id="ci_bspp" value="${existing.bspp||''}" placeholder="6.5" step="0.1" style="text-align:center;"></div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border-radius:var(--radius);padding:10px 12px;margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px;">⚖️ 体重（kg）</div>
+      <input type="number" id="ci_weight" value="${existing.weight||''}" placeholder="65.0" step="0.1" style="text-align:center;">
+    </div>
+
+    ${activeMeds.length?`<div style="background:var(--bg2);border-radius:var(--radius);padding:10px 12px;margin-bottom:10px;">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:8px;">💊 今日用药</div>
+      <div style="display:flex;gap:10px;flex-direction:row;">
+        <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+          <input type="radio" name="ci_med" value="1" ${existing.medTaken!==false?'checked':''} style="width:16px;height:16px;flex-shrink:0;"> 已服用
+        </label>
+        <label style="display:flex;flex-direction:row;align-items:center;gap:6px;font-size:14px;cursor:pointer;white-space:nowrap;">
+          <input type="radio" name="ci_med" value="0" ${existing.medTaken===false?'checked':''} style="width:16px;height:16px;flex-shrink:0;"> 未服用
+        </label>
+      </div>
+    </div>`:''}
+
+    <label class="fl">备注（选填）</label>
+    <input id="ci_note" value="${esc(existing.note||'')}" placeholder="如：今天运动后测量">
+
+    <div class="rb"><button class="btn-p" onclick="saveCheckin('${date}')" style="flex:1;">保存打卡</button><button class="btn-o" onclick="closeOverlay()">取消</button></div>
+  </div>`);
+}
+
+function saveCheckin(date){
+  const sbp = document.getElementById('ci_sbp')?.value;
+  const dbp = document.getElementById('ci_dbp')?.value;
+  const hr  = document.getElementById('ci_hr')?.value;
+  const bsgf= document.getElementById('ci_bsgf')?.value;
+  const bspp= document.getElementById('ci_bspp')?.value;
+  const weight=document.getElementById('ci_weight')?.value;
+  const note= document.getElementById('ci_note')?.value;
+  const medTaken= document.querySelector('input[name="ci_med"]:checked')?.value;
+
+  if(!sbp&&!dbp&&!bsgf&&!weight){alert('请至少填写一项数据');return;}
+
+  const rec = {
+    date,
+    sbp:sbp?parseFloat(sbp):null,
+    dbp:dbp?parseFloat(dbp):null,
+    hr: hr?parseFloat(hr):null,
+    bsgf:bsgf?parseFloat(bsgf):null,
+    bspp:bspp?parseFloat(bspp):null,
+    weight:weight?parseFloat(weight):null,
+    medTaken:medTaken!==undefined?(medTaken==='1'):undefined,
+    note:note||''
+  };
+
+  // 去掉 null
+  Object.keys(rec).forEach(k=>{ if(rec[k]===null) delete rec[k]; });
+
+  if(!AD().checkins) AD().checkins=[];
+  const idx = AD().checkins.findIndex(x=>x.date===date);
+  if(idx>=0) AD().checkins[idx]=rec;
+  else AD().checkins.unshift(rec);
+  AD().checkins.sort((a,b)=>b.date.localeCompare(a.date));
+
+  saveState(); closeOverlay(); rCheckin();
+
+  // 异常提醒
+  const warns=[];
+  if(rec.sbp && (rec.sbp>140||rec.sbp<90)) warns.push('收缩压'+rec.sbp+'mmHg');
+  if(rec.dbp && (rec.dbp>90||rec.dbp<60)) warns.push('舒张压'+rec.dbp+'mmHg');
+  if(rec.bsgf && (rec.bsgf>6.1||rec.bsgf<3.9)) warns.push('空腹血糖'+rec.bsgf+'mmol/L');
+  if(warns.length) setTimeout(()=>alert('⚠️ 注意：'+warns.join('、')+'超出正常范围，建议关注并咨询医生。'),300);
+}
+
+function saveReminderTime(){
+  const t = document.getElementById('reminderTime')?.value;
+  if(t) localStorage.setItem('checkin_reminder_'+CM, t);
+}
+
+
+// ── 就诊记录 ──────────────────────────────────────────────────────────
+function rVisits(){
+  const c = document.getElementById('mc');
+  const visits = AD().visits||[];
+
+  let html = `
+  <div style="display:flex;gap:6px;margin-bottom:8px;">
+    <button class="btn-p" style="flex:1;" onclick="showAddVisit()">＋ 就诊记录</button>
+    <button class="btn-o" style="flex:1;" onclick="showAddPhysical()">🏃 录入体检</button>
+    <button class="btn-o" onclick="showBatchVisit()">📦 批量</button>
+  </div>
+  <button class="btn-o" style="width:100%;margin-bottom:12px;border-color:var(--info-text);color:var(--info-text);" onclick="showPrepVisit()">
+    📋 准备就诊 — 生成复诊清单
+  </button>`;
+
+  if(!visits.length){
+    html += `<div class="es">🏥<br><br>暂无就诊记录<br><div style="font-size:12px;margin-top:8px;color:var(--text3);">上传检查报告/病历/影像<br>AI 自动整理成就诊记录</div></div>`;
+    c.innerHTML = html; return;
+  }
+
+  // 按月分组
+  const groups = {};
+  visits.forEach(v=>{
+    const m = v.date.slice(0,7);
+    if(!groups[m]) groups[m]=[];
+    groups[m].push(v);
+  });
+  const monthNames=['','1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  Object.keys(groups).sort((a,b)=>b.localeCompare(a)).forEach(month=>{
+    const [yr,mo] = month.split('-');
+    html += `<div style="display:flex;align-items:center;gap:8px;margin:14px 0 8px;">
+      <div style="font-size:12px;font-weight:600;color:var(--text2);">${yr}年 ${monthNames[parseInt(mo)]}</div>
+      <div style="flex:1;height:0.5px;background:var(--border);"></div>
+    </div>`;
+
+    groups[month].sort((a,b)=>b.date.localeCompare(a.date)).forEach(v=>{
+      const abnMetrics = (v.metrics||[]).filter(m=>m.status!=='ok');
+      const abnFindings = (v.findings||[]).filter(f=>f.status!=='ok');
+      const totalAbn = abnMetrics.length + abnFindings.length;
+      const bc = totalAbn===0?'bok':totalAbn<=3?'bwarn':'bdanger';
+      const abnLabel = totalAbn===0?'未见异常':totalAbn+'项需关注';
+      const isPhysical = v.visitType==='physical';
+      const cardIcon = isPhysical?'🏃':'🏥';
+      const typeTag = isPhysical?`<span class="badge bpurple">${esc(v.physicalType||'体检')}</span>`:'';
+
+      html += `<div class="card cp" onclick="this.classList.toggle('open')" style="margin-bottom:8px;${isPhysical?'border-left:3px solid #534ab7;':''}">
+        <div style="display:flex;align-items:flex-start;gap:10px;">
+          <div style="font-size:24px;margin-top:2px;">${cardIcon}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+              <span style="font-size:14px;font-weight:600;">${esc(v.hospital||'就诊记录')}</span>
+              ${typeTag}
+              <span class="badge ${bc}">${abnLabel}</span>
+            </div>
+            <div style="font-size:11px;color:var(--text2);margin-top:3px;">
+              ${v.date}${v.department?' · '+esc(v.department):''}${v.doctor?' · '+esc(v.doctor)+'医生':''}
+            </div>
+            ${v.diagnosis&&!isPhysical?`<div style="font-size:12px;color:var(--text);margin-top:4px;font-weight:500;">诊断：${esc(v.diagnosis)}</div>`:''}
+          </div>
+          <span style="font-size:10px;color:var(--text3);flex-shrink:0;">▼</span>
+        </div>
+
+        <div class="db">
+          ${abnMetrics.length?`
+          <div style="margin-bottom:10px;">
+            <div class="sl">⚠️ 异常指标（${abnMetrics.length}项）</div>
+            <div class="mg">
+              ${abnMetrics.map(m=>`<div class="mc">
+                <div class="mc-n">${esc(m.name)}</div>
+                <div class="mc-v warn">${esc(m.value)}</div>
+                <div class="mc-r">参考 ${esc(m.reference||'')}</div>
+              </div>`).join('')}
+            </div>
+          </div>`:``}
+
+          ${(function(){
+            const okMs=(v.metrics||[]).filter(m=>m.status==='ok');
+            if(!okMs.length) return '';
+            if(isPhysical){
+              // 体检按分类展示
+              const cats={};
+              okMs.forEach(m=>{const c=m.category||'其他';if(!cats[c])cats[c]=[];cats[c].push(m);});
+              return Object.keys(cats).map(cat=>`<details style="margin-bottom:6px;">
+                <summary style="font-size:11px;color:var(--text3);cursor:pointer;padding:3px 0;">${esc(cat)} 正常（${cats[cat].length}项）</summary>
+                <div class="mg" style="margin-top:4px;">${cats[cat].map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div>
+              </details>`).join('');
+            } else {
+              return `<details style="margin-bottom:10px;"><summary style="font-size:11px;color:var(--text3);cursor:pointer;padding:4px 0;">正常指标（${okMs.length}项，点击展开）</summary>
+              <div class="mg" style="margin-top:6px;">${okMs.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div></details>`;
+            }
+          })()}
+
+          ${abnFindings.length?`
+          <div style="margin-bottom:10px;">
+            <div class="sl">🔬 影像异常所见</div>
+            <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 10px;">
+              ${abnFindings.map(f=>{
+                const dc=f.status==='warn'?'#fac775':'#e24b4a';
+                return `<div style="display:flex;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--border);">
+                  <div style="width:8px;height:8px;border-radius:50%;background:${dc};flex-shrink:0;margin-top:4px;"></div>
+                  <div>
+                    <div style="font-size:12px;font-weight:500;">${esc(f.location)}</div>
+                    <div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div>
+                  </div>
+                </div>`;
+              }).join('')}
+            </div>
+          </div>`:``}
+
+          ${(v.findings||[]).filter(f=>f.status==='ok').length?`
+          <details style="margin-bottom:10px;">
+            <summary style="font-size:11px;color:var(--text3);cursor:pointer;padding:4px 0;">影像正常所见（点击展开）</summary>
+            <div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:4px 10px;margin-top:6px;">
+              ${(v.findings||[]).filter(f=>f.status==='ok').map(f=>`<div style="display:flex;gap:8px;padding:5px 0;border-bottom:0.5px solid var(--border);">
+                <div style="width:8px;height:8px;border-radius:50%;background:#9fe1cb;flex-shrink:0;margin-top:4px;"></div>
+                <div><div style="font-size:11px;font-weight:500;">${esc(f.location)}</div><div style="font-size:11px;color:var(--text2);">${esc(f.desc)}</div></div>
+              </div>`).join('')}
+            </div>
+          </details>`:``}
+
+          ${v.conclusion?`<div style="background:var(--bg2);border-radius:var(--radius);padding:8px 10px;font-size:12px;line-height:1.7;margin-bottom:8px;">📋 ${esc(v.conclusion)}</div>`:``}
+          ${v.content?`<div style="background:var(--bg2);border-radius:var(--radius);padding:8px 10px;font-size:12px;line-height:1.7;margin-bottom:8px;">🩺 ${esc(v.content)}</div>`:``}
+          ${v.medications?`<div style="font-size:12px;color:var(--text2);margin-bottom:6px;">💊 开药：${esc(v.medications)}</div>`:``}
+          ${v.followUp?`<div style="font-size:12px;color:var(--warn-text);margin-bottom:8px;">⏰ 复查：${esc(v.followUp)}</div>`:``}
+          ${v.suggestion?`<div style="font-size:12px;color:var(--warn-text);margin-bottom:8px;">💡 建议：${esc(v.suggestion)}</div>`:``}
+
+          <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;">
+            ${v.followUp||v.suggestion?`<button class="btn-o" onclick="event.stopPropagation();showEvDialog('复查：'+'${esc(v.diagnosis||v.hospital||'')}','','${esc(v.hospital||'')}','${esc(v.department||'')}','${esc(v.doctor||'')}','${esc(v.followUp||v.suggestion||'')}')">📅 添加复查提醒</button>`:''}
+            <button class="btn-o" onclick="event.stopPropagation();delVisit('${v.id}')">🗑 删除</button>
+          </div>
+        </div>
+      </div>`;
+    });
+  });
+
+  c.innerHTML = html;
+}
+
+function delVisit(id){
+  if(!confirm('确定删除此就诊记录？'))return;
+  const d=AD(); d.visits=d.visits.filter(x=>x.id!==id);
+  saveState(); renderSidebar(); rVisits();
+}
+
+function showAddVisit(){
+  showOverlay(`<div class="dialog" style="max-width:420px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">🏥 添加就诊记录</h3>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px;">上传图片让 AI 自动识别，或手动填写，有什么填什么</div>
+
+    <div class="analyze-box">
+      <h4>📷 上传检查报告 / 病历 / 影像（可多选，混合上传）</h4>
+      <input type="file" accept="image/*" multiple onchange="onVisitImgs(event)" style="margin:8px 0;">
+      <div class="img-grid" id="grid_visit_imgs"></div>
+      <button class="btn-p" style="width:100%;font-size:12px;margin-top:6px;" onclick="doVisitAI()">🤖 AI 识别并自动填入</button>
+      <div id="visit_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
+    </div>
+
+    <div style="font-size:11px;color:var(--text3);margin-bottom:6px;">有什么填什么，没有的留空即可</div>
+    <div style="display:flex;gap:6px;">
+      <div style="flex:1;"><label class="fl">就诊日期</label><input type="date" id="vt_date" value="${TS}"></div>
+      <div style="flex:1;"><label class="fl">医院</label><input id="vt_hosp" placeholder="医院名称"></div>
+    </div>
+    <div style="display:flex;gap:6px;">
+      <div style="flex:1;"><label class="fl">科室</label><input id="vt_dept" placeholder="科室"></div>
+      <div style="flex:1;"><label class="fl">医生</label><input id="vt_doc" placeholder="医生"></div>
+    </div>
+    <label class="fl">主要诊断</label><input id="vt_diag" placeholder="如：高血压、2型糖尿病">
+    <label class="fl">病历内容/医嘱（选填）</label>
+    <textarea id="vt_content" rows="2" placeholder="医生说了什么、注意事项…"></textarea>
+    <label class="fl">开具药物（选填）</label>
+    <input id="vt_meds" placeholder="如：苯磺酸氨氯地平、二甲双胍">
+    <label class="fl">复查要求（选填）</label>
+    <input id="vt_followup" placeholder="如：1个月后复查血压">
+    <div class="rb">
+      <button class="btn-p" onclick="saveVisit()" style="flex:1;">保存就诊记录</button>
+      <button class="btn-o" onclick="closeOverlay()">取消</button>
+    </div>
+  </div>`);
+}
+
+function onVisitImgs(e){
+  window._imgStore = window._imgStore||{};
+  window._imgStore['visit_imgs'] = Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));
+  renderImgGrid('visit_imgs','removeImg');
+}
+
+async function doVisitAI(){
+  const files = (window._imgStore||{})['visit_imgs']||[];
+  if(!files.length){alert('请先选择图片');return;}
+  const st = document.getElementById('visit_ai_status');
+  if(st) st.textContent='⏳ AI 识别中…';
+
+  // 统一 prompt，让 AI 自动判断图片类型并返回完整就诊信息
+  const prompt = '请识别这张医疗图片（可能是检查报告/病历/影像报告）。'
+    +'只输出JSON，不要markdown，第一个字符必须是{：'
+    +'{"imgType":"report或note或imaging","date":"YYYY-MM-DD","hospital":"医院","department":"科室","doctor":"医生",'
+    +'"diagnosis":"主要诊断","content":"病历内容（病历图片才有）","medications":"开具药物","followUp":"复查要求",'
+    +'"conclusion":"影像结论（影像图片才有）","suggestion":"影像建议",'
+    +'"metrics":[{"name":"指标名","value":"值+单位","reference":"参考范围","status":"ok或warn或danger"}],'
+    +'"findings":[{"location":"部位","status":"ok或warn或danger","desc":"所见描述"}]}'
+    +'。检查报告的findings为空数组，影像报告的metrics为空数组，病历的metrics和findings都为空数组。'
+    +'有异常必须如实标注warn/danger。无法识别返回{"error":"原因"}';
+
+  try {
+    const allMetrics = {}, allFindings = [];
+    let mainInfo = {};
+    let recognized = 0;
+
+    for(let i=0;i<files.length;i++){
+      if(st) st.textContent=`⏳ 正在识别第${i+1}/${files.length}张…`;
+      const {b64,mime} = await readFile(files[i]);
+      try{
+        const r = await callAI(b64, mime, prompt);
+        if(r._raw||r.error) continue;
+        recognized++;
+        // 取第一张有效图片的基本信息
+        if(!mainInfo.date && r.date) mainInfo = r;
+        // 合并指标（去重取最后）
+        (r.metrics||[]).forEach(m=>{ allMetrics[m.name]=m; });
+        // 合并影像所见
+        (r.findings||[]).forEach(f=>{
+          if(!allFindings.find(x=>x.location===f.location)) allFindings.push(f);
+        });
+        // 合并病历内容
+        if(r.content && !mainInfo._content) mainInfo._content = r.content;
+        if(r.medications && !mainInfo._meds) mainInfo._meds = r.medications;
+        if(r.followUp && !mainInfo._followUp) mainInfo._followUp = r.followUp;
+        if(r.conclusion && !mainInfo._conclusion) mainInfo._conclusion = r.conclusion;
+        if(r.suggestion && !mainInfo._suggestion) mainInfo._suggestion = r.suggestion;
+        if(r.diagnosis && !mainInfo.diagnosis) mainInfo.diagnosis = r.diagnosis;
+      }catch(e){ console.log('识别失败',e); }
+    }
+
+    if(!recognized){if(st) st.textContent='❌ 识别失败，请手动填写';return;}
+
+    // 填入表单
+    if(mainInfo.date) document.getElementById('vt_date').value=mainInfo.date;
+    if(mainInfo.hospital) document.getElementById('vt_hosp').value=mainInfo.hospital;
+    if(mainInfo.department) document.getElementById('vt_dept').value=mainInfo.department;
+    if(mainInfo.doctor) document.getElementById('vt_doc').value=mainInfo.doctor;
+    if(mainInfo.diagnosis) document.getElementById('vt_diag').value=mainInfo.diagnosis;
+    if(mainInfo._content) document.getElementById('vt_content').value=mainInfo._content;
+    if(mainInfo._meds) document.getElementById('vt_meds').value=mainInfo._meds;
+    if(mainInfo._followUp||mainInfo._suggestion) document.getElementById('vt_followup').value=mainInfo._followUp||mainInfo._suggestion;
+
+    // 存到临时变量供 saveVisit 使用
+    window._visitMetrics = Object.values(allMetrics);
+    window._visitFindings = allFindings;
+    window._visitConclusion = mainInfo._conclusion||'';
+
+    const abn = Object.values(allMetrics).filter(m=>m.status!=='ok').length + allFindings.filter(f=>f.status!=='ok').length;
+    if(st) st.textContent=`✅ 识别完成（${files.length}张）${abn>0?'，发现'+abn+'项异常':''} ，请检查后保存`;
+
+  }catch(err){
+    if(st) st.textContent='❌ 错误：'+err.message;
+  }
+}
+
+function saveVisit(){
+  const date = document.getElementById('vt_date').value;
+  if(!date){alert('请填写就诊日期');return;}
+  const v = {
+    id: uid(),
+    date,
+    hospital: document.getElementById('vt_hosp').value,
+    department: document.getElementById('vt_dept').value,
+    doctor: document.getElementById('vt_doc').value,
+    diagnosis: document.getElementById('vt_diag').value,
+    content: document.getElementById('vt_content').value,
+    medications: document.getElementById('vt_meds').value,
+    followUp: document.getElementById('vt_followup').value,
+    metrics: window._visitMetrics||[],
+    findings: window._visitFindings||[],
+    conclusion: window._visitConclusion||''
+  };
+
+  // 清理临时数据
+  window._visitMetrics=null; window._visitFindings=null; window._visitConclusion=null;
+
+  if(!AD().visits) AD().visits=[];
+  AD().visits.unshift(v);
+  AD().visits.sort((a,b)=>b.date.localeCompare(a.date));
+
+  // 如果有复查要求，提示添加日历
+  if(v.followUp){
+    const d=calcFU(v.date,v.followUp);
+    if(d&&confirm('检测到复查要求：「'+v.followUp+'」\n建议日期：'+d+'\n\n是否添加到日历？')){
+      AD().events.unshift({id:uid(),title:'复查：'+(v.diagnosis||v.hospital||''),date:d,hospital:v.hospital,department:v.department,doctor:v.doctor,note:v.followUp});
+    }
+  }
+
+  saveState(); renderSidebar(); closeOverlay();
+  showSaveBanner('就诊记录已保存！');
+  // 切到时间线
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[2].classList.add('active');
+  CT='visits'; rVisits();
+}
+
+function showBatchVisit(){
+  showOverlay(`<div class="dialog" style="max-width:420px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">📦 批量导入就诊记录</h3>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px;">一次上传多张图片，AI 按日期自动归组成不同就诊记录</div>
+    <input type="file" accept="image/*" multiple id="batchVisitInput" style="margin-bottom:10px;" onchange="onBatchVisitFiles(event)">
+    <div id="batchVisitGrid" class="img-grid" style="min-height:44px;"></div>
+    <div id="batchVisitStatus" style="font-size:12px;color:var(--text2);margin:8px 0;"></div>
+    <div id="batchVisitResults" style="max-height:250px;overflow-y:auto;"></div>
+    <div class="rb">
+      <button class="btn-p" id="batchVisitBtn" onclick="startBatchVisit()" style="flex:1;display:none;">🤖 开始批量识别</button>
+      <button class="btn-o" onclick="closeOverlay()">关闭</button>
+    </div>
+  </div>`);
+}
+
+let _batchVisitFiles=[];
+function onBatchVisitFiles(e){
+  _batchVisitFiles=Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));
+  const grid=document.getElementById('batchVisitGrid');
+  const st=document.getElementById('batchVisitStatus');
+  const btn=document.getElementById('batchVisitBtn');
+  if(!grid||!_batchVisitFiles.length)return;
+  grid.innerHTML='';
+  _batchVisitFiles.forEach(function(f,i){
+    const url=URL.createObjectURL(f);
+    const div=document.createElement('div');
+    div.className='img-thumb-wrap';
+    div.innerHTML='<img class="img-thumb" src="'+url+'" alt=""><div class="img-rm" id="bvs_'+i+'" style="background:var(--bg2);color:var(--text3);font-size:9px;width:18px;height:18px;">⏳</div>';
+    grid.appendChild(div);
+  });
+  if(st) st.textContent=_batchVisitFiles.length+'张图片已选，点击开始识别';
+  if(btn) btn.style.display='block';
+}
+
+async function startBatchVisit(){
+  if(!_batchVisitFiles.length)return;
+  const btn=document.getElementById('batchVisitBtn');
+  if(btn) btn.style.display='none';
+  const st=document.getElementById('batchVisitStatus');
+  const res=document.getElementById('batchVisitResults');
+  if(res) res.innerHTML='';
+
+  const prompt='请识别这张医疗图片（检查报告/病历/影像）。'
+    +'只输出JSON，不要markdown：'
+    +'{"imgType":"report或note或imaging","date":"YYYY-MM-DD","hospital":"医院","department":"科室","doctor":"医生",'
+    +'"diagnosis":"主要诊断","content":"病历内容","medications":"开具药物","followUp":"复查要求",'
+    +'"conclusion":"影像结论","suggestion":"建议",'
+    +'"metrics":[{"name":"指标名","value":"值+单位","reference":"参考范围","status":"ok或warn或danger"}],'
+    +'"findings":[{"location":"部位","status":"ok或warn或danger","desc":"所见"}]}'
+    +'。无法识别返回{"error":"原因"}';
+
+  // 按日期分组
+  const dateGroups={};
+  let saved=0, failed=0;
+
+  for(let i=0;i<_batchVisitFiles.length;i++){
+    const f=_batchVisitFiles[i];
+    const dot=document.getElementById('bvs_'+i);
+    if(st) st.textContent='正在识别第'+(i+1)+'/'+_batchVisitFiles.length+'张…';
+    if(dot){dot.textContent='⏳';dot.style.background='var(--bg2)';}
+    try{
+      const {b64,mime}=await readFile(f);
+      const r=await callAI(b64,mime,prompt);
+      if(r._raw||r.error) throw new Error(r.error||'识别失败');
+      const dateKey=r.date||TS;
+      if(!dateGroups[dateKey]) dateGroups[dateKey]={date:dateKey,metrics:{},findings:[],info:{}};
+      const g=dateGroups[dateKey];
+      // 合并信息
+      if(r.hospital&&!g.info.hospital) g.info={...r};
+      (r.metrics||[]).forEach(m=>{g.metrics[m.name]=m;});
+      (r.findings||[]).forEach(f=>{if(!g.findings.find(x=>x.location===f.location))g.findings.push(f);});
+      if(r.content&&!g.info.content) g.info.content=r.content;
+      if(r.medications&&!g.info.medications) g.info.medications=r.medications;
+      if(r.followUp&&!g.info.followUp) g.info.followUp=r.followUp;
+      if(r.conclusion&&!g.info.conclusion) g.info.conclusion=r.conclusion;
+      if(r.diagnosis&&!g.info.diagnosis) g.info.diagnosis=r.diagnosis;
+      if(dot){dot.textContent='✅';dot.style.background='#1d9e75';}
+      if(res) res.innerHTML+='<div style="font-size:11px;padding:3px 6px;border-bottom:0.5px solid var(--border);color:var(--success-text);">✅ '+f.name+' → '+(r.date||'未知日期')+' '+esc(r.hospital||'')+'</div>';
+    }catch(err){
+      failed++;
+      if(dot){dot.textContent='❌';dot.style.background='#e24b4a';}
+      if(res) res.innerHTML+='<div style="font-size:11px;padding:3px 6px;border-bottom:0.5px solid var(--border);color:var(--danger-text);">❌ '+f.name+' → '+err.message.slice(0,40)+'</div>';
+    }
+  }
+
+  // 保存每个日期组为一条就诊记录
+  if(!AD().visits) AD().visits=[];
+  Object.values(dateGroups).forEach(g=>{
+    const v={
+      id:uid(), date:g.date,
+      hospital:g.info.hospital||'', department:g.info.department||'',
+      doctor:g.info.doctor||'', diagnosis:g.info.diagnosis||'',
+      content:g.info.content||'', medications:g.info.medications||'',
+      followUp:g.info.followUp||'', conclusion:g.info.conclusion||'',
+      metrics:Object.values(g.metrics), findings:g.findings,
+      suggestion:g.info.suggestion||''
+    };
+    AD().visits.unshift(v);
+    saved++;
+  });
+  AD().visits.sort((a,b)=>b.date.localeCompare(a.date));
+  saveState(); renderSidebar();
+  if(st) st.textContent='完成！共整理 '+saved+' 条就诊记录，失败 '+failed+' 张';
+  rt('visits');
+}
+
+
+// ── 就诊前准备清单 ────────────────────────────────────────────────────
+function showPrepVisit(){
+  const m = state.members.find(x=>x.id===CM);
+  const d = AD();
+  const visits = d.visits||[];
+  const checkins = d.checkins||[];
+  const meds = d.meds.filter(x=>x.active);
+  const events = d.events||[];
+  const feelings = d.feelings||[];
+
+  // 上次就诊记录
+  const lastVisit = visits[0];
+
+  // 待复查事项（日历里未来的事件）
+  const upcoming = events.filter(e=>e.date>=TS).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,5);
+
+  // 近7天血压均值
+  const recent7 = checkins.filter(c=>{
+    const diff = (new Date(TS)-new Date(c.date))/86400000;
+    return diff>=0 && diff<=7;
+  });
+  const avgSbp = recent7.filter(c=>c.sbp).length ?
+    Math.round(recent7.filter(c=>c.sbp).reduce((s,c)=>s+c.sbp,0)/recent7.filter(c=>c.sbp).length) : null;
+  const avgDbp = recent7.filter(c=>c.dbp).length ?
+    Math.round(recent7.filter(c=>c.dbp).reduce((s,c)=>s+c.dbp,0)/recent7.filter(c=>c.dbp).length) : null;
+  const avgBsg = recent7.filter(c=>c.bsgf).length ?
+    (recent7.filter(c=>c.bsgf).reduce((s,c)=>s+c.bsgf,0)/recent7.filter(c=>c.bsgf).length).toFixed(1) : null;
+
+  // 近期症状（最近7天感受记录）
+  const recentFeelings = feelings.filter(f=>{
+    const diff=(new Date(TS)-new Date(f.date))/86400000;
+    return diff>=0&&diff<=14;
+  });
+  const allSymptoms = [];
+  recentFeelings.forEach(f=>(f.tags||[]).forEach(t=>{
+    if(t.level>0&&!allSymptoms.find(s=>s.name===t.name)) allSymptoms.push(t);
+  }));
+
+  // 异常指标追踪
+  const allAbnMetrics = {};
+  visits.forEach(v=>{
+    (v.metrics||[]).filter(m=>m.status!=='ok').forEach(m=>{
+      if(!allAbnMetrics[m.name]) allAbnMetrics[m.name]=[];
+      allAbnMetrics[m.name].push({date:v.date, value:m.value, status:m.status});
+    });
+  });
+  const abnKeys = Object.keys(allAbnMetrics).slice(0,5);
+
+  // 未服药提醒
+  const todayCheckin = checkins.find(c=>c.date===TS);
+  const medNotTaken = meds.length && todayCheckin && todayCheckin.medTaken===false;
+
+  const html = `<div class="dialog" style="max-width:420px;max-height:85vh;overflow-y:auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+      <h3 style="font-size:15px;font-weight:700;">📋 就诊准备清单</h3>
+      <span style="font-size:11px;color:var(--text3);">${esc(m?m.name:'')} · ${TS}</span>
+    </div>
+
+    ${medNotTaken?`<div class="ab" style="margin-bottom:12px;">⚠️ 今日用药未服用，就诊前请确认</div>`:''}
+
+    <!-- 近期症状 -->
+    ${allSymptoms.length?`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">🤒 近两周症状</div>
+      <div style="display:flex;gap:5px;flex-wrap:wrap;">
+        ${allSymptoms.map(t=>`<span style="font-size:11px;padding:2px 9px;border-radius:20px;background:${LEVEL_COLORS[t.level-1]}22;color:${LEVEL_COLORS[t.level-1]};border:0.5px solid ${LEVEL_COLORS[t.level-1]};">${esc(t.name)}</span>`).join('')}
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:6px;">💡 建议告诉医生以上症状的出现频率和严重程度</div>
+    </div>`:``}
+
+    <!-- 近期血压血糖 -->
+    ${(avgSbp||avgBsg)?`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">📊 近7天数据均值</div>
+      <div class="mg">
+        ${avgSbp?`<div class="mc"><div class="mc-n">平均收缩压</div><div class="mc-v" style="color:${avgSbp>140?'var(--danger-text)':'var(--success-text)'};">${avgSbp} mmHg</div><div class="mc-r">${avgSbp>140?'⬆ 偏高':'✓ 正常'}</div></div>`:''}
+        ${avgDbp?`<div class="mc"><div class="mc-n">平均舒张压</div><div class="mc-v" style="color:${avgDbp>90?'var(--danger-text)':'var(--success-text)'};">${avgDbp} mmHg</div><div class="mc-r">${avgDbp>90?'⬆ 偏高':'✓ 正常'}</div></div>`:''}
+        ${avgBsg?`<div class="mc"><div class="mc-n">平均空腹血糖</div><div class="mc-v" style="color:${parseFloat(avgBsg)>6.1?'var(--danger-text)':'var(--success-text)'};">${avgBsg} mmol/L</div><div class="mc-r">${parseFloat(avgBsg)>6.1?'⬆ 偏高':'✓ 正常'}</div></div>`:''}
+      </div>
+    </div>`:``}
+
+    <!-- 持续异常指标 -->
+    ${abnKeys.length?`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">⚠️ 历史异常指标</div>
+      ${abnKeys.map(k=>{
+        const records=allAbnMetrics[k];
+        const latest=records[0];
+        return `<div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid var(--border);">
+          <span style="font-size:12px;">${esc(k)}</span>
+          <span style="font-size:12px;color:var(--warn-text);">${esc(latest.value)} <span style="font-size:10px;color:var(--text3);">(${latest.date})</span></span>
+        </div>`;
+      }).join('')}
+      <div style="font-size:11px;color:var(--text3);margin-top:6px;">💡 建议主动告知医生以上指标的变化情况</div>
+    </div>`:``}
+
+    <!-- 现在用药 -->
+    ${meds.length?`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">💊 目前用药清单</div>
+      ${meds.map(m=>`<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:0.5px solid var(--border);font-size:12px;">
+        <span>${esc(m.name)} ${m.spec?`<span style="font-size:10px;color:var(--text3);">${esc(m.spec)}</span>`:''}  </span>
+        <span style="color:var(--text2);">每日${m.timesPerDay}次 每次${m.dosePerTime}${esc(m.unit)}</span>
+      </div>`).join('')}
+    </div>`:``}
+
+    <!-- 上次就诊复查要求 -->
+    ${lastVisit&&lastVisit.followUp?`<div style="border:0.5px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:10px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:6px;">⏰ 上次复查要求</div>
+      <div style="font-size:12px;color:var(--warn-text);">${esc(lastVisit.followUp)}</div>
+      <div style="font-size:11px;color:var(--text3);margin-top:3px;">来自 ${lastVisit.date} ${esc(lastVisit.hospital||'')}</div>
+    </div>`:``}
+
+    <!-- 建议问医生的问题 -->
+    <div style="border:0.5px solid var(--info-text);border-radius:var(--radius);padding:12px;margin-bottom:10px;background:var(--info-bg);">
+      <div style="font-size:12px;font-weight:600;color:var(--info-text);margin-bottom:8px;">💡 建议问医生的问题</div>
+      <div style="font-size:12px;color:var(--info-text);line-height:1.9;">
+        ${avgSbp&&avgSbp>140?'• 近期血压平均'+avgSbp+'，需要调整用药吗？<br>':''}
+        ${avgBsg&&parseFloat(avgBsg)>6.1?'• 空腹血糖平均'+avgBsg+'mmol/L，是否需要关注？<br>':''}
+        ${allSymptoms.filter(t=>t.level>=1).length?'• 近期出现'+allSymptoms.filter(t=>t.level>=1).map(t=>t.name).slice(0,3).join('、')+'，是否与用药有关？<br>':''}
+        ${lastVisit&&lastVisit.followUp?'• 关于上次要求的复查：'+esc(lastVisit.followUp)+'<br>':''}
+        • 目前用药方案需要调整吗？
+      </div>
+    </div>
+
+    <div class="rb">
+      <button class="btn-p" onclick="copyPrepSummary()" style="flex:1;">📋 复制清单</button>
+      <button class="btn-o" onclick="closeOverlay()">关闭</button>
+    </div>
+  </div>`;
+
+  showOverlay(html);
+}
+
+function copyPrepSummary(){
+  const el = document.querySelector('.dialog');
+  if(!el) return;
+  // 提取纯文字
+  const text = el.innerText;
+  navigator.clipboard?.writeText(text).then(()=>alert('已复制！可粘贴发给医生或家人'));
+}
+
+// ── 异常指标追踪（时间线里的异常视图） ────────────────────────────────
+function rAbnormalTracking(){
+  const c = document.getElementById('mc');
+  const visits = AD().visits||[];
+
+  // 收集所有历史出现过异常的指标
+  const metricHistory = {}; // name -> [{date, value, status, hospital}]
+  visits.forEach(v=>{
+    (v.metrics||[]).forEach(m=>{
+      if(!metricHistory[m.name]) metricHistory[m.name]=[];
+      metricHistory[m.name].push({date:v.date, value:m.value, status:m.status, hospital:v.hospital||''});
+    });
+  });
+
+  // 只保留曾经异常过的指标
+  const abnMetrics = {};
+  Object.keys(metricHistory).forEach(k=>{
+    if(metricHistory[k].some(r=>r.status!=='ok')) abnMetrics[k]=metricHistory[k].sort((a,b)=>a.date.localeCompare(b.date));
+  });
+
+  // 影像异常所见
+  const findingHistory = {};
+  visits.forEach(v=>{
+    (v.findings||[]).filter(f=>f.status!=='ok').forEach(f=>{
+      if(!findingHistory[f.location]) findingHistory[f.location]=[];
+      findingHistory[f.location].push({date:v.date, desc:f.desc, status:f.status, hospital:v.hospital||''});
+    });
+  });
+
+  if(!Object.keys(abnMetrics).length && !Object.keys(findingHistory).length){
+    c.innerHTML=`<div class="es">✅<br><br>暂无异常记录<br><div style="font-size:12px;margin-top:8px;color:var(--text3);">所有检查指标均在正常范围内</div></div>`;
+    return;
+  }
+
+  let html = `<div style="font-size:11px;color:var(--text3);margin-bottom:12px;">只显示曾经出现异常的指标，追踪变化趋势</div>`;
+
+  // 检查指标异常追踪
+  if(Object.keys(abnMetrics).length){
+    html += `<div class="sl">⚠️ 异常检查指标追踪（${Object.keys(abnMetrics).length}项）</div>`;
+    Object.keys(abnMetrics).forEach(name=>{
+      const records = abnMetrics[name];
+      const latest = records[records.length-1];
+      const isCurrentlyAbn = latest.status!=='ok';
+      html += `<div class="card" style="margin-bottom:8px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+          <span style="font-size:13px;font-weight:600;">${esc(name)}</span>
+          <span class="badge ${isCurrentlyAbn?'bwarn':'bok'}">${isCurrentlyAbn?'仍异常':'已恢复'}</span>
+        </div>
+        <div style="display:flex;gap:0;overflow-x:auto;">
+          ${records.map((r,i)=>`<div style="flex-shrink:0;min-width:72px;text-align:center;padding:4px 6px;border-right:0.5px solid var(--border);">
+            <div style="font-size:9px;color:var(--text3);margin-bottom:3px;">${r.date}</div>
+            <div style="font-size:13px;font-weight:600;color:${r.status!=='ok'?'var(--warn-text)':'var(--success-text)'};">${esc(r.value.split(' ')[0])}</div>
+            <div style="font-size:9px;color:var(--text3);">${r.value.split(' ').slice(1).join(' ')}</div>
+            <div style="font-size:9px;margin-top:2px;">${r.status!=='ok'?'⚠️':'✓'}</div>
+          </div>`).join('')}
+        </div>
+        <div style="font-size:11px;color:var(--text3);margin-top:6px;">来自 ${esc(latest.hospital)} · ${records.length}次记录</div>
+      </div>`;
+    });
+  }
+
+  // 影像异常追踪
+  if(Object.keys(findingHistory).length){
+    html += `<div class="sl" style="margin-top:14px;">🔬 影像异常所见追踪（${Object.keys(findingHistory).length}处）</div>`;
+    Object.keys(findingHistory).forEach(loc=>{
+      const records = findingHistory[loc];
+      const latest = records[records.length-1];
+      html += `<div class="card" style="margin-bottom:8px;">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px;">${esc(loc)}</div>
+        ${records.map(r=>`<div style="padding:6px 0;border-bottom:0.5px solid var(--border);">
+          <div style="font-size:10px;color:var(--text3);margin-bottom:2px;">${r.date} · ${esc(r.hospital)}</div>
+          <div style="font-size:12px;">${esc(r.desc)}</div>
+        </div>`).join('')}
+      </div>`;
+    });
+  }
+
+  c.innerHTML = html;
+}
+
+
+// ── 体检录入 ──────────────────────────────────────────────────────────
+function showAddPhysical(){
+  showOverlay(`<div class="dialog" style="max-width:420px;">
+    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">🏃 录入体检报告</h3>
+    <div style="font-size:11px;color:var(--text2);margin-bottom:10px;">上传体检报告图片，AI 自动识别所有指标</div>
+
+    <div class="analyze-box">
+      <h4>📷 上传体检报告（可多选，支持多页）</h4>
+      <input type="file" accept="image/*" multiple onchange="onPhysicalImgs(event)" style="margin:8px 0;">
+      <div class="img-grid" id="grid_physical_imgs"></div>
+      <button class="btn-p" style="width:100%;font-size:12px;margin-top:6px;" onclick="doPhysicalAI()">🤖 AI 识别体检结果</button>
+      <div id="physical_ai_status" style="font-size:11px;color:var(--text2);margin-top:6px;"></div>
+      <div id="physical_ai_preview" style="margin-top:8px;"></div>
+    </div>
+
+    <div style="font-size:11px;color:var(--text3);margin-bottom:6px;">基本信息</div>
+    <div style="display:flex;gap:6px;">
+      <div style="flex:1;"><label class="fl">体检日期</label><input type="date" id="ph_date" value="${TS}"></div>
+      <div style="flex:1;"><label class="fl">体检机构</label><input id="ph_hosp" placeholder="如：爱康国宾、美年大健康"></div>
+    </div>
+    <label class="fl">体检类型</label>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;" id="phTypeRow">
+      ${['年度体检','入职体检','专项体检','孕前检查','儿童体检'].map((t,i)=>
+        `<div onclick="selectPhType('${t}',this)" data-phtype="${t}"
+          style="font-size:12px;padding:4px 10px;border-radius:20px;border:0.5px solid ${i===0?'var(--text)':'var(--border2)'};cursor:pointer;background:${i===0?'var(--bg3)':'var(--bg2)'};">${t}</div>`
+      ).join('')}
+    </div>
+    <input type="hidden" id="ph_type" value="年度体检">
+    <label class="fl">总结/医生建议（选填）</label>
+    <textarea id="ph_summary" rows="2" placeholder="体检总体结论或医生建议…"></textarea>
+    <div class="rb">
+      <button class="btn-p" onclick="savePhysical()" style="flex:1;">保存体检记录</button>
+      <button class="btn-o" onclick="closeOverlay()">取消</button>
+    </div>
+  </div>`);
+}
+
+function selectPhType(t, el){
+  document.getElementById('ph_type').value=t;
+  document.querySelectorAll('#phTypeRow [data-phtype]').forEach(d=>{
+    d.style.borderColor = d.dataset.phtype===t?'var(--text)':'var(--border2)';
+    d.style.background = d.dataset.phtype===t?'var(--bg3)':'var(--bg2)';
+  });
+}
+
+function onPhysicalImgs(e){
+  window._imgStore=window._imgStore||{};
+  window._imgStore['physical_imgs']=Array.from(e.target.files||[]).filter(f=>f.type.startsWith('image/'));
+  renderImgGrid('physical_imgs','removeImg');
+}
+
+async function doPhysicalAI(){
+  const files=(window._imgStore||{})['physical_imgs']||[];
+  if(!files.length){alert('请先选择体检报告图片');return;}
+  const st=document.getElementById('physical_ai_status');
+  const preview=document.getElementById('physical_ai_preview');
+  if(st) st.textContent='⏳ AI 识别中，体检报告较多请耐心等待…';
+  if(preview) preview.innerHTML='';
+
+  const prompt='请识别这张体检报告图片。'
+    +'只输出JSON，不要markdown，第一个字符必须是{：'
+    +'{"date":"YYYY-MM-DD","hospital":"体检机构名称","summary":"体检总结",'
+    +'"metrics":[{"name":"指标全称","value":"数值+单位","reference":"参考范围","status":"ok或warn或danger","category":"分类如血常规/生化/尿常规/肝功能/肾功能/血脂/血糖/甲状腺/心电图/超声/其他"}]}'
+    +'。status规则：正常=ok，偏高偏低=warn，明显异常=danger。把所有指标都列出来不要遗漏。无法识别返回{"error":"原因"}';
+
+  try{
+    const allMetrics={};
+    let mainInfo={};
+    let recognized=0;
+
+    for(let i=0;i<files.length;i++){
+      if(st) st.textContent='⏳ 正在识别第'+(i+1)+'/'+files.length+'张…';
+      const {b64,mime}=await readFile(files[i]);
+      try{
+        const r=await callAI(b64,mime,prompt);
+        if(r._raw||r.error) continue;
+        recognized++;
+        if(!mainInfo.date&&r.date) mainInfo=r;
+        if(r.hospital&&!mainInfo.hospital) mainInfo.hospital=r.hospital;
+        (r.metrics||[]).forEach(m=>{ allMetrics[m.name]={...m}; });
+      }catch(e){ console.log('识别失败',e); }
+    }
+
+    if(!recognized){if(st) st.textContent='❌ 识别失败，请手动填写';return;}
+
+    window._physicalMetrics=Object.values(allMetrics);
+
+    // 填入基本信息
+    if(mainInfo.date) document.getElementById('ph_date').value=mainInfo.date;
+    if(mainInfo.hospital) document.getElementById('ph_hosp').value=mainInfo.hospital;
+    if(mainInfo.summary) document.getElementById('ph_summary').value=mainInfo.summary;
+
+    // 按分类展示识别结果预览
+    const metrics=Object.values(allMetrics);
+    const abn=metrics.filter(m=>m.status!=='ok');
+    const ok=metrics.filter(m=>m.status==='ok');
+
+    // 按category分组
+    const cats={};
+    metrics.forEach(m=>{
+      const cat=m.category||'其他';
+      if(!cats[cat]) cats[cat]=[];
+      cats[cat].push(m);
+    });
+
+    let prevHtml=`<div style="background:var(--bg2);border-radius:var(--radius);padding:10px;margin-top:6px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:6px;">识别结果预览：共${metrics.length}项指标，${abn.length}项异常</div>`;
+
+    if(abn.length){
+      prevHtml+=`<div style="font-size:11px;font-weight:600;color:var(--warn-text);margin-bottom:4px;">⚠️ 异常指标（${abn.length}项）</div>
+      <div class="mg" style="margin-bottom:8px;">${abn.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v warn">${esc(m.value)}</div><div class="mc-r">参考 ${esc(m.reference||'')}</div></div>`).join('')}</div>`;
+    }
+
+    // 分类显示正常
+    Object.keys(cats).forEach(cat=>{
+      const catOk=cats[cat].filter(m=>m.status==='ok');
+      if(catOk.length){
+        prevHtml+=`<details style="margin-bottom:4px;"><summary style="font-size:11px;color:var(--text3);cursor:pointer;">${esc(cat)} 正常（${catOk.length}项）</summary>
+        <div class="mg" style="margin-top:4px;">${catOk.map(m=>`<div class="mc"><div class="mc-n">${esc(m.name)}</div><div class="mc-v ok">${esc(m.value)}</div><div class="mc-r">✓</div></div>`).join('')}</div></details>`;
+      }
+    });
+
+    prevHtml+=`</div>`;
+    if(preview) preview.innerHTML=prevHtml;
+    if(st) st.textContent=`✅ 识别完成（${files.length}张），共${metrics.length}项指标，${abn.length}项异常`;
+
+  }catch(err){
+    if(st) st.textContent='❌ 错误：'+err.message;
+  }
+}
+
+function savePhysical(){
+  const date=document.getElementById('ph_date').value;
+  if(!date){alert('请填写体检日期');return;}
+  const phType=document.getElementById('ph_type').value;
+  const v={
+    id:uid(),
+    date,
+    visitType:'physical',
+    physicalType:phType,
+    hospital:document.getElementById('ph_hosp').value,
+    diagnosis:phType,
+    content:document.getElementById('ph_summary').value,
+    metrics:window._physicalMetrics||[],
+    findings:[],
+    medications:'',
+    followUp:'',
+    conclusion:''
+  };
+  window._physicalMetrics=null;
+  if(!AD().visits) AD().visits=[];
+  AD().visits.unshift(v);
+  AD().visits.sort((a,b)=>b.date.localeCompare(a.date));
+  saveState(); renderSidebar(); closeOverlay();
+  showSaveBanner('体检记录已保存！');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab')[2].classList.add('active');
+  CT='visits'; rVisits();
+}
+
+
+// ── 新手引导 ──────────────────────────────────────────────────────────
+function checkOnboarding(){
+  const done = localStorage.getItem('onboarding_done');
+  if(!done) showOnboarding(0);
+}
+
+function showOnboarding(step){
+  const steps = [
+    {
+      emoji: '👨‍👩‍👧‍👦',
+      title: '欢迎使用家庭健康档案',
+      desc: '帮你把全家的健康信息整理在一个地方，永远不再找不到报告。',
+      sub: '先给家庭成员起个名字吧',
+      btnText: '开始设置 →',
+      action: 'nextOnboarding(1)'
+    },
+    {
+      emoji: '📷',
+      title: '上传报告，AI 自动识别',
+      desc: '拍照上传检查报告、病历或体检报告，AI 自动提取所有指标，异常的会高亮显示。',
+      sub: '支持多张同时上传，混合上传也没问题',
+      btnText: '下一步 →',
+      action: 'nextOnboarding(2)'
+    },
+    {
+      emoji: '🔒',
+      title: '你的数据，只属于你',
+      desc: '所有健康档案存储在你自己的设备里，我们的服务器看不到任何内容。AI 识别时图片会发送给 AI 处理，识别完即删除，不做任何存储。',
+      sub: '建议定期在设置里导出备份',
+      btnText: '开始使用 🎉',
+      action: 'finishOnboarding()'
+    }
+  ];
+
+  const s = steps[step];
+  const dots = steps.map((_,i) =>
+    `<div style="width:6px;height:6px;border-radius:50%;background:${i===step?'var(--text)':'var(--border2)'};"></div>`
+  ).join('');
+
+  showOverlay(`<div class="dialog" style="max-width:360px;text-align:center;">
+    <div style="font-size:56px;margin-bottom:16px;">${s.emoji}</div>
+    <div style="font-size:16px;font-weight:700;margin-bottom:10px;">${s.title}</div>
+    <div style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:8px;white-space:pre-line;">${s.desc}</div>
+    <div style="font-size:11px;color:var(--text3);margin-bottom:20px;">${s.sub}</div>
+    <button class="btn-p" onclick="${s.action}" style="width:100%;padding:12px;font-size:14px;">${s.btnText}</button>
+    ${step>0?`<button class="btn-o" onclick="showOnboarding(${step-1})" style="width:100%;margin-top:8px;">← 上一步</button>`:''}
+    <div style="display:flex;justify-content:center;gap:6px;margin-top:16px;">${dots}</div>
+    ${step===0?`<button onclick="finishOnboarding()" style="background:none;border:none;font-size:11px;color:var(--text3);cursor:pointer;margin-top:8px;">跳过引导</button>`:''}
+  </div>`);
+}
+
+function nextOnboarding(step){
+  showOnboarding(step);
+}
+
+function finishOnboarding(){
+  localStorage.setItem('onboarding_done','1');
+  closeOverlay();
+  // 第一次完成引导，弹出添加成员
+  const m = state.members.find(x=>x.name==='成员1'||x.name==='成员2');
+  if(m && (m.name==='成员1'||m.name==='成员2')){
+    setTimeout(()=>showEditMember(CM), 300);
+  }
+}
+
+// ── 设置页 ────────────────────────────────────────────────────────────
+function showSettings(){
+  const totalRecords = state.members.reduce((sum,m)=>{
+    const d = AD(m.id);
+    return sum+(d.visits||[]).length+(d.checkins||[]).length+(d.feelings||[]).length+(d.meds||[]).length;
+  },0);
+
+  showOverlay(`<div class="dialog" style="max-width:380px;">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;">⚙️ 设置</h3>
+
+    <!-- 数据安全说明 -->
+    <div style="background:var(--info-bg);border-radius:var(--radius);padding:12px;margin-bottom:14px;">
+      <div style="font-size:12px;font-weight:600;color:var(--info-text);margin-bottom:6px;">🔒 你的数据安全</div>
+      <div style="font-size:11px;color:var(--info-text);line-height:1.8;">
+        ✅ 所有健康档案存储在<strong>你自己的设备</strong>里<br>
+        ✅ 我们的服务器<strong>无法看到</strong>你的任何数据<br>
+        ✅ AI 识别图片处理后<strong>立即删除</strong>，不做存储<br>
+        ✅ 不卖数据，不投广告
+      </div>
+    </div>
+
+    <!-- 数据统计 -->
+    <div style="background:var(--bg2);border-radius:var(--radius);padding:12px;margin-bottom:14px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">📊 数据统计</div>
+      <div style="display:flex;gap:10px;">
+        <div style="flex:1;text-align:center;">
+          <div style="font-size:22px;font-weight:700;">${state.members.length}</div>
+          <div style="font-size:11px;color:var(--text3);">家庭成员</div>
+        </div>
+        <div style="flex:1;text-align:center;">
+          <div style="font-size:22px;font-weight:700;">${totalRecords}</div>
+          <div style="font-size:11px;color:var(--text3);">健康记录</div>
+        </div>
+        <div style="flex:1;text-align:center;">
+          <div style="font-size:22px;font-weight:700;">${state.members.reduce((s,m)=>(s+(AD(m.id).visits||[]).length),0)}</div>
+          <div style="font-size:11px;color:var(--text3);">就诊记录</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 备份导出 -->
+    <div style="margin-bottom:14px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">💾 数据备份</div>
+      <div style="font-size:11px;color:var(--text3);margin-bottom:8px;">建议每月导出一次备份，防止数据丢失。导出的文件可以随时重新导入恢复。</div>
+      <div style="display:flex;gap:6px;">
+        <button class="btn-p" onclick="exportAll()" style="flex:1;font-size:12px;">📤 导出备份</button>
+        <button class="btn-o" onclick="importData();closeOverlay();" style="flex:1;font-size:12px;">📥 导入恢复</button>
+      </div>
+    </div>
+
+    <!-- 其他 -->
+    <div style="margin-bottom:14px;">
+      <div style="font-size:12px;font-weight:600;margin-bottom:8px;">🛠 其他</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <button class="btn-o" onclick="showOnboarding(0)" style="text-align:left;padding:10px 12px;font-size:12px;">📖 重新查看新手引导</button>
+        <button class="btn-o" onclick="confirmClearData()" style="text-align:left;padding:10px 12px;font-size:12px;color:var(--danger-text);">🗑 清除所有数据</button>
+      </div>
+    </div>
+
+    <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:4px;">
+      家庭健康档案 · 数据存储在本地设备
+    </div>
+
+    <button class="btn-o" onclick="closeOverlay()" style="width:100%;margin-top:10px;">关闭</button>
+  </div>`);
+}
+
+function confirmClearData(){
+  if(!confirm('确定要清除所有健康数据吗？\n\n此操作不可恢复！\n建议先导出备份。')) return;
+  if(!confirm('再次确认：清除后所有家庭成员的健康档案将永久删除。')) return;
+  localStorage.removeItem('family_health_v2');
+  location.reload();
+}
+
+
+// ── 初始化 ────────────────────────────────────────────────────────────
+renderSidebar();
+const initM=state.members.find(x=>x.id===CM);
+document.getElementById('mt').textContent=(initM?initM.name:'')+'的健康档案';
+if(initM){
+  const tags=initM.tags||[];
+  document.getElementById('tagRow').innerHTML=tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+(initM.isChild?'<span class="tag-chip child">👶儿童</span>':'');
+}
+rt('feelings');
+</script>
+</body>
+</html>
