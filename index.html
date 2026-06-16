@@ -200,7 +200,7 @@ function saveState(){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(state)
 
 let state = loadState();
 let CM = state.currentMember||0;
-let CT = 'notes';
+let CT = 'feelings';
 
 function AD(id){ 
   if(id===undefined) id=CM;
@@ -1593,7 +1593,7 @@ if(initM){
   const tags=initM.tags||[];
   document.getElementById('tagRow').innerHTML=tags.map(t=>`<span class="tag-chip">${esc(t)}</span>`).join('')+(initM.isChild?'<span class="tag-chip child">👶儿童</span>':'');
 }
-rt('notes');
+rt('feelings');
 </script>
 </body>
 </html>
